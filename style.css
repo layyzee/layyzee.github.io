@@ -1,74 +1,92 @@
 /* ==========================================================================
-   Balaji Palani - Senior Scrum Master Masterclass Stylesheet
-   Spotlight Card Hover Physics, Clean Tag Badges, and Print Styling
+   Balaji Palani — Dribbble / Framer-Tier Bento Portfolio Stylesheet
+   Signature Bento Aesthetics, Cursor Spotlight Physics & Infinite Marquee
    ========================================================================== */
 
-/* Skill & Pill Badges */
-.skill-tag {
+/* Bento Card Base & Glassmorphism */
+.bento-card {
+  background-color: rgba(14, 17, 26, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.bento-card:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+  box-shadow: 0 12px 40px -10px rgba(14, 165, 233, 0.12),
+              0 0 0 1px rgba(56, 189, 248, 0.1);
+}
+
+/* Subtle Pill Tags */
+.pill-tag {
   display: inline-block;
   padding: 0.35rem 0.65rem;
   font-size: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
   font-weight: 500;
   color: #cbd5e1;
-  background-color: #0b1120;
-  border: 1px solid #1e293b;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 0.5rem;
   transition: all 0.2s ease;
 }
 
-.skill-tag:hover {
-  border-color: #3b82f6;
-  color: #60a5fa;
+.pill-tag:hover {
+  border-color: #38bdf8;
+  color: #38bdf8;
   transform: translateY(-1px);
 }
 
-/* Spotlight Card Hover Interaction */
-.spotlight-card {
-  position: relative;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+/* Marquee Infinite Animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
 
-.spotlight-card:hover {
-  border-color: rgba(59, 130, 246, 0.4);
-  box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.15);
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
 }
 
-/* Scenario Tab Active States */
-.scenario-tab.active {
-  border-color: #3b82f6 !important;
-  background-color: rgba(59, 130, 246, 0.15) !important;
-  color: #ffffff !important;
+.marquee-track:hover {
+  animation-play-state: paused;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #070b12;
+  background: #08090d;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #1c2130;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #2e374e;
 }
 
-/* Print Optimization for Saving as PDF Resume */
+/* Print Styles for Clean 2-Page Executive PDF */
 @media print {
   body {
     background-color: #ffffff !important;
     color: #0f172a !important;
   }
-  header, footer, button, #toast, form, #simulator, #analytics, .fixed {
+  header, footer, button, #toast, .marquee-track, #simulator, .fixed {
     display: none !important;
   }
   main {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
   }
-  .spotlight-card, .bg-slate-900\/80, .bg-slate-900\/90, .bg-slate-950\/70, .bg-slate-950\/90, .bg-slate-950 {
+  .bento-card {
     background-color: #ffffff !important;
     border-color: #e2e8f0 !important;
     color: #1e293b !important;
@@ -81,13 +99,7 @@
   .text-slate-300, .text-slate-400 {
     color: #475569 !important;
   }
-  .text-slate-500 {
-    color: #64748b !important;
-  }
-  .border-slate-800, .border-slate-800\/80 {
-    border-color: #e2e8f0 !important;
-  }
-  .skill-tag {
+  .pill-tag {
     background-color: #f8fafc !important;
     border-color: #cbd5e1 !important;
     color: #334155 !important;
