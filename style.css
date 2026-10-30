@@ -1,9 +1,9 @@
 /* ==========================================================================
-   Balaji Palani - Senior Scrum Master Portfolio Stylesheet
-   Tailwind Supplement, Crisp Typography, Tag Pills & Clean Print Styles
+   Balaji Palani - Senior Scrum Master Masterclass Stylesheet
+   Spotlight Card Hover Physics, Clean Tag Badges, and Print Styling
    ========================================================================== */
 
-/* Custom Skill & Pill Badges */
+/* Skill & Pill Badges */
 .skill-tag {
   display: inline-block;
   padding: 0.35rem 0.65rem;
@@ -22,9 +22,22 @@
   transform: translateY(-1px);
 }
 
-/* Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
+/* Spotlight Card Hover Interaction */
+.spotlight-card {
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.spotlight-card:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.15);
+}
+
+/* Scenario Tab Active States */
+.scenario-tab.active {
+  border-color: #3b82f6 !important;
+  background-color: rgba(59, 130, 246, 0.15) !important;
+  color: #ffffff !important;
 }
 
 /* Custom Scrollbar */
@@ -32,7 +45,7 @@ html {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #090d16;
+  background: #070b12;
 }
 ::-webkit-scrollbar-thumb {
   background: #1e293b;
@@ -48,17 +61,19 @@ html {
     background-color: #ffffff !important;
     color: #0f172a !important;
   }
-  header, footer, button, #toast, form, .fixed {
+  header, footer, button, #toast, form, #simulator, #analytics, .fixed {
     display: none !important;
   }
   main {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
   }
-  .bg-slate-900\/80, .bg-slate-900\/90, .bg-slate-900\/50, .bg-slate-950\/70, .bg-slate-950\/90, .bg-slate-950 {
+  .spotlight-card, .bg-slate-900\/80, .bg-slate-900\/90, .bg-slate-950\/70, .bg-slate-950\/90, .bg-slate-950 {
     background-color: #ffffff !important;
     border-color: #e2e8f0 !important;
     color: #1e293b !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
   }
   .text-white {
     color: #0f172a !important;
