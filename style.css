@@ -1,0 +1,80 @@
+/* ==========================================================================
+   Balaji Palani - Senior Scrum Master Portfolio Stylesheet
+   Tailwind Supplement, Crisp Typography, Tag Pills & Clean Print Styles
+   ========================================================================== */
+
+/* Custom Skill & Pill Badges */
+.skill-tag {
+  display: inline-block;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  background-color: #0b1120;
+  border: 1px solid #1e293b;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  border-color: #3b82f6;
+  color: #60a5fa;
+  transform: translateY(-1px);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Print Optimization for Saving as PDF Resume */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+  header, footer, button, #toast, form, .fixed {
+    display: none !important;
+  }
+  main {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .bg-slate-900\/80, .bg-slate-900\/90, .bg-slate-900\/50, .bg-slate-950\/70, .bg-slate-950\/90, .bg-slate-950 {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    color: #1e293b !important;
+  }
+  .text-white {
+    color: #0f172a !important;
+  }
+  .text-slate-300, .text-slate-400 {
+    color: #475569 !important;
+  }
+  .text-slate-500 {
+    color: #64748b !important;
+  }
+  .border-slate-800, .border-slate-800\/80 {
+    border-color: #e2e8f0 !important;
+  }
+  .skill-tag {
+    background-color: #f8fafc !important;
+    border-color: #cbd5e1 !important;
+    color: #334155 !important;
+  }
+}
