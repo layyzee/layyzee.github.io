@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Balaji Palani — Senior Scrum Master & Agile Delivery Leader</title>
-  <meta name="description" content="Portfolio of Balaji Palani - Senior Scrum Master & Agile Coach with 7+ years IT experience, engineering foundation, CSM® and SAFe® 6 SSM credentials." />
-  
+  <title>Balaji Palani — Senior Scrum Master & Agile Delivery Architect</title>
+  <meta name="description" content="Senior Scrum Master with 7+ years of IT experience and React/AWS engineering background. CSM® & SAFe® 6 SSM Certified. Driving +20% sprint velocity and -40% blockers." />
+
   <!-- Open Graph -->
-  <meta property="og:title" content="Balaji Palani — Senior Scrum Master" />
-  <meta property="og:description" content="Former frontend engineer turned Senior Scrum Master. 7+ years IT experience, +20% velocity boost, -40% blockers." />
+  <meta property="og:title" content="Balaji Palani — Senior Scrum Master & Agile Delivery Architect" />
+  <meta property="og:description" content="Former engineer turned Senior Scrum Master. 7+ yrs IT, CSM & SAFe. Data-driven delivery telemetry." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://layyzee.github.io/" />
 
@@ -30,13 +30,12 @@
             mono: ['"JetBrains Mono"', 'monospace'],
           },
           colors: {
-            obsidian: '#08090d',
-            surface: '#0f1118',
-            surfaceHover: '#151822',
-            surfaceBorder: 'rgba(255, 255, 255, 0.08)',
-            neonBlue: '#38bdf8',
-            neonViolet: '#a855f7',
-            neonEmerald: '#10b981',
+            saasDark: '#080c16',
+            saasCard: '#0f172a',
+            saasBorder: 'rgba(255, 255, 255, 0.08)',
+            accentBlue: '#38bdf8',
+            accentEmerald: '#10b981',
+            accentIndigo: '#818cf8',
           }
         }
       }
@@ -45,579 +44,826 @@
 
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-[#08090d] text-slate-300 font-sans antialiased selection:bg-blue-600 selection:text-white min-h-screen relative overflow-x-hidden">
+<body class="bg-[#070b14] text-slate-300 font-sans antialiased selection:bg-blue-600 selection:text-white min-h-screen relative overflow-x-hidden">
 
   <!-- Ambient Glow Backgrounds -->
   <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-    <div class="absolute -top-40 -left-20 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[160px]"></div>
-    <div class="absolute top-1/2 -right-40 w-[650px] h-[650px] bg-purple-600/10 rounded-full blur-[180px]"></div>
-    <div class="absolute -bottom-20 left-1/3 w-[550px] h-[550px] bg-emerald-600/10 rounded-full blur-[160px]"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+    <div class="absolute -top-40 left-1/4 w-[750px] h-[550px] bg-blue-600/[0.07] rounded-full blur-[150px]"></div>
+    <div class="absolute top-1/3 -right-40 w-[600px] h-[600px] bg-indigo-600/[0.05] rounded-full blur-[160px]"></div>
+    <div class="absolute bottom-10 -left-40 w-[600px] h-[600px] bg-emerald-600/[0.04] rounded-full blur-[160px]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:36px_36px]"></div>
   </div>
 
-  <!-- FLOATING DRIBBBLE-STYLE NAVBAR -->
-  <header class="fixed top-5 inset-x-0 z-50 flex justify-center px-4">
-    <nav class="flex items-center justify-between gap-4 sm:gap-8 px-4 sm:px-6 py-3 rounded-full bg-[#0d0f17]/80 backdrop-blur-2xl border border-white/10 shadow-2xl shadow-black/80 max-w-4xl w-full transition-all">
+  <!-- FLOATING EXECUTIVE NAVBAR -->
+  <header class="fixed top-4 inset-x-0 z-50 flex justify-center px-4">
+    <nav class="flex items-center justify-between px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-[#0d1322]/90 backdrop-blur-xl border border-white/[0.08] shadow-2xl shadow-black/80 max-w-6xl w-full">
       
-      <!-- Brand Monogram -->
-      <a href="#hero" class="flex items-center gap-3 group">
-        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-600 to-emerald-400 p-[1.5px] shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
-          <div class="w-full h-full rounded-full bg-[#08090d] flex items-center justify-center text-white font-display font-bold text-xs tracking-wider">
-            BP
-          </div>
+      <!-- Monogram & Role -->
+      <a href="#hero" class="flex items-center gap-3 group flex-shrink-0">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-display font-bold text-xs tracking-wider shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform">
+          BP
         </div>
-        <div class="hidden sm:block">
-          <span class="font-display font-bold text-white text-sm tracking-tight group-hover:text-blue-400 transition-colors">Balaji Palani</span>
-          <span class="text-[10px] text-slate-400 block -mt-0.5 font-mono">Senior Scrum Master</span>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            <span class="font-display font-bold text-white text-sm tracking-tight group-hover:text-blue-400 transition-colors whitespace-nowrap">Balaji Palani</span>
+            <span class="hidden sm:inline-flex px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20 whitespace-nowrap">CSM® • SAFe® 6</span>
+          </div>
+          <span class="text-[10px] text-slate-400 font-mono whitespace-nowrap">Senior Scrum Master</span>
         </div>
       </a>
 
-      <!-- Quick Nav Links -->
-      <div class="hidden md:flex items-center gap-1 text-xs font-semibold text-slate-400">
-        <a href="#bento-overview" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-all">Overview</a>
-        <a href="#experience" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-all">Experience</a>
-        <a href="#simulator" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-all">Playbook</a>
-        <a href="#metrics" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-all">Impact</a>
-        <a href="#certifications" class="px-3.5 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-all">Credentials</a>
+      <!-- Navigation Links (Desktop) -->
+      <div class="hidden lg:flex items-center gap-6 text-xs font-medium text-slate-300">
+        <a href="#telemetry" class="hover:text-blue-400 transition-colors whitespace-nowrap">Telemetry</a>
+        <a href="#burndown" class="hover:text-blue-400 transition-colors whitespace-nowrap">Sprint Engine</a>
+        <a href="#differentiator" class="hover:text-blue-400 transition-colors whitespace-nowrap">Technical Edge</a>
+        <a href="#cases" class="hover:text-blue-400 transition-colors whitespace-nowrap">Case Studies</a>
+        <a href="#playbook" class="hover:text-blue-400 transition-colors whitespace-nowrap">Playbook</a>
+        <a href="#credentials" class="hover:text-blue-400 transition-colors whitespace-nowrap">Credentials</a>
       </div>
 
-      <!-- Action Button -->
-      <div class="flex items-center gap-2">
-        <button onclick="window.print()" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-mono font-medium border border-white/10 transition-all">
-          <span>Resume PDF</span>
+      <!-- Action Controls -->
+      <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+        <button onclick="window.print()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono text-slate-300 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] transition-all whitespace-nowrap" title="Print 2-page executive resume format">
+          <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+          <span>PDF Resume</span>
         </button>
-        <a href="#contact" class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold shadow-lg shadow-blue-600/30 transition-all transform hover:-translate-y-0.5">
-          <span>Let's Talk</span>
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        <a href="#contact" class="px-4 py-1.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold shadow-lg shadow-blue-600/30 transition-all transform hover:-translate-y-0.5 whitespace-nowrap">
+          Get in Touch
         </a>
       </div>
 
     </nav>
   </header>
 
-  <!-- MAIN CONTAINER (BENTO GRID ARCHITECTURE) -->
-  <main class="relative z-10 pt-28 sm:pt-36 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+  <!-- MAIN EXECUTIVE CONTAINER -->
+  <main class="relative z-10 pt-28 sm:pt-36 pb-28 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
 
-    <!-- BENTO ROW 1: HERO SPOTLIGHT + LIVE STATUS CARD -->
-    <section id="bento-overview" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-      
-      <!-- HERO CARD (8 COLS) -->
-      <div class="lg:col-span-8 bento-card p-8 sm:p-10 rounded-3xl relative overflow-hidden flex flex-col justify-between group">
-        <div class="space-y-6">
+    <!-- 1. THE EXECUTIVE HOOK (HERO) - BALANCED 2-COLUMN COCKPIT -->
+    <section id="hero" class="pt-4">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        
+        <!-- Left Column: The Value Proposition (7 cols) -->
+        <div class="lg:col-span-7 space-y-6">
           
-          <!-- Pill Tag -->
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs text-slate-300 font-mono">
-            <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-            Senior Scrum Master & Agile Delivery Leader
+          <!-- Availability Badge -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-mono font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            OPEN TO SENIOR SCRUM MASTER & AGILE ROLES
           </div>
 
-          <!-- Hero Headline (Dribbble Display Typography) -->
-          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white tracking-tight leading-[1.1]">
-            Engineering roots. <br />
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-emerald-400">
-              Predictable Agile delivery.
-            </span>
-          </h1>
+          <!-- High-Impact Headline -->
+          <div class="space-y-4">
+            <h1 class="text-3xl sm:text-5xl lg:text-[3.25rem] font-display font-extrabold text-white tracking-tight leading-[1.12]">
+              Turning complex roadmaps into <br class="hidden sm:inline" />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-emerald-400">
+                predictable, high-velocity delivery.
+              </span>
+            </h1>
 
-          <!-- Value Statement -->
-          <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl">
-            Hi, I’m <strong class="text-white font-semibold">Balaji Palani</strong>. With <strong class="text-white font-semibold">7+ years of IT experience</strong> and <strong class="text-white font-semibold">4+ years leading cross-functional Agile teams</strong> in UK BFSI, Telecom, and FinTech, I eliminate delivery blockers, optimize sprint velocity (+20%), and bridge software engineering with business execution.
-          </p>
+            <p class="text-base text-slate-300 font-normal leading-relaxed">
+              I’m <strong class="text-white font-semibold">Balaji Palani</strong> — a Senior Scrum Master with 
+              <strong class="text-white font-semibold">7+ years of IT experience</strong> and 
+              <strong class="text-white font-semibold">4+ years leading cross-functional Agile delivery</strong> across UK BFSI, Telecom, and FinTech. Former React & AWS engineer who eliminates delivery friction, protects developer flow state, and builds unshakeable sprint predictability.
+            </p>
+          </div>
 
-        </div>
+          <!-- Quick Telemetry Highlights Strip -->
+          <div class="flex flex-wrap items-center gap-3 pt-1">
+            <div class="px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.08] flex items-center gap-2 text-xs font-mono">
+              <span class="text-emerald-400 font-bold">+20%</span>
+              <span class="text-slate-400">Sprint Velocity</span>
+            </div>
+            <div class="px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.08] flex items-center gap-2 text-xs font-mono">
+              <span class="text-blue-400 font-bold">-40%</span>
+              <span class="text-slate-400">Blockers SLA</span>
+            </div>
+            <div class="px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.08] flex items-center gap-2 text-xs font-mono">
+              <span class="text-indigo-400 font-bold">98%</span>
+              <span class="text-slate-400">Commitment Predictability</span>
+            </div>
+          </div>
 
-        <!-- Hero Bottom Action Bar -->
-        <div class="pt-8 border-t border-white/10 mt-8 flex flex-wrap items-center justify-between gap-4">
-          <div class="flex flex-wrap items-center gap-3">
-            <a href="#experience" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg shadow-blue-600/30 transition-all flex items-center gap-2">
-              <span>Explore Track Record</span>
+          <!-- Primary Action Buttons -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a href="#burndown" class="px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs tracking-wide shadow-xl shadow-blue-600/30 transition-all flex items-center gap-2 whitespace-nowrap">
+              <span>Interactive Sprint Engine</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </a>
-            <button onclick="copyToClipboard('balajinia@gmail.com', this)" class="px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-mono border border-white/10 transition-all flex items-center gap-2">
-              <span>balajinia@gmail.com</span>
-              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            <a href="#cases" class="px-5 py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-white border border-white/[0.08] font-semibold text-xs transition-all whitespace-nowrap">
+              View STAR Case Studies
+            </a>
+            <button onclick="window.print()" class="px-4 py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 font-mono text-xs border border-white/[0.08] transition-all whitespace-nowrap">
+              Print PDF Resume
             </button>
           </div>
 
-          <div class="flex items-center gap-3 text-xs font-mono text-slate-400">
-            <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> CSM®</span>
-            <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> SAFe® 6</span>
-            <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> React/AWS</span>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- STATUS & LOCATION BENTO CARD (4 COLS) -->
-      <div class="lg:col-span-4 bento-card p-8 rounded-3xl flex flex-col justify-between relative overflow-hidden">
-        
-        <div>
-          <!-- Live Status Badge with Radar -->
-          <div class="flex items-center justify-between pb-5 border-b border-white/10">
-            <div class="flex items-center gap-2.5">
-              <span class="relative flex h-3 w-3">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-              </span>
-              <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">Available for Hire</span>
-            </div>
-            <span class="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded border border-white/5">Q4 2026</span>
-          </div>
-
-          <!-- Location & Live Time Clock -->
-          <div class="py-6 space-y-4">
-            <div>
-              <div class="text-[11px] font-mono text-slate-500 uppercase">Base Location</div>
-              <div class="text-base font-bold text-white flex items-center gap-2 mt-0.5">
-                <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                Mumbai, India (IST)
-              </div>
-            </div>
-
-            <!-- Live Clock Widget -->
-            <div class="p-3.5 rounded-2xl bg-black/40 border border-white/5 flex items-center justify-between">
-              <div>
-                <span class="text-[10px] font-mono text-slate-500 block uppercase">Local Time (UTC+5:30)</span>
-                <span id="live-clock" class="text-lg font-mono font-bold text-white">08:30:00 AM</span>
-              </div>
-              <span class="text-xs text-slate-500 font-mono">IST</span>
-            </div>
-
-            <div>
-              <div class="text-[11px] font-mono text-slate-500 uppercase">Target Roles</div>
-              <div class="text-xs font-medium text-slate-300 mt-1">
-                Senior Scrum Master • Agile Delivery Lead • Agile Coach
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Social Pills -->
-        <div class="pt-5 border-t border-white/10 flex items-center justify-between gap-2">
-          <a href="https://linkedin.com/in/balajipalani92" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 rounded-xl bg-white/5 hover:bg-[#0077b5]/20 hover:text-[#0077b5] text-slate-300 text-xs font-mono text-center border border-white/10 transition-all">
-            LinkedIn ↗
-          </a>
-          <a href="tel:+917540015522" class="flex-1 py-2 rounded-xl bg-white/5 hover:bg-emerald-500/20 hover:text-emerald-400 text-slate-300 text-xs font-mono text-center border border-white/10 transition-all">
-            Call Direct
-          </a>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- BENTO ROW 2: INFINITE ROLLING MARQUEE TICKER (SIGNATURE DRIBBBLE ELEMENT) -->
-    <section class="relative overflow-hidden py-3 rounded-2xl bg-[#0b0d14] border border-white/10">
-      <div class="marquee-track flex items-center gap-8 whitespace-nowrap text-xs font-mono font-bold tracking-widest text-slate-400 uppercase">
-        <span class="flex items-center gap-2"><span class="text-blue-400">✦</span> SPRINT VELOCITY +20%</span>
-        <span class="flex items-center gap-2"><span class="text-emerald-400">✦</span> MID-SPRINT BLOCKERS -40%</span>
-        <span class="flex items-center gap-2"><span class="text-purple-400">✦</span> SAFE® 6 SCRUM MASTER</span>
-        <span class="flex items-center gap-2"><span class="text-blue-400">✦</span> CERTIFIED SCRUMMASTER (CSM)</span>
-        <span class="flex items-center gap-2"><span class="text-emerald-400">✦</span> JIRA AUTOMATION & DOR/DOD</span>
-        <span class="flex items-center gap-2"><span class="text-purple-400">✦</span> UK BFSI & VERIZON TELECOM</span>
-        <span class="flex items-center gap-2"><span class="text-blue-400">✦</span> REACT & AWS CLOUD FOUNDATION</span>
-        <span class="flex items-center gap-2"><span class="text-emerald-400">✦</span> B.E. COMPUTER SCIENCE</span>
-        <span class="flex items-center gap-2"><span class="text-blue-400">✦</span> SPRINT VELOCITY +20%</span>
-        <span class="flex items-center gap-2"><span class="text-emerald-400">✦</span> MID-SPRINT BLOCKERS -40%</span>
-        <span class="flex items-center gap-2"><span class="text-purple-400">✦</span> SAFE® 6 SCRUM MASTER</span>
-        <span class="flex items-center gap-2"><span class="text-blue-400">✦</span> CERTIFIED SCRUMMASTER (CSM)</span>
-      </div>
-    </section>
-
-    <!-- BENTO ROW 3: QUANTIFIABLE IMPACT METRICS (4 ASYMMETRIC TILES) -->
-    <section id="metrics" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      
-      <!-- Metric 1 -->
-      <div class="bento-card p-6 rounded-3xl flex flex-col justify-between group">
-        <div class="flex items-center justify-between">
-          <span class="text-[11px] font-mono font-bold uppercase text-emerald-400 tracking-wider">Velocity Growth</span>
-          <span class="text-xs text-slate-500 font-mono">2 Quarters</span>
-        </div>
-        <div class="my-4">
-          <div class="text-4xl sm:text-5xl font-display font-extrabold text-white tracking-tight text-emerald-400">+20%</div>
-          <div class="text-xs font-semibold text-slate-200 mt-1">Sustained Velocity Boost</div>
-        </div>
-        <p class="text-xs text-slate-400 leading-relaxed pt-3 border-t border-white/5">
-          Achieved via restructured retrospectives and user story slicing workshops across 3 Scrum squads.
-        </p>
-      </div>
-
-      <!-- Metric 2 -->
-      <div class="bento-card p-6 rounded-3xl flex flex-col justify-between group">
-        <div class="flex items-center justify-between">
-          <span class="text-[11px] font-mono font-bold uppercase text-blue-400 tracking-wider">Dependency SLA</span>
-          <span class="text-xs text-slate-500 font-mono">48h Resolution</span>
-        </div>
-        <div class="my-4">
-          <div class="text-4xl sm:text-5xl font-display font-extrabold text-white tracking-tight text-blue-400">-40%</div>
-          <div class="text-xs font-semibold text-slate-200 mt-1">Mid-Sprint Blockers Cut</div>
-        </div>
-        <p class="text-xs text-slate-400 leading-relaxed pt-3 border-t border-white/5">
-          Coordinated shared QA and DevOps allocations through a centralized cross-team dependency board.
-        </p>
-      </div>
-
-      <!-- Metric 3 -->
-      <div class="bento-card p-6 rounded-3xl flex flex-col justify-between group">
-        <div class="flex items-center justify-between">
-          <span class="text-[11px] font-mono font-bold uppercase text-purple-400 tracking-wider">Planning Speed</span>
-          <span class="text-xs text-slate-500 font-mono">Automated Gates</span>
-        </div>
-        <div class="my-4">
-          <div class="text-4xl sm:text-5xl font-display font-extrabold text-white tracking-tight text-purple-400">-30%</div>
-          <div class="text-xs font-semibold text-slate-200 mt-1">Sprint Planning Overhead</div>
-        </div>
-        <p class="text-xs text-slate-400 leading-relaxed pt-3 border-t border-white/5">
-          Enforced Definition of Ready (DoR) and Done (DoD) via Jira automation rules, eliminating ambiguous stories.
-        </p>
-      </div>
-
-      <!-- Metric 4 -->
-      <div class="bento-card p-6 rounded-3xl flex flex-col justify-between group">
-        <div class="flex items-center justify-between">
-          <span class="text-[11px] font-mono font-bold uppercase text-amber-400 tracking-wider">Spillover Drop</span>
-          <span class="text-xs text-slate-500 font-mono">70% Drop</span>
-        </div>
-        <div class="my-4">
-          <div class="text-4xl sm:text-5xl font-display font-extrabold text-white tracking-tight text-amber-400">10 → 3</div>
-          <div class="text-xs font-semibold text-slate-200 mt-1">Carried-Forward Stories</div>
-        </div>
-        <p class="text-xs text-slate-400 leading-relaxed pt-3 border-t border-white/5">
-          Crushed spillover rates with realistic capacity forecasting in Power BI and rigorous acceptance criteria.
-        </p>
-      </div>
-
-    </section>
-
-    <!-- BENTO ROW 4: INTERACTIVE EXPERIENCE TABS (8 COLS) + CREDENTIALS BENTO (4 COLS) -->
-    <section id="experience" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-      
-      <!-- EXPERIENCE SHOWCASE (8 COLS) -->
-      <div class="lg:col-span-8 bento-card p-8 sm:p-10 rounded-3xl flex flex-col justify-between">
-        
-        <div>
-          <!-- Header -->
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-white/10 gap-3">
-            <div>
-              <span class="text-xs font-mono font-bold uppercase text-blue-400 tracking-widest">Career Trajectory</span>
-              <h2 class="text-2xl sm:text-3xl font-display font-bold text-white mt-1">Experience & Proven Delivery</h2>
-            </div>
-            <span class="text-xs font-mono text-slate-400 bg-white/5 px-3 py-1 rounded-full border border-white/10 w-fit">
-              7+ Yrs IT • 4 Roles
+          <!-- Verified Meta Strip -->
+          <div class="pt-4 border-t border-white/[0.06] flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-mono text-slate-400">
+            <span class="flex items-center gap-1.5 text-slate-200">
+              <svg class="w-3.5 h-3.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Mumbai, India
             </span>
+            <span class="text-white/[0.1]">•</span>
+            <a href="mailto:balajinia@gmail.com" class="hover:text-blue-400 transition-colors">balajinia@gmail.com</a>
+            <span class="text-white/[0.1]">•</span>
+            <a href="tel:+917540015522" class="hover:text-emerald-400 transition-colors">+91-7540015522</a>
+            <span class="text-white/[0.1]">•</span>
+            <a href="https://linkedin.com/in/balajipalani92" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">linkedin.com/in/balajipalani92 ↗</a>
           </div>
 
-          <!-- Company Selector Tabs (Framer/Dribbble Pill Segmented Control) -->
-          <div class="flex flex-wrap gap-2 py-6 border-b border-white/10">
-            <button onclick="selectCompany(0)" id="comp-btn-0" class="company-tab px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all bg-blue-600 text-white shadow-md shadow-blue-600/30">
-              MITS Global (UK BFSI)
-            </button>
-            <button onclick="selectCompany(1)" id="comp-btn-1" class="company-tab px-4 py-2 rounded-xl text-xs font-mono font-semibold transition-all bg-white/5 text-slate-400 hover:text-white border border-white/5">
-              Incedo Inc (Verizon)
-            </button>
-            <button onclick="selectCompany(2)" id="comp-btn-2" class="company-tab px-4 py-2 rounded-xl text-xs font-mono font-semibold transition-all bg-white/5 text-slate-400 hover:text-white border border-white/5">
-              CDP360 Tech
-            </button>
-            <button onclick="selectCompany(3)" id="comp-btn-3" class="company-tab px-4 py-2 rounded-xl text-xs font-mono font-semibold transition-all bg-white/5 text-slate-400 hover:text-white border border-white/5">
-              Azure Soft Tech
-            </button>
-          </div>
-
-          <!-- Dynamic Company Content Display -->
-          <div class="pt-6 space-y-4" id="company-display">
-            <!-- Populated via script.js -->
-          </div>
         </div>
 
-        <!-- Tech Badges Footer -->
-        <div class="pt-6 border-t border-white/10 mt-6 flex flex-wrap gap-2" id="company-tags">
-          <!-- Populated via script.js -->
+        <!-- Right Column: The Live Delivery Telemetry Cockpit (5 cols) -->
+        <div class="lg:col-span-5">
+          <div class="p-6 sm:p-7 rounded-3xl bg-gradient-to-b from-[#0f172a] to-[#0a1020] border border-white/[0.1] shadow-2xl relative overflow-hidden space-y-6">
+            
+            <!-- Window Bar -->
+            <div class="flex items-center justify-between pb-4 border-b border-white/[0.08]">
+              <div class="flex items-center gap-1.5">
+                <div class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></div>
+              </div>
+              <span class="text-[10px] font-mono text-emerald-400 flex items-center gap-1.5 font-semibold">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                ACTIVE DELIVERY CADENCE
+              </span>
+            </div>
+
+            <!-- Active Squad Telemetry -->
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">Enterprise Programme</span>
+                  <span class="text-sm font-display font-bold text-white">UK BFSI Digital Banking ART</span>
+                </div>
+                <span class="text-xs font-mono text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded border border-blue-500/20 font-bold">3 Squads</span>
+              </div>
+
+              <!-- Metrics Matrix Inside Cockpit -->
+              <div class="grid grid-cols-2 gap-2.5 pt-1">
+                <div class="p-3 rounded-xl bg-black/40 border border-white/[0.06] space-y-1">
+                  <div class="text-[10px] font-mono text-slate-400 uppercase">Predictability</div>
+                  <div class="text-xl font-display font-extrabold text-emerald-400">98.4%</div>
+                  <div class="text-[10px] text-slate-500 font-mono">Sprint commitment vs done</div>
+                </div>
+                <div class="p-3 rounded-xl bg-black/40 border border-white/[0.06] space-y-1">
+                  <div class="text-[10px] font-mono text-slate-400 uppercase">Blocker SLA</div>
+                  <div class="text-xl font-display font-extrabold text-blue-400">&lt; 24h</div>
+                  <div class="text-[10px] text-slate-500 font-mono">Cross-team impediments</div>
+                </div>
+                <div class="p-3 rounded-xl bg-black/40 border border-white/[0.06] space-y-1">
+                  <div class="text-[10px] font-mono text-slate-400 uppercase">Spillover</div>
+                  <div class="text-xl font-display font-extrabold text-indigo-400">0 Stories</div>
+                  <div class="text-[10px] text-slate-500 font-mono">Strict capacity modeling</div>
+                </div>
+                <div class="p-3 rounded-xl bg-black/40 border border-white/[0.06] space-y-1">
+                  <div class="text-[10px] font-mono text-slate-400 uppercase">Flow Shield</div>
+                  <div class="text-xl font-display font-extrabold text-amber-400">3.5h / day</div>
+                  <div class="text-[10px] text-slate-500 font-mono">Deep focus uninterrupted</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Technical Engineering Roots -->
+            <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.06] space-y-2">
+              <div class="flex items-center justify-between text-xs font-mono">
+                <span class="text-slate-400">Technical Foundation:</span>
+                <span class="text-white font-bold">4 Yrs Frontend / AWS</span>
+              </div>
+              <div class="flex flex-wrap gap-1.5 text-[10px] font-mono text-slate-300">
+                <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-300 border border-blue-500/20">React.js</span>
+                <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20">AWS (S3, Amplify)</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">CI/CD Pipelines</span>
+                <span class="px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">Jira Automation</span>
+              </div>
+            </div>
+
+            <!-- Philosophy Quote -->
+            <p class="text-xs text-slate-400 italic leading-relaxed pt-1 border-t border-white/[0.06]">
+              “Agile is not about policing tickets. It’s about building an unshakeable delivery engine and protecting developer flow state.”
+            </p>
+
+          </div>
         </div>
 
       </div>
-
-      <!-- CREDENTIALS & ACADEMICS BENTO CARD (4 COLS) -->
-      <div id="certifications" class="lg:col-span-4 bento-card p-8 rounded-3xl flex flex-col justify-between space-y-6">
-        
-        <div>
-          <span class="text-xs font-mono font-bold uppercase text-purple-400 tracking-widest">Accreditations</span>
-          <h2 class="text-xl font-display font-bold text-white mt-1">Verified Credentials</h2>
-          <p class="text-xs text-slate-400 mt-1">Recognized worldwide for Agile governance & scaling.</p>
-        </div>
-
-        <div class="space-y-4">
-          <!-- CSM Badge -->
-          <div class="p-4 rounded-2xl bg-black/40 border border-white/10 hover:border-blue-500/40 transition-all flex items-start gap-3.5">
-            <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center justify-center font-bold text-sm shrink-0">
-              CSM
-            </div>
-            <div>
-              <span class="text-[10px] font-mono text-blue-400 uppercase">Scrum Alliance • 2022</span>
-              <h3 class="text-sm font-bold text-white">Certified ScrumMaster</h3>
-              <p class="text-[11px] text-slate-400 mt-1">Facilitation, servant leadership, sprint cadence & team empowerment.</p>
-            </div>
-          </div>
-
-          <!-- SAFe SSM Badge -->
-          <div class="p-4 rounded-2xl bg-black/40 border border-white/10 hover:border-emerald-500/40 transition-all flex items-start gap-3.5">
-            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center font-bold text-sm shrink-0">
-              SAFe
-            </div>
-            <div>
-              <span class="text-[10px] font-mono text-emerald-400 uppercase">Scaled Agile • 2023</span>
-              <h3 class="text-sm font-bold text-white">SAFe® 6 Scrum Master</h3>
-              <p class="text-[11px] text-slate-400 mt-1">PI planning, Agile Release Train (ART) sync & enterprise multi-team alignment.</p>
-            </div>
-          </div>
-
-          <!-- University Degree -->
-          <div class="p-4 rounded-2xl bg-black/40 border border-white/10 hover:border-purple-500/40 transition-all flex items-start gap-3.5">
-            <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20 flex items-center justify-center font-bold text-sm shrink-0">
-              B.E.
-            </div>
-            <div>
-              <span class="text-[10px] font-mono text-purple-400 uppercase">Anna University • 2012–2016</span>
-              <h3 class="text-sm font-bold text-white">B.E. Computer Science</h3>
-              <p class="text-[11px] text-slate-400 mt-1">Algorithms, distributed software architecture & software engineering lifecycle.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="pt-4 border-t border-white/10 text-center">
-          <span class="text-[11px] font-mono text-slate-500">100% Verified & Active Credentials</span>
-        </div>
-
-      </div>
-
     </section>
 
-    <!-- BENTO ROW 5: INTERACTIVE AGILE PROBLEM-SOLVER SIMULATOR (FULL WIDTH 12 COLS) -->
-    <section id="simulator" class="bento-card p-8 sm:p-10 rounded-3xl relative overflow-hidden">
-      
-      <!-- Section Header -->
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-white/10 gap-3">
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-mono font-bold uppercase tracking-wider mb-1">
-            <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span> Interactive Delivery Engine
-          </div>
-          <h2 class="text-2xl sm:text-3xl font-display font-bold text-white">
-            The Agile Playbook & Problem-Solving Simulator
-          </h2>
-          <p class="text-xs text-slate-400 mt-0.5">Select a real enterprise challenge below to see how Balaji executes:</p>
+    <!-- 2. ENTERPRISE DELIVERY TELEMETRY (4-CARD BENCHMARK SCORECARD) -->
+    <section id="telemetry" class="space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div class="space-y-1">
+          <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400">Quantitative Telemetry</span>
+          <h2 class="text-2xl sm:text-3xl font-display font-bold text-white">Proven Delivery Benchmarks</h2>
         </div>
         <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 w-fit">
-          Proven across 4 Enterprise Programs
+          Verified Across 4 Enterprise Engagements
         </span>
       </div>
 
-      <!-- Problem Selector Buttons -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-6">
-        <button onclick="switchPlaybook(0)" id="pb-btn-0" class="playbook-tab p-4 rounded-2xl bg-blue-600 text-white font-bold text-xs text-left shadow-lg shadow-blue-600/30 transition-all">
-          <span class="block text-blue-200 text-[10px] font-mono uppercase mb-1">Challenge 01</span>
-          Mid-Sprint Scope Creep
-        </button>
-        <button onclick="switchPlaybook(1)" id="pb-btn-1" class="playbook-tab p-4 rounded-2xl bg-white/5 text-slate-400 hover:text-white font-semibold text-xs text-left border border-white/5 transition-all">
-          <span class="block text-slate-500 text-[10px] font-mono uppercase mb-1">Challenge 02</span>
-          Multi-Team ART Blockers
-        </button>
-        <button onclick="switchPlaybook(2)" id="pb-btn-2" class="playbook-tab p-4 rounded-2xl bg-white/5 text-slate-400 hover:text-white font-semibold text-xs text-left border border-white/5 transition-all">
-          <span class="block text-slate-500 text-[10px] font-mono uppercase mb-1">Challenge 03</span>
-          Low Velocity & Morale
-        </button>
-        <button onclick="switchPlaybook(3)" id="pb-btn-3" class="playbook-tab p-4 rounded-2xl bg-white/5 text-slate-400 hover:text-white font-semibold text-xs text-left border border-white/5 transition-all">
-          <span class="block text-slate-500 text-[10px] font-mono uppercase mb-1">Challenge 04</span>
-          Capacity Over-Commitment
-        </button>
-      </div>
-
-      <!-- Playbook Display Triad -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         
-        <!-- Dilemma -->
-        <div class="lg:col-span-4 p-5 rounded-2xl bg-black/40 border border-red-500/20 flex flex-col justify-between">
+        <!-- Metric 1 -->
+        <div class="dashboard-card p-6 rounded-2xl bg-[#0f172a]/90 border border-white/[0.08] hover:border-emerald-500/40 transition-all flex flex-col justify-between">
           <div>
-            <div class="text-[10px] font-mono font-bold text-red-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span> The Bottleneck
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[11px] font-mono font-bold uppercase text-emerald-400 tracking-wider">Velocity Growth</span>
+              <span class="text-xs text-slate-500 font-mono">2 Quarters</span>
             </div>
-            <h3 id="pb-title" class="text-sm font-bold text-white mb-2 leading-snug">
-              15+ Mid-Sprint Requests Derailing Release Goals
-            </h3>
-            <p id="pb-desc" class="text-xs text-slate-400 leading-relaxed">
-              Stakeholders submitting ad-hoc requirements mid-sprint without clear acceptance criteria, causing context switching, developer burnout, and 10+ carried-forward stories.
+            <div class="text-4xl font-display font-extrabold text-emerald-400 mb-1">+20%</div>
+            <div class="text-xs font-semibold text-white mb-2">Sustained Sprint Velocity</div>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Maintained across 3 Scrum squads over 2 quarters via user story slicing workshops and actionable retrospective loops.
             </p>
           </div>
-          <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-red-300 font-mono" id="pb-risk">
-            Risk: Delivery unpredictability, developer fatigue.
+          <div class="mt-4 pt-3 border-t border-white/[0.06] text-[11px] font-mono text-emerald-400">
+            From 42 to 51 Story Points
           </div>
         </div>
 
-        <!-- Strategy -->
-        <div class="lg:col-span-5 p-5 rounded-2xl bg-black/40 border border-blue-500/20 flex flex-col justify-between">
+        <!-- Metric 2 -->
+        <div class="dashboard-card p-6 rounded-2xl bg-[#0f172a]/90 border border-white/[0.08] hover:border-blue-500/40 transition-all flex flex-col justify-between">
           <div>
-            <div class="text-[10px] font-mono font-bold text-blue-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> Balaji's Tactical Framework
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[11px] font-mono font-bold uppercase text-blue-400 tracking-wider">Dependency SLA</span>
+              <span class="text-xs text-slate-500 font-mono">48h SLA</span>
             </div>
-            <h3 id="pb-solution" class="text-sm font-bold text-white mb-2 leading-snug">
-              DoR Enforcement & Automated Jira Change Protocol
-            </h3>
-            <ul id="pb-steps" class="space-y-2 text-xs text-slate-300">
-              <!-- Populated dynamically -->
-            </ul>
+            <div class="text-4xl font-display font-extrabold text-blue-400 mb-1">-40%</div>
+            <div class="text-xs font-semibold text-white mb-2">Mid-Sprint Blockers Cut</div>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Coordinated shared QA and DevOps resources through a central dependency tracker; resolved cross-team impediments within 48h.
+            </p>
           </div>
-          <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-blue-300 font-mono" id="pb-tools">
-            Tools: Jira Automation • Confluence • Story Slicing
+          <div class="mt-4 pt-3 border-t border-white/[0.06] text-[11px] font-mono text-blue-400">
+            Zero Release Delays
           </div>
         </div>
 
-        <!-- Outcome -->
-        <div class="lg:col-span-3 p-5 rounded-2xl bg-black/40 border border-emerald-500/30 flex flex-col justify-between">
+        <!-- Metric 3 -->
+        <div class="dashboard-card p-6 rounded-2xl bg-[#0f172a]/90 border border-white/[0.08] hover:border-indigo-500/40 transition-all flex flex-col justify-between">
           <div>
-            <div class="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Quantifiable Result
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[11px] font-mono font-bold uppercase text-indigo-400 tracking-wider">Planning Efficiency</span>
+              <span class="text-xs text-slate-500 font-mono">Automated Gate</span>
             </div>
-            <div id="pb-stat" class="text-4xl font-display font-extrabold text-emerald-400 my-2">
-              -30%
-            </div>
-            <div id="pb-stat-label" class="text-xs font-bold text-white uppercase tracking-wider mb-2">
-              Planning Overhead Cut
-            </div>
-            <p id="pb-stat-detail" class="text-xs text-slate-400 leading-relaxed">
-              Carried-forward stories dropped from 10 down to 3 per sprint; team delivery predictability increased by 30%.
+            <div class="text-4xl font-display font-extrabold text-indigo-400 mb-1">-30%</div>
+            <div class="text-xs font-semibold text-white mb-2">Sprint Planning Overhead</div>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Enforced strict Definition of Ready (DoR) and Done (DoD) via Jira automation rules, reducing meetings from 4.5h to 3h.
             </p>
           </div>
-          <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-emerald-400 font-mono">
-            <span>Status: Cleared</span>
-            <span>100% On-Time</span>
+          <div class="mt-4 pt-3 border-t border-white/[0.06] text-[11px] font-mono text-indigo-400">
+            Eliminated Ambiguous Stories
+          </div>
+        </div>
+
+        <!-- Metric 4 -->
+        <div class="dashboard-card p-6 rounded-2xl bg-[#0f172a]/90 border border-white/[0.08] hover:border-amber-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[11px] font-mono font-bold uppercase text-amber-400 tracking-wider">Spillover Drop</span>
+              <span class="text-xs text-slate-500 font-mono">70% Reduction</span>
+            </div>
+            <div class="text-4xl font-display font-extrabold text-amber-400 mb-1">10 → 3</div>
+            <div class="text-xs font-semibold text-white mb-2">Carried-Forward Stories</div>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Cut incomplete sprint stories by 70% with historical rolling velocity and realistic capacity modeling in Power BI.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-white/[0.06] text-[11px] font-mono text-amber-400">
+            Predictability Soared to 98%
           </div>
         </div>
 
       </div>
-
     </section>
 
-    <!-- BENTO ROW 6: SKILLS MATRIX (6 COLS) + DIRECT CONTACT (6 COLS) -->
-    <section id="contact" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-      
-      <!-- TOOLKIT & SKILLS (6 COLS) -->
-      <div class="lg:col-span-6 bento-card p-8 rounded-3xl flex flex-col justify-between space-y-6">
-        <div>
-          <span class="text-xs font-mono font-bold uppercase text-blue-400 tracking-widest">Core Capabilities</span>
-          <h2 class="text-2xl font-display font-bold text-white mt-1">Technical & Delivery Toolkit</h2>
-          <p class="text-xs text-slate-400 mt-1">Bridging Agile governance, team facilitation, and software architecture.</p>
-        </div>
-
-        <div class="space-y-4">
+    <!-- 3. INTERACTIVE SPRINT ENGINE & BURNDOWN SIMULATOR (THE RECRUITER WOW FACTOR) -->
+    <section id="burndown" class="space-y-6">
+      <div class="p-6 sm:p-10 rounded-3xl bg-gradient-to-b from-[#0f172a] to-[#0a1020] border border-blue-500/30 shadow-2xl space-y-8">
+        
+        <!-- Header -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-white/[0.08] gap-3">
           <div>
-            <div class="text-[11px] font-mono text-slate-400 uppercase mb-2">Agile Delivery Frameworks</div>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="pill-tag">Scrum</span>
-              <span class="pill-tag">SAFe® 6</span>
-              <span class="pill-tag">Kanban</span>
-              <span class="pill-tag">PI Planning</span>
-              <span class="pill-tag">Scrum of Scrums</span>
-              <span class="pill-tag">Sprint Cadence</span>
-              <span class="pill-tag">User Story Slicing</span>
-              <span class="pill-tag">DoR & DoD</span>
-            </div>
+            <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400">// Interactive Delivery Engine</span>
+            <h2 class="text-2xl sm:text-3xl font-display font-bold text-white mt-1">10-Day Sprint Cadence & Burndown</h2>
+            <p class="text-xs text-slate-400 mt-1">Click through sprint days below to see Balaji's real-time intervention points:</p>
           </div>
-
-          <div>
-            <div class="text-[11px] font-mono text-slate-400 uppercase mb-2">Platforms & Dashboards</div>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="pill-tag">JIRA & Automations</span>
-              <span class="pill-tag">Confluence</span>
-              <span class="pill-tag">Power BI</span>
-              <span class="pill-tag">Azure DevOps</span>
-              <span class="pill-tag">Trello</span>
-              <span class="pill-tag">Slack / Teams</span>
-            </div>
-          </div>
-
-          <div>
-            <div class="text-[11px] font-mono text-slate-400 uppercase mb-2">Engineering Foundations</div>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="pill-tag">React.js</span>
-              <span class="pill-tag">React Native</span>
-              <span class="pill-tag">AWS (S3, Amplify, ECS)</span>
-              <span class="pill-tag">Redux</span>
-              <span class="pill-tag">REST APIs</span>
-              <span class="pill-tag">Git / GitHub</span>
-            </div>
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1.5 rounded-lg border border-emerald-500/20 w-fit">
+              UK BFSI & FinTech Sprint Model
+            </span>
           </div>
         </div>
 
-        <div class="p-3.5 rounded-2xl bg-black/40 border border-white/5 text-xs text-slate-400 italic">
-          "Speaks fluent developer, Product Owner, and Executive leadership."
+        <!-- 10-Day Day Clicker Bar with Prev / Next Navigation -->
+        <div class="space-y-3">
+          <div class="grid grid-cols-5 sm:grid-cols-10 gap-2">
+            <button onclick="inspectDay(1)" id="day-btn-1" class="day-btn py-2.5 rounded-xl border border-blue-500 bg-blue-600/20 text-white font-mono text-xs font-bold transition-all text-center">Day 1</button>
+            <button onclick="inspectDay(2)" id="day-btn-2" class="day-btn py-2.5 rounded-xl border border-white/10 bg-white/[0.02] text-slate-400 hover:text-white font-mono text-xs font-medium transition-all text-center">Day 2</button>
+            <button onclick="inspectDay(3)" id="day-btn-3" class="day-btn py-2.5 rounded-xl border border-white/10 bg-white/[0.02] text-slate-400 hover:text-white font-mono text-xs font-medium transition-all text-center">Day 3</button>
+            <button onclick="inspectDay(4)" id="day-btn-4" class="day-btn py-2.5 rounded-xl border border-white/10 bg-white/[0.02] text-slate-400 hover:text-white font-mono text-xs font-medium transition-all text-center">Day 4</button>
+            <button onclick="inspectDay(5)" id="day-btn-5" class="day-btn py-2.5 rounded-xl border border-white/10 bg-white/[0.02] text-slate-400 hover:text-white font-mono text-xs font-medium transition-all text-center">Day 5</button>
+            <button onclick="inspectDay(6)" id="day-btn-6" class="day-btn py-2.5 rounded-xl border border-white/10 bg-white/[0.02] text-slate-400 hover:text-white font-mono text-xs font-medium transition-all text-center">Day 6</button>
+            <button onclick="inspectDay(7)" id="day-btn-7" class="day-btn py-2.5 rounded-xl border border-white/10 bg-white/[0.02] text-slate-400 hover:text-white font-mono text-xs font-medium transition-all text-center">Day 7</button>
+            <button onclick="inspectDay(8)" id="day-btn-8" class="day-btn py-2.5 rounded-xl border border-white/10 bg-white/[0.02] text-slate-400 hover:text-white font-mono text-xs font-medium transition-all text-center">Day 8</button>
+            <button onclick="inspectDay(9)" id="day-btn-9" class="day-btn py-2.5 rounded-xl border border-white/10 bg-white/[0.02] text-slate-400 hover:text-white font-mono text-xs font-medium transition-all text-center">Day 9</button>
+            <button onclick="inspectDay(10)" id="day-btn-10" class="day-btn py-2.5 rounded-xl border border-white/10 bg-white/[0.02] text-slate-400 hover:text-white font-mono text-xs font-medium transition-all text-center">Day 10</button>
+          </div>
+
+          <!-- Stepper Buttons for Mobile & Quick Browsing -->
+          <div class="flex items-center justify-between text-xs font-mono text-slate-400 pt-1">
+            <button onclick="stepDay(-1)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] hover:text-white transition-all">
+              <span>← Previous Day</span>
+            </button>
+            <span class="text-[11px] text-slate-500">Interactive Sprint Simulation</span>
+            <button onclick="stepDay(1)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] hover:text-white transition-all">
+              <span>Next Day →</span>
+            </button>
+          </div>
         </div>
+
+        <!-- Dynamic Day Inspection Screen -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch pt-2">
+          
+          <!-- Burndown Visual Card -->
+          <div class="lg:col-span-5 p-6 rounded-2xl bg-black/40 border border-white/10 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-3 border-b border-white/10 text-xs font-mono">
+                <span class="text-blue-400" id="burndown-phase">PHASE: SPRINT KICKOFF</span>
+                <span class="text-slate-400 font-bold" id="burndown-points">REMAINING: 51 PTS</span>
+              </div>
+              
+              <!-- Progress Bar -->
+              <div class="mt-6 space-y-2">
+                <div class="flex justify-between text-xs font-mono">
+                  <span class="text-slate-400">Burn Progress</span>
+                  <span class="text-emerald-400 font-bold" id="burn-percent">0% Completed</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                  <div id="burn-bar" class="h-full bg-gradient-to-r from-blue-500 to-emerald-400 rounded-full transition-all duration-500 w-[0%]"></div>
+                </div>
+              </div>
+
+              <div class="mt-6 p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.06] text-xs font-mono text-slate-300 space-y-1.5">
+                <div class="flex justify-between">
+                  <span class="text-slate-500">Committed Scope:</span>
+                  <span class="text-white font-bold">51 Story Points</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-500">Definition of Ready:</span>
+                  <span class="text-emerald-400 font-bold">100% Passed</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-500">Impediment Status:</span>
+                  <span class="text-blue-400 font-bold" id="blocker-status">0 Blockers Active</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-white/10 text-[11px] font-mono text-slate-500 text-center">
+              Target Release Window: On Track
+            </div>
+          </div>
+
+          <!-- Tactical Action Report -->
+          <div class="lg:col-span-7 p-6 rounded-2xl bg-black/40 border border-white/10 flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="text-[11px] font-mono text-blue-400 uppercase tracking-wider font-bold" id="day-badge">
+                DAY 1 // SPRINT COMMITMENT & DOR LOCK
+              </div>
+              <h3 class="text-lg font-display font-bold text-white" id="day-headline">
+                Automated DoR Gate Enforced & Sprint Backlog Locked
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light" id="day-desc">
+                Facilitated sprint planning with 3 cross-functional squads. All 20+ user stories were pre-sliced with strict acceptance criteria verified through Jira automation. Capacity modeled around historical rolling velocity, avoiding over-commitment.
+              </p>
+              
+              <div class="pt-3 border-t border-white/[0.08] space-y-2">
+                <div class="text-[11px] font-mono text-slate-400 uppercase font-bold">Scrum Master Tactical Moves:</div>
+                <ul class="text-xs text-slate-300 space-y-1.5 font-light" id="day-actions">
+                  <li class="flex items-start gap-2">
+                    <span class="text-blue-400 font-bold">›</span>
+                    <span>Verified team member leaves and holiday schedules in Power BI dashboard.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-blue-400 font-bold">›</span>
+                    <span>Aligned dependencies with upstream Payment Gateway teams.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-blue-400 font-bold">›</span>
+                    <span>Secured shared QA and DevOps resource commitments.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-white/10 text-[11px] font-mono text-slate-400 flex items-center justify-between">
+              <span>Jira Automation Active</span>
+              <span class="text-emerald-400 font-bold">Zero Scope Drift</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. THE TECHNICAL DIFFERENTIATOR (THE UNFAIR ADVANTAGE) -->
+    <section id="differentiator" class="space-y-6">
+      <div class="space-y-2">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400">The Unfair Advantage</span>
+        <h2 class="text-2xl sm:text-3xl font-display font-bold text-white">Why Technical Empathy Sets Balaji Apart</h2>
+        <p class="text-sm text-slate-400 max-w-2xl">
+          Most Scrum Masters cannot read code or understand cloud deployments. Having 4 years of frontend and AWS engineering experience fundamentally transforms how I lead Agile teams.
+        </p>
       </div>
 
-      <!-- DIRECT CONTACT BENTO CARD (6 COLS) -->
-      <div class="lg:col-span-6 bento-card p-8 rounded-3xl flex flex-col justify-between space-y-6">
-        <div>
-          <span class="text-xs font-mono font-bold uppercase text-emerald-400 tracking-widest">Direct Channel</span>
-          <h2 class="text-2xl font-display font-bold text-white mt-1">Let’s Start a Conversation</h2>
-          <p class="text-xs text-slate-400 mt-1">Reach out directly for Senior Scrum Master & Agile Coach roles.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        
+        <div class="p-7 rounded-2xl bg-[#0f172a] border border-white/[0.08] space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-sm font-mono">
+            01
+          </div>
+          <h3 class="text-base font-display font-bold text-white">Understands Architectural Friction</h3>
+          <p class="text-xs text-slate-400 leading-relaxed font-light">
+            I understand branch merging, CI/CD pipeline bottlenecks, API contracts, and technical debt. Developers don’t have to waste time translating engineering problems into non-technical buzzwords.
+          </p>
         </div>
 
-        <!-- 1-Click Action Contacts -->
-        <div class="space-y-3">
-          <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-xs">@</div>
-              <div>
-                <span class="text-[10px] font-mono text-slate-500 uppercase block">Email Address</span>
-                <a href="mailto:balajinia@gmail.com" class="text-xs sm:text-sm font-bold text-white hover:text-blue-400 transition-colors">balajinia@gmail.com</a>
+        <div class="p-7 rounded-2xl bg-[#0f172a] border border-white/[0.08] space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-sm font-mono">
+            02
+          </div>
+          <h3 class="text-base font-display font-bold text-white">Shields Focus & Eliminates Fatigue</h3>
+          <p class="text-xs text-slate-400 leading-relaxed font-light">
+            Knowing how devastating context-switching is for coders, I protect developers from useless meetings and ad-hoc stakeholder chatter, giving them long blocks of deep-focus engineering time.
+          </p>
+        </div>
+
+        <div class="p-7 rounded-2xl bg-[#0f172a] border border-white/[0.08] space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold text-sm font-mono">
+            03
+          </div>
+          <h3 class="text-base font-display font-bold text-white">Accurate Story Estimation</h3>
+          <p class="text-xs text-slate-400 leading-relaxed font-light">
+            Having built 15+ React/AWS apps, I facilitate user story slicing with real technical insight, catching hidden complexity in acceptance criteria before stories enter the sprint backlog.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. ENTERPRISE CASE STUDIES (STAR FORMAT) -->
+    <section id="cases" class="space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div class="space-y-1">
+          <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400">Enterprise Case Studies</span>
+          <h2 class="text-2xl sm:text-3xl font-display font-bold text-white">Proven Deliverables at Scale</h2>
+        </div>
+        <span class="text-xs font-mono text-slate-400">Structured as Situation • Task • Action • Result</span>
+      </div>
+
+      <div class="space-y-6">
+
+        <!-- Case 1: MITS Global -->
+        <div class="p-8 rounded-3xl bg-[#0f172a] border border-white/[0.08] hover:border-blue-500/30 transition-all space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-white/[0.06] gap-2">
+            <div>
+              <div class="flex items-center gap-2.5">
+                <h3 class="text-2xl font-display font-bold text-white">Senior Scrum Master</h3>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20">Current Role</span>
+              </div>
+              <div class="text-xs font-mono text-blue-400 mt-1">
+                MITS Global Consulting <span class="text-slate-500 font-sans">• Client: UK BFSI & FinTech Programme</span>
               </div>
             </div>
-            <button onclick="copyToClipboard('balajinia@gmail.com', this)" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-blue-600 hover:text-white text-xs font-mono text-slate-300 border border-white/10 transition-all">
-              Copy
-            </button>
+            <div class="text-xs font-mono text-slate-400 bg-white/[0.03] px-3.5 py-1 rounded-full border border-white/[0.06] w-fit">
+              07/2024 – 03/2026
+            </div>
           </div>
 
-          <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-xs">📞</div>
-              <div>
-                <span class="text-[10px] font-mono text-slate-500 uppercase block">Direct Phone</span>
-                <a href="tel:+917540015522" class="text-xs sm:text-sm font-bold text-white hover:text-emerald-400 transition-colors">+91-7540015522</a>
-              </div>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs">
+            <div class="p-4 rounded-xl bg-black/30 border border-white/[0.06] space-y-1">
+              <strong class="text-blue-400 font-mono text-[10px] uppercase block">Situation</strong>
+              <p class="text-slate-300 font-light leading-relaxed">
+                3 Scrum squads (25+ engineers & QA) bogged down by 4.5h sprint planning marathons, conflicting dependencies, and frequent mid-sprint scope creep.
+              </p>
             </div>
-            <button onclick="copyToClipboard('+917540015522', this)" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-emerald-600 hover:text-white text-xs font-mono text-slate-300 border border-white/10 transition-all">
-              Copy
-            </button>
+            <div class="p-4 rounded-xl bg-black/30 border border-white/[0.06] space-y-1">
+              <strong class="text-indigo-400 font-mono text-[10px] uppercase block">Task</strong>
+              <p class="text-slate-300 font-light leading-relaxed">
+                Stabilize sprint cadence, enforce strict requirement readiness, and resolve cross-team dependencies across external vendors and product squads.
+              </p>
+            </div>
+            <div class="p-4 rounded-xl bg-black/30 border border-white/[0.06] space-y-1">
+              <strong class="text-purple-400 font-mono text-[10px] uppercase block">Action</strong>
+              <p class="text-slate-300 font-light leading-relaxed">
+                Automated DoR/DoD gates in Jira, created Confluence change protocol for 15+ mid-sprint requests, and led hands-on story slicing workshops.
+              </p>
+            </div>
+            <div class="p-4 rounded-xl bg-black/30 border border-emerald-500/30 space-y-1">
+              <strong class="text-emerald-400 font-mono text-[10px] uppercase block">Result</strong>
+              <p class="text-slate-200 font-medium leading-relaxed">
+                Planning time fell by <strong>30%</strong>, sprint velocity increased by <strong>20% over 2 quarters</strong>, and blockers dropped by <strong>40%</strong>.
+              </p>
+            </div>
           </div>
 
-          <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-lg bg-[#0077b5]/10 text-[#0077b5] flex items-center justify-center font-bold text-xs">in</div>
-              <div>
-                <span class="text-[10px] font-mono text-slate-500 uppercase block">LinkedIn Profile</span>
-                <a href="https://linkedin.com/in/balajipalani92" target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm font-bold text-white hover:text-blue-400 transition-colors">balajipalani92</a>
-              </div>
-            </div>
-            <a href="https://linkedin.com/in/balajipalani92" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-[#0077b5] hover:text-white text-xs font-mono text-slate-300 border border-white/10 transition-all">
-              Connect ↗
-            </a>
+          <div class="pt-4 border-t border-white/[0.06] flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.03] border border-white/[0.06]">Jira Automation</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.03] border border-white/[0.06]">Confluence (100+ Docs)</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.03] border border-white/[0.06]">Power BI Capacity Dashboards</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.03] border border-white/[0.06]">UK BFSI</span>
           </div>
         </div>
 
-        <a href="mailto:balajinia@gmail.com?subject=Senior%20Scrum%20Master%20Opportunity&body=Hi%20Balaji,%20we%20would%20like%20to%20discuss%20an%20opportunity%20with%20you." class="w-full py-3.5 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs text-center shadow-lg shadow-blue-600/30 transition-all block">
-          Compose Direct Email Inquiry ↗
-        </a>
+        <!-- Case 2: Incedo Inc / Verizon -->
+        <div class="p-8 rounded-3xl bg-[#0f172a] border border-white/[0.08] hover:border-emerald-500/30 transition-all space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-white/[0.06] gap-2">
+            <div>
+              <div class="flex items-center gap-2.5">
+                <h3 class="text-2xl font-display font-bold text-white">SAFe Scrum Master</h3>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Telecom Enterprise</span>
+              </div>
+              <div class="text-xs font-mono text-emerald-400 mt-1">
+                Incedo Inc <span class="text-slate-500 font-sans">• Client: Verizon (Telecom Enterprise)</span>
+              </div>
+            </div>
+            <div class="text-xs font-mono text-slate-400 bg-white/[0.03] px-3.5 py-1 rounded-full border border-white/[0.06] w-fit">
+              09/2023 – 03/2024
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs">
+            <div class="p-4 rounded-xl bg-black/30 border border-white/[0.06] space-y-1">
+              <strong class="text-blue-400 font-mono text-[10px] uppercase block">Situation</strong>
+              <p class="text-slate-300 font-light leading-relaxed">
+                Enterprise telecom features delayed by cross-team dependencies across 5 squads on the Agile Release Train (ART).
+              </p>
+            </div>
+            <div class="p-4 rounded-xl bg-black/30 border border-white/[0.06] space-y-1">
+              <strong class="text-indigo-400 font-mono text-[10px] uppercase block">Task</strong>
+              <p class="text-slate-300 font-light leading-relaxed">
+                Coordinate objectives, dependencies, and risk matrices for 2 enterprise Program Increment (PI) planning events.
+              </p>
+            </div>
+            <div class="p-4 rounded-xl bg-black/30 border border-white/[0.06] space-y-1">
+              <strong class="text-purple-400 font-mono text-[10px] uppercase block">Action</strong>
+              <p class="text-slate-300 font-light leading-relaxed">
+                Facilitated daily Scrum of Scrums to surface blockers, ran bi-weekly 20+ story refinements with Product Owners, and delivered bi-weekly stakeholder updates.
+              </p>
+            </div>
+            <div class="p-4 rounded-xl bg-black/30 border border-emerald-500/30 space-y-1">
+              <strong class="text-emerald-400 font-mono text-[10px] uppercase block">Result</strong>
+              <p class="text-slate-200 font-medium leading-relaxed">
+                Delivery predictability climbed by <strong>30%</strong>, velocity increased by <strong>15%</strong>, and 100% on-time milestone delivery achieved.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-white/[0.06] flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.03] border border-white/[0.06]">SAFe® 6.0</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.03] border border-white/[0.06]">PI Planning</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.03] border border-white/[0.06]">Scrum of Scrums</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.03] border border-white/[0.06]">Verizon Telecom</span>
+          </div>
+        </div>
+
+        <!-- Case 3: CDP360 & Azure Soft Tech -->
+        <div class="p-8 rounded-3xl bg-[#0f172a] border border-white/[0.08] hover:border-purple-500/30 transition-all space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-white/[0.06] gap-2">
+            <div>
+              <div class="flex items-center gap-2.5">
+                <h3 class="text-2xl font-display font-bold text-white">Scrum Master & Technical Lead</h3>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-purple-500/10 text-purple-400 border border-purple-500/20">Engineering Foundation</span>
+              </div>
+              <div class="text-xs font-mono text-purple-400 mt-1">
+                CDP360 & Azure Soft Tech <span class="text-slate-500 font-sans">• Web, Mobile & AWS Deployments</span>
+              </div>
+            </div>
+            <div class="text-xs font-mono text-slate-400 bg-white/[0.03] px-3.5 py-1 rounded-full border border-white/[0.06] w-fit">
+              12/2018 – 07/2023
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs">
+            <div class="p-4 rounded-xl bg-black/30 border border-white/[0.06] space-y-1">
+              <strong class="text-blue-400 font-mono text-[10px] uppercase block">Situation</strong>
+              <p class="text-slate-300 font-light leading-relaxed">
+                6 international client projects with high scope churn, carried-forward stories (10+ per sprint), and unmonitored AWS deployments.
+              </p>
+            </div>
+            <div class="p-4 rounded-xl bg-black/30 border border-white/[0.06] space-y-1">
+              <strong class="text-indigo-400 font-mono text-[10px] uppercase block">Task</strong>
+              <p class="text-slate-300 font-light leading-relaxed">
+                Standardize Jira and Trello workflows, train developers on Agile ceremonies, and manage AWS cloud release pipelines.
+              </p>
+            </div>
+            <div class="p-4 rounded-xl bg-black/30 border border-white/[0.06] space-y-1">
+              <strong class="text-purple-400 font-mono text-[10px] uppercase block">Action</strong>
+              <p class="text-slate-300 font-light leading-relaxed">
+                Locked acceptance criteria on all stories, guided mobile React Native builds, and managed 10+ AWS deployments (S3, Amplify, ECS).
+              </p>
+            </div>
+            <div class="p-4 rounded-xl bg-black/30 border border-emerald-500/30 space-y-1">
+              <strong class="text-emerald-400 font-mono text-[10px] uppercase block">Result</strong>
+              <p class="text-slate-200 font-medium leading-relaxed">
+                Spillover plunged from <strong>10 to 3 stories</strong>, release speed increased by <strong>20%</strong>, and sprint cycle efficiency improved by <strong>30%</strong>.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-white/[0.06] flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.03] border border-white/[0.06]">React.js & React Native</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.03] border border-white/[0.06]">AWS (S3, Amplify, ECS)</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.03] border border-white/[0.06]">Jira & Trello Workflows</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. THE CEREMONY PLAYBOOK & TOOLING MATRIX -->
+    <section id="playbook" class="space-y-6">
+      <div class="space-y-2">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400">Execution Framework</span>
+        <h2 class="text-2xl sm:text-3xl font-display font-bold text-white">How Balaji Runs Agile Ceremonies</h2>
+        <p class="text-sm text-slate-400 max-w-2xl">
+          Ceremonies should be high-value checkpoints that energize teams, not administrative chores.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <div class="p-6 rounded-2xl bg-[#0f172a] border border-white/[0.08] space-y-3">
+          <div class="text-xs font-mono text-blue-400 font-bold uppercase tracking-wider">01 // SPRINT PLANNING</div>
+          <h3 class="text-base font-display font-bold text-white">Capacity & DoR Validated</h3>
+          <p class="text-xs text-slate-400 leading-relaxed font-light">
+            No story enters without meeting strict Definition of Ready criteria. Commitments are matched against rolling velocity averages and team time-off, preventing burnout.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#0f172a] border border-white/[0.08] space-y-3">
+          <div class="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">02 // DAILY STANDUP</div>
+          <h3 class="text-base font-display font-bold text-white">Strict 15-Minute Cadence</h3>
+          <p class="text-xs text-slate-400 leading-relaxed font-light">
+            Focused exclusively on sprint goal trajectory and immediate blockers. Deep architectural discussions are moved to dedicated breakout syncs to respect developer focus time.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#0f172a] border border-white/[0.08] space-y-3">
+          <div class="text-xs font-mono text-indigo-400 font-bold uppercase tracking-wider">03 // REFINEMENT</div>
+          <h3 class="text-base font-display font-bold text-white">Pre-Sliced User Stories</h3>
+          <p class="text-xs text-slate-400 leading-relaxed font-light">
+            Bi-weekly sessions with Product Owners prepping 20+ stories ahead of time. Complex stories are sliced into sub-3-day estimable tasks with locked acceptance criteria.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#0f172a] border border-white/[0.08] space-y-3">
+          <div class="text-xs font-mono text-amber-400 font-bold uppercase tracking-wider">04 // RETROSPECTIVES</div>
+          <h3 class="text-base font-display font-bold text-white">Action Items in Jira</h3>
+          <p class="text-xs text-slate-400 leading-relaxed font-light">
+            Sailboat and Team Health Check radar assessments. Every action item is assigned directly in Jira and tracked to completion, increasing engagement by 30%.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. ACCREDITATIONS & EDUCATION -->
+    <section id="credentials" class="space-y-6">
+      <div class="space-y-2">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400">Accreditations</span>
+        <h2 class="text-2xl sm:text-3xl font-display font-bold text-white">Verified Certifications & Education</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        
+        <div class="p-7 rounded-2xl bg-[#0f172a] border border-white/[0.08] hover:border-blue-500/30 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center justify-center font-bold text-xs font-mono mb-4">
+              CSM
+            </div>
+            <span class="text-[11px] font-mono text-blue-400 uppercase tracking-wider">Scrum Alliance</span>
+            <h3 class="text-lg font-display font-bold text-white mt-1">Certified ScrumMaster®</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed font-light">
+              Certified in Scrum values, servant leadership facilitation, sprint cadence, continuous improvement loops, and team self-organization.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/[0.06] text-xs font-mono text-slate-400">
+            Issued 2022
+          </div>
+        </div>
+
+        <div class="p-7 rounded-2xl bg-[#0f172a] border border-white/[0.08] hover:border-emerald-500/30 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center font-bold text-xs font-mono mb-4">
+              SAFe
+            </div>
+            <span class="text-[11px] font-mono text-emerald-400 uppercase tracking-wider">Scaled Agile</span>
+            <h3 class="text-lg font-display font-bold text-white mt-1">SAFe® 6 Scrum Master (SSM)</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed font-light">
+              Accredited in scaling Agile across enterprise releases, facilitating PI Planning, and synchronizing multi-team Agile Release Trains.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/[0.06] text-xs font-mono text-slate-400">
+            Issued 2023
+          </div>
+        </div>
+
+        <div class="p-7 rounded-2xl bg-[#0f172a] border border-white/[0.08] hover:border-indigo-500/30 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center font-bold text-xs font-mono mb-4">
+              B.E.
+            </div>
+            <span class="text-[11px] font-mono text-indigo-400 uppercase tracking-wider">Anna University, Chennai</span>
+            <h3 class="text-lg font-display font-bold text-white mt-1">Bachelor of Engineering</h3>
+            <div class="text-xs text-slate-300 font-medium mt-0.5">Computer Science and Engineering</div>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed font-light">
+              Rigorous 4-year foundation in computing algorithms, software engineering lifecycle, distributed systems, and data structures.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/[0.06] text-xs font-mono text-slate-400">
+            2012 – 2016
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 8. RECRUITER ACTION HUB & DIRECT CONTACT -->
+    <section id="contact" class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#0f172a] to-[#090d18] border border-white/[0.08] shadow-2xl space-y-8">
+      <div class="space-y-3 max-w-2xl">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400">Direct Recruiter Channel</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">
+          Ready to elevate your sprint delivery and team predictability?
+        </h2>
+        <p class="text-sm text-slate-400 leading-relaxed font-light">
+          Whether you need a Senior Scrum Master to streamline multi-team dependencies, an Agile Coach to elevate delivery velocity, or a technical delivery lead, I'm available for discussions.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        
+        <div class="p-5 rounded-2xl bg-black/40 border border-white/[0.06] flex flex-col justify-between space-y-3">
+          <div class="text-[11px] font-mono text-slate-500 uppercase">Direct Email</div>
+          <a href="mailto:balajinia@gmail.com" class="text-sm font-semibold text-white hover:text-blue-400 transition-colors">
+            balajinia@gmail.com
+          </a>
+          <button onclick="copyToClipboard('balajinia@gmail.com', this)" class="w-full py-2.5 rounded-xl bg-white/[0.04] hover:bg-blue-600 hover:text-white text-xs font-mono text-slate-300 border border-white/[0.08] transition-all">
+            Copy Email
+          </button>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-black/40 border border-white/[0.06] flex flex-col justify-between space-y-3">
+          <div class="text-[11px] font-mono text-slate-500 uppercase">Direct Phone</div>
+          <a href="tel:+917540015522" class="text-sm font-semibold text-white hover:text-emerald-400 transition-colors">
+            +91-7540015522
+          </a>
+          <button onclick="copyToClipboard('+917540015522', this)" class="w-full py-2.5 rounded-xl bg-white/[0.04] hover:bg-emerald-600 hover:text-white text-xs font-mono text-slate-300 border border-white/[0.08] transition-all">
+            Copy Phone
+          </button>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-black/40 border border-white/[0.06] flex flex-col justify-between space-y-3">
+          <div class="text-[11px] font-mono text-slate-500 uppercase">LinkedIn Profile</div>
+          <a href="https://linkedin.com/in/balajipalani92" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-white hover:text-blue-400 transition-colors">
+            balajipalani92
+          </a>
+          <a href="https://linkedin.com/in/balajipalani92" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl bg-white/[0.04] hover:bg-[#0077b5] hover:text-white text-xs font-mono text-slate-300 border border-white/[0.08] text-center transition-all block">
+            Connect on LinkedIn ↗
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Quick Message Dispatch -->
+      <div class="p-6 rounded-2xl bg-black/30 border border-white/[0.06]">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <div class="text-sm font-bold text-white">Looking to schedule an introductory interview?</div>
+            <div class="text-xs text-slate-400 font-light mt-0.5">Click below to open a pre-addressed email draft to Balaji.</div>
+          </div>
+          <a href="mailto:balajinia@gmail.com?subject=Senior%20Scrum%20Master%20Opportunity&body=Hi%20Balaji,%0A%0AWe%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity%20with%20our%20team.%0A%0ABest%20regards," class="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs tracking-wide shadow-lg shadow-blue-600/25 transition-all text-center whitespace-nowrap">
+            Schedule Discussion ↗
+          </a>
+        </div>
       </div>
 
     </section>
 
   </main>
 
-  <!-- DRIBBBLE STYLE COMPACT FOOTER -->
-  <footer class="border-t border-white/10 py-10 bg-[#06070a] text-xs text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2.5">
-        <span class="w-6 h-6 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-[10px]">BP</span>
-        <span class="font-mono">Balaji Palani • Senior Scrum Master</span>
+  <!-- CLEAN SAAS FOOTER -->
+  <footer class="border-t border-white/[0.06] py-10 text-xs text-slate-500 bg-[#050810]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px]">
+      <div>
+        © <span id="current-year"></span> Balaji Palani • Senior Scrum Master
       </div>
-      <div class="flex items-center gap-6 font-mono text-[11px]">
+      <div class="flex items-center gap-6">
         <a href="#hero" class="hover:text-blue-400 transition-colors">Top ↑</a>
         <a href="https://linkedin.com/in/balajipalani92" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors">LinkedIn</a>
         <a href="mailto:balajinia@gmail.com" class="hover:text-blue-400 transition-colors">Email</a>
@@ -627,7 +873,7 @@
   </footer>
 
   <!-- Toast Notification -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-white text-slate-950 px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 text-xs sm:text-sm font-bold font-mono border border-slate-200">
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-white text-slate-950 px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2 text-xs font-mono font-bold border border-slate-200">
     <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
     <span id="toast-message">Copied!</span>
   </div>
