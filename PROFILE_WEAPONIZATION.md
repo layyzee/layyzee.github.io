@@ -52,7 +52,22 @@ Engineered a real-time multiplayer Scrum Planning Poker application built to eli
 • Built-in Recruiter 1-click sandbox controls to simulate team voting scenarios instantly.
 ```
 
-#### Project 3: BalaGPT — Enterprise GenAI Productivity Workstation
+#### Project 3: PI Planner — Enterprise SAFe® 6.0 Program Board
+* **Client / Organization:** Self-Engineered / Open Production Platform
+* **Role:** Lead Agile Architect & Facilitation Engineer
+* **Duration:** Jan 2026 – Present
+* **Site / Demo Link:** https://piplanner.onrender.com
+* **Key Skills:** SAFe 6.0, PI Planning, Agile Release Train (ART), ROAM Risk Management, React 18, SVG Bézier Curves
+* **Project Details:**
+```text
+Engineered an enterprise SAFe® 6.0 Program Board to simulate and facilitate multi-team Program Increment (PI) planning for Agile Release Trains.
+• Designed dynamic curved red Bézier dependency strings connecting stories across 4 squads and 5 sprints, with conflict plucking audio.
+• Implemented interactive 4-column ROAM risk matrix (Resolved, Owned, Accepted, Mitigated) with real-time status transitions.
+• Engineered team PI objectives with Committed vs. Uncommitted categorization and all-hands Fist of Five confidence voting.
+• Integrated an in-app SAFe 101 recruiter cheat sheet with word-for-word interview scripts and 1-click recruiter scenario sandbox.
+```
+
+#### Project 4: BalaGPT — Enterprise GenAI Productivity Workstation
 * **Client / Organization:** Self-Engineered / Open Production SaaS
 * **Role:** Lead Engineer & Solution Architect
 * **Duration:** Jan 2026 – Present
@@ -71,7 +86,7 @@ Developed a high-performance, privacy-first AI productivity workspace powered by
 ## 2. 🌐 LINKEDIN PROFILE OPTIMIZATION
 
 ### A. LinkedIn Headline
-> Senior Scrum Master | Technical Agile Delivery Lead (CSM® & SAFe® 6.0) | 7+ Yrs IT | Ex-MITS Global (UK BFSI), Incedo (Verizon ART) | Creator of Live Agile SaaS Suite (BalaBoard, SprintPoker) | Immediate Joiner
+> Senior Scrum Master | Technical Agile Delivery Lead (CSM® & SAFe® 6.0) | 7+ Yrs IT | Ex-MITS Global (UK BFSI), Incedo (Verizon ART) | Creator of Live Agile SaaS Suite (SprintPoker, BalaBoard, PI Planner) | Immediate Joiner
 
 ### B. LinkedIn About Section
 ```text
@@ -83,7 +98,8 @@ Across large-scale programmes at MITS Global (managing 3 concurrent Scrum teams 
 🤖 Enforcing automated Definition of Ready (DoR) and Definition of Done (DoD) via Jira Automation.
 
 What sets me apart from traditional Scrum Masters:
-Unlike process-only facilitators, I possess the technical depth to bridge engineering and business teams seamlessly. To demonstrate this capability in production, I designed, built, and launched a suite of three live Agile tools:
+Unlike process-only facilitators, I possess the technical depth to bridge engineering and business teams seamlessly. To demonstrate this capability in production, I designed, built, and launched a suite of live Agile tools:
+🎯 PI Planner (https://piplanner.onrender.com) — Enterprise SAFe® 6.0 Program Board with dynamic dependency strings, ROAM risk board, and Fist of Five voting.
 🃏 SprintPoker (https://sprintpoker-gnel.onrender.com) — Real-time multiplayer story point estimation with Jira CSV export.
 📋 BalaBoard (https://balaboard.onrender.com/?room=sandbox&demo=true) — Real-time Miro retro alternative with Jira issue integration.
 ⚡ BalaGPT (https://balagpt.onrender.com) — GenAI productivity engine with native SQLite.
@@ -96,12 +112,12 @@ Open to Senior Scrum Master, Agile Delivery Lead, and Agile Project Manager oppo
 1. **Link 1:** `https://layyzee.github.io`  
    * **Title:** Executive Agile Portfolio — Balaji Palani (CSM®, SAFe® 6 SSM)  
    * **Description:** Interactive showcase of delivery benchmarks, client metrics (UK BFSI, Verizon), and live production SaaS applications.
-2. **Link 2:** `https://sprintpoker-gnel.onrender.com`  
+2. **Link 2:** `https://piplanner.onrender.com`  
+   * **Title:** PI Planner — SAFe® 6.0 Program Increment & Dependency Board  
+   * **Description:** Live multi-team ART Program Board with Bézier dependency strings, ROAM risk management, and Fist of Five confidence voting.
+3. **Link 3:** `https://sprintpoker-gnel.onrender.com`  
    * **Title:** SprintPoker — Real-Time Agile Estimation Table  
    * **Description:** Live multiplayer planning poker tool with 3D card flips, consensus detection, and Jira backlog export.
-3. **Link 3:** `https://balaboard.onrender.com/?room=sandbox&demo=true`  
-   * **Title:** BalaBoard — Interactive Agile Retrospective Platform  
-   * **Description:** Real-time whiteboard alternative with 12 frameworks, AI clustering, and Jira Cloud ticket creation.
 
 ---
 
@@ -111,6 +127,7 @@ Open to Senior Scrum Master, Agile Delivery Lead, and Agile Project Manager oppo
 
 ```text
 PROPRIETARY AGILE SAAS DELIVERY PLATFORMS (Live Production)
+• PI Planner (piplanner.onrender.com): Built an enterprise SAFe 6.0 Program Board for multi-squad ART coordination; engineered dynamic red dependency strings, 4-column ROAM risk governance, and Fist of Five confidence polling.
 • SprintPoker (sprintpoker-gnel.onrender.com): Architected a real-time multiplayer Scrum Planning Poker web application eliminating anchoring bias; engineered 3D card states, automated consensus/variance detection, and RFC 4180 Jira CSV backlog export.
 • BalaBoard (balaboard.onrender.com/?room=sandbox&demo=true): Built an enterprise Miro alternative with low-latency WebSockets, 12 Agile retro templates, automated AI grouping, and 1-click Jira Cloud issue generation.
 • Executive Portfolio (layyzee.github.io): Published comprehensive telemetry documenting 20% velocity gains, 40% impediment reduction, and SAFe 6.0 ART coordination across Verizon and UK BFSI engagements.
@@ -129,7 +146,8 @@ Hi [Hiring Manager Name],
 
 I noticed [Company Name] is actively scaling its Agile engineering teams. With 7+ years of IT experience—including coordinating 3 concurrent Scrum teams on a UK BFSI banking programme and facilitating within a 10-team SAFe Agile Release Train for Verizon—I specialize in removing cross-team blockers, improving velocity by 20%, and bridging the gap between business objectives and engineering execution.
 
-Unlike conventional process-only facilitators, I bring hands-on technical depth. To optimize our team ceremonies, I engineered and deployed two live production tools:
+Unlike conventional process-only facilitators, I bring hands-on technical depth. To optimize our team ceremonies and scaled delivery, I engineered and deployed live production tools:
+• PI Planner: https://piplanner.onrender.com (Enterprise SAFe 6.0 Program Board with dependency strings & ROAM risk matrix)
 • SprintPoker: https://sprintpoker-gnel.onrender.com (Real-time multiplayer story estimation with 1-click Jira export)
 • BalaBoard: https://balaboard.onrender.com/?room=sandbox&demo=true (Real-time retro whiteboard with direct Jira Cloud sync)
 
