@@ -1,5 +1,7 @@
 # 🚀 Balaji Palani — Senior Scrum Master & Agile Delivery Architect
 
+> 📌 **Recruiter & Job Hunt Quick Reference:** See [**PROFILE_WEAPONIZATION.md**](./PROFILE_WEAPONIZATION.md) for ready-to-paste Naukri headlines, LinkedIn About narratives, 3 live project showcase blurbs, master resume bullets, and high-conversion cold outreach templates.
+
 A high-converting, enterprise SaaS-tier portfolio website for **Balaji Palani** (Senior Scrum Master with CSM® & SAFe® 6 SSM credentials and a Computer Science / Frontend engineering background).
 
 Designed to prove **scale, delivery predictability, and quantitative impact** to Engineering Directors, Heads of Agile, and Tech Recruiters.
