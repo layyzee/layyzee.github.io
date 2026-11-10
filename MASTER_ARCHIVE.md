@@ -13,6 +13,7 @@
 | **PI Planner** | SAFe® 6.0 Program Board (Cross-Team Red Strings + ROAM + Cheat Sheet) | [piplanner.onrender.com](https://piplanner.onrender.com) | [github.com/layyzee/PIPlanner](https://github.com/layyzee/PIPlanner) | [`docs/LAUNCH_REPORT.md`](https://github.com/layyzee/PIPlanner/blob/main/docs/LAUNCH_REPORT.md) |
 | **Dia Studio** | Reconstructed AI Browser & Multi-Agent Workstation (Bun + Claude Code) | [diastudio.onrender.com](https://diastudio.onrender.com) | [github.com/layyzee/DiaStudio](https://github.com/layyzee/DiaStudio) | [`docs/LAUNCH_REPORT.md`](https://github.com/layyzee/DiaStudio/blob/main/docs/LAUNCH_REPORT.md) |
 | **BalaGPT** | GenAI Productivity Engine (Node 22 SQLite + Llama-3.3 70B) | [balagpt.onrender.com](https://balagpt.onrender.com) | [github.com/layyzee/chatgpt-web](https://github.com/layyzee/chatgpt-web) | [`README.md`](https://github.com/layyzee/chatgpt-web/blob/main/README.md) |
+| **Stremio Studio** | Reconstructed Streaming Architecture (Rust/Wry + libmpv + Addon Protocol v3) | [stremiostudio.onrender.com](https://stremiostudio.onrender.com) | [github.com/layyzee/StremioStudio](https://github.com/layyzee/StremioStudio) | [`docs/LAUNCH_REPORT.md`](https://github.com/layyzee/StremioStudio/blob/main/docs/LAUNCH_REPORT.md) |
 | **Executive Portfolio** | Senior Scrum Master Telemetry & Delivery Benchmarks | [layyzee.github.io](https://layyzee.github.io) | [github.com/layyzee/layyzee.github.io](https://github.com/layyzee/layyzee.github.io) | [`PROFILE_WEAPONIZATION.md`](https://github.com/layyzee/layyzee.github.io/blob/main/PROFILE_WEAPONIZATION.md) |
 
 ---
@@ -41,6 +42,11 @@
 ### 5. [BalaGPT](https://github.com/layyzee/chatgpt-web)
 * **Agile Competency:** Technical literacy and personal AI productivity enablement.
 * **Key Features:** Groq Llama-3.3 70B streaming inference, zero-external-DB Node 22 native SQLite storage, multi-page PDF document extraction, DuckDuckGo web search.
+
+### 6. [Stremio Studio](https://github.com/layyzee/StremioStudio)
+* **Agile Competency:** Systems architecture fluency, native vs. web engine trade-off evaluation, and high-performance cross-platform media delivery.
+* **Key Features:** Clean-room forensic decomposition of Stremio Desktop 5 (`com.westbridge.stremio5-mac`); models the triple-tier hybrid architecture (Rust `wry`/`tao` native shell + macOS `WKWebView` + local Node streaming daemon + `libmpv` C ABI FFI with Apple VideoToolbox hardware acceleration), interactive Cinemeta catalog browsing, real-time MPV/VideoToolbox telemetry HUD, and Stremio Addon Protocol v3 manifest management.
+* **Zero-Cost Implementation:** Operates entirely over public-domain HLS and decentralized JSON endpoints with $0.00 infrastructure cost.
 
 ---
 
