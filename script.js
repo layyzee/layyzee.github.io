@@ -169,9 +169,9 @@ window.inspectDay = function(day) {
     const btn = document.getElementById(`day-btn-${i}`);
     if (btn) {
       if (i === day) {
-        btn.className = 'day-btn py-2.5 rounded-xl border border-blue-500 bg-blue-600/20 text-white font-mono text-xs font-bold transition-all text-center';
+        btn.className = 'day-btn active py-2.5 rounded-xl border font-mono text-xs font-bold transition-all text-center';
       } else {
-        btn.className = 'day-btn py-2.5 rounded-xl border border-white/10 bg-white/[0.02] text-slate-400 hover:text-white font-mono text-xs font-medium transition-all text-center';
+        btn.className = 'day-btn inactive py-2.5 rounded-xl border font-mono text-xs font-medium transition-all text-center';
       }
     }
   }
@@ -237,10 +237,52 @@ window.copyToClipboard = function (text, buttonElement) {
   });
 };
 
-// 3. Document Initialization
+// 3. Theme Toggle (Apple Studio Light <-> Obsidian Dark)
+window.initTheme = function() {
+  const saved = localStorage.getItem('layyzee_theme');
+  if (saved === 'dark') {
+    document.documentElement.classList.add('dark');
+    updateThemeToggleUI('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+    updateThemeToggleUI('light');
+  }
+};
+
+window.toggleTheme = function() {
+  const isDark = document.documentElement.classList.toggle('dark');
+  const newTheme = isDark ? 'dark' : 'light';
+  localStorage.setItem('layyzee_theme', newTheme);
+  updateThemeToggleUI(newTheme);
+  // Re-render day button state to sync styling
+  window.inspectDay(activeDayIndex);
+};
+
+function updateThemeToggleUI(theme) {
+  const btn = document.getElementById('theme-toggle-btn');
+  if (!btn) return;
+  if (theme === 'dark') {
+    btn.innerHTML = `
+      <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+      <span class="hidden sm:inline font-mono text-[11px]">Daylight</span>
+    `;
+    btn.setAttribute('title', 'Switch to Apple Studio Daylight mode');
+  } else {
+    btn.innerHTML = `
+      <svg class="w-3.5 h-3.5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+      <span class="hidden sm:inline font-mono text-[11px]">Dark</span>
+    `;
+    btn.setAttribute('title', 'Switch to Obsidian Dark mode');
+  }
+}
+
+// 4. Document Initialization
 document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('current-year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Initialize Theme
+  initTheme();
 
   // Initialize Burndown on Day 1
   inspectDay(1);

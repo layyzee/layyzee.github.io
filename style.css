@@ -1,58 +1,174 @@
 /* ==========================================================================
-   Balaji Palani — SaaS Executive Dark Stylesheet
-   Linear/Datadog Visual Standards, Strict Alignment & Crisp Typography
+   Balaji Palani — Apple Studio Light & Obsidian SaaS Stylesheet
+   Porcelain Daylight Canvas, Crisp Obsidian Typography & Electric Indigo Accents
    ========================================================================== */
 
-/* Dashboard & Telemetry Cards */
-.dashboard-card {
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+:root {
+  --bg-canvas: #F8FAFC;
+  --text-main: #0F172A;
+  --text-muted: #475569;
+  --text-subtle: #64748B;
+  --card-bg: #FFFFFF;
+  --card-border: rgba(226, 232, 240, 0.9);
+  --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
+  --subcard-bg: #F8FAFC;
+  --subcard-border: rgba(226, 232, 240, 0.85);
+  --nav-bg: rgba(255, 255, 255, 0.88);
+  --nav-border: rgba(226, 232, 240, 0.9);
+  --nav-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
 }
 
-.dashboard-card:hover {
+html.dark {
+  --bg-canvas: #070B14;
+  --text-main: #F8FAFC;
+  --text-muted: #CBD5E1;
+  --text-subtle: #94A3B8;
+  --card-bg: #0F172A;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --subcard-bg: rgba(0, 0, 0, 0.35);
+  --subcard-border: rgba(255, 255, 255, 0.06);
+  --nav-bg: rgba(13, 19, 34, 0.92);
+  --nav-border: rgba(255, 255, 255, 0.08);
+  --nav-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6);
+}
+
+/* Ambient Canvas Backgrounds */
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-main);
+  background-image: 
+    radial-gradient(at 15% 0%, rgba(99, 102, 241, 0.06) 0px, transparent 50%),
+    radial-gradient(at 85% 10%, rgba(59, 130, 246, 0.05) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(16, 185, 129, 0.03) 0px, transparent 60%),
+    radial-gradient(circle at 50% 100%, rgba(241, 245, 249, 0.8) 0%, #F8FAFC 100%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark body {
+  background-image: 
+    radial-gradient(at 25% 10%, rgba(37, 99, 235, 0.08) 0px, transparent 50%),
+    radial-gradient(at 85% 20%, rgba(79, 70, 229, 0.06) 0px, transparent 50%),
+    radial-gradient(at 50% 80%, rgba(16, 185, 129, 0.04) 0px, transparent 60%);
+}
+
+/* Apple Studio Floating Navbar */
+.apple-nav {
+  background: var(--nav-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--nav-border);
+  box-shadow: var(--nav-shadow);
+  transition: all 0.3s ease;
+}
+
+/* Apple Studio Light Card Architecture */
+.apple-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apple-card:hover {
+  border-color: rgba(99, 102, 241, 0.45);
   transform: translateY(-2px);
-  box-shadow: 0 12px 35px -10px rgba(14, 165, 233, 0.15);
+  box-shadow: 0 12px 24px -4px rgba(79, 70, 229, 0.08), 0 4px 8px -2px rgba(0, 0, 0, 0.03);
 }
 
-/* Day Button Active / Hover */
+html.dark .apple-card:hover {
+  box-shadow: 0 14px 35px -10px rgba(79, 70, 229, 0.3);
+}
+
+/* Nested Inset Cards */
+.apple-subcard {
+  background: var(--subcard-bg);
+  border: 1px solid var(--subcard-border);
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+/* Day Button Styling (Interactive Burndown) */
 .day-btn {
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 42px;
 }
 
 .day-btn.active {
-  border-color: #3b82f6 !important;
-  background-color: rgba(59, 130, 246, 0.2) !important;
-  color: #ffffff !important;
+  border-color: #4F46E5 !important;
+  background-color: #4F46E5 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 10px rgba(79, 70, 229, 0.35) !important;
+}
+
+.day-btn.inactive {
+  background-color: #F1F5F9;
+  border-color: #E2E8F0;
+  color: #64748B;
+}
+
+.day-btn.inactive:hover {
+  background-color: #E2E8F0;
+  color: #0F172A;
+}
+
+html.dark .day-btn.active {
+  border-color: #3B82F6 !important;
+  background-color: rgba(59, 130, 246, 0.25) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.3) !important;
+}
+
+html.dark .day-btn.inactive {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #94A3B8;
+}
+
+html.dark .day-btn.inactive:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #070b14;
+  background: var(--bg-canvas);
 }
 ::-webkit-scrollbar-thumb {
-  background: #172033;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #253350;
+  background: #94A3B8;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #1E293B;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #334155;
 }
 
 /* Clean Print Styles for 2-Page Executive PDF */
 @media print {
   body {
     background-color: #ffffff !important;
+    background-image: none !important;
     color: #0f172a !important;
   }
-  header, footer, button, #toast, .fixed, #burndown {
+  header, footer, button, #toast, .fixed, #burndown, .no-print {
     display: none !important;
   }
   main {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
   }
-  .bg-\[\#0f172a\], .bg-\[\#0f172a\]\/90, .bg-black\/30, .bg-black\/40 {
+  .apple-card, .apple-subcard {
     background-color: #ffffff !important;
     border-color: #e2e8f0 !important;
     color: #1e293b !important;
@@ -67,8 +183,5 @@
   }
   .text-slate-500 {
     color: #64748b !important;
-  }
-  .border-white\/\[0\.08\], .border-white\/\[0\.06\] {
-    border-color: #e2e8f0 !important;
   }
 }
