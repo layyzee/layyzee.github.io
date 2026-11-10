@@ -36,7 +36,7 @@
 
 ### 4. [Dia Studio](https://github.com/layyzee/DiaStudio)
 * **Agile Competency:** Advanced AI Tooling & Autonomous Knowledge Work Orchestration.
-* **Key Features:** Clean-room reconstruction of The Browser Company's Dia Browser (`company.thebrowser.dia`); incorporates Bun agent runtime with embedded Claude Code harness, 43 specialized subagents, numbered DOM browser-use automation with human-in-the-loop 2FA handoffs, and generative SlideKit presentation carousels.
+* **Key Features:** Clean-room reconstruction of The Browser Company's Dia Browser (`company.thebrowser.dia`); incorporates Bun agent runtime with embedded Claude Code harness, live real URL web crawling via Omnibar, interactive Push to Jira Cloud modal with RFC 4180 CSV export, 1-click standalone HTML presentation deck download, numbered DOM browser-use automation with human-in-the-loop 2FA handoffs, and generative SlideKit/ReportKit deliverables.
 
 ### 5. [BalaGPT](https://github.com/layyzee/chatgpt-web)
 * **Agile Competency:** Technical literacy and personal AI productivity enablement.
