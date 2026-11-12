@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html class="h-full bg-slate-50" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>AppTracker Pro | Executive Agile Recruitment CRM - Balaji Palani</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  
+  <!-- FontAwesome 6 Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS v3 with Forms & Container Plugins -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          },
+          boxShadow: {
+            'subtle': '0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.04)',
+            'card': '0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -2px rgba(0, 0, 0, 0.03)',
+            'modal': '0 25px 50px -12px rgba(15, 23, 42, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* Subtle dot-matrix engineering background */
+    .bg-dot-grid {
+      background-image: radial-gradient(rgba(148, 163, 184, 0.22) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    
+    /* Sleek custom scrollbars for independent kanban swimlanes */
+    .kanban-scroll::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .kanban-scroll::-webkit-scrollbar-track {
+      background: rgba(241, 245, 249, 0.6);
+      border-radius: 9999px;
+    }
+    .kanban-scroll::-webkit-scrollbar-thumb {
+      background: rgba(203, 213, 225, 0.85);
+      border-radius: 9999px;
+    }
+    .kanban-scroll::-webkit-scrollbar-thumb:hover {
+      background: rgba(148, 163, 184, 1);
+    }
+
+    /* Drag and Drop States */
+    .pipeline-card {
+      transition: all 0.15s ease-in-out;
+    }
+    .pipeline-card.is-dragging {
+      opacity: 0.45;
+      transform: scale(0.98);
+    }
+    .drag-target-active {
+      background-color: rgba(219, 234, 254, 0.65) !important;
+      border-color: #3b82f6 !important;
+      outline: 2px dashed #2563eb !important;
+      outline-offset: -2px;
+    }
+
+    /* Shimmer & badge pulse effects */
+    @keyframes pulse-subtle {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(0.98); }
+    }
+    .status-pulse {
+      animation: pulse-subtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+  </style>
+</head>
+<body class="h-full font-sans antialiased text-slate-800 bg-[#f8faff] flex flex-col min-h-screen overflow-hidden">
+
+  <!-- BEGIN: Executive Header -->
+  <header class="bg-white border-b border-slate-200/90 shadow-sm z-30 shrink-0 select-none">
+    <div class="px-4 lg:px-6 py-2.5 flex items-center justify-between gap-4">
+      
+      <!-- Brand & Profile Anchor -->
+      <div class="flex items-center gap-3.5 shrink-0">
+        <!-- Back to Career Hub Button -->
+        <a class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200/80 rounded-lg border border-slate-200 transition-all duration-150 group" href="index.html">
+          <i class="fa-solid fa-arrow-left text-slate-500 group-hover:-translate-x-0.5 transition-transform text-[11px]"></i>
+          <span>Career Hub</span>
+        </a>
+        <div class="h-5 w-px bg-slate-200 mx-0.5"></div>
+        
+        <!-- AppTracker Pro Enterprise Logo & Monogram -->
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-700 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-brand-600/20">
+            <i class="fa-solid fa-chart-kanban text-sm"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-slate-900 tracking-tight text-base leading-none">AppTracker<span class="text-brand-600">Pro</span></span>
+              <span class="px-1.5 py-0.5 bg-blue-50 text-brand-700 border border-brand-200 text-[10px] font-bold rounded tracking-wider uppercase">ENTERPRISE CRM v2.4</span>
+            </div>
+            <p class="text-[11px] font-medium text-slate-500 leading-tight mt-0.5">Balaji Palani • Senior Scrum Master &amp; Agile Delivery Pipeline</p>
+          </div>
+        </div>
+
+        <!-- Balaji's Live Profile Badge -->
+        <div class="hidden xl:flex items-center gap-2.5 ml-2 pl-3 border-l border-slate-200">
+          <img alt="Balaji Palani" class="w-8 h-8 rounded-full object-cover ring-2 ring-emerald-500/40" src="./assets/img/my-pic.jpg" onerror="this.src='https://github.com/layyzee.png'"/>
+          <div class="leading-tight">
+            <div class="flex items-center gap-1.5">
+              <span class="text-xs font-bold text-slate-800">Balaji Palani</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+                0 Days Notice (Immediate)
+              </span>
+            </div>
+            <span class="text-[10px] text-slate-400 font-mono">SAFe 6.0 | PSM II | PMP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Search Bar with Hotkey -->
+      <div class="flex-1 max-w-xl mx-2 hidden md:block">
+        <div class="relative flex items-center">
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 text-slate-400 text-xs"></i>
+          <input id="searchInput" oninput="handleSearch()" class="w-full text-xs bg-slate-50 hover:bg-white focus:bg-white border border-slate-200 rounded-xl pl-9 pr-14 py-2 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-600 transition-all shadow-inner" placeholder="Search 55+ companies, roles, recruiters, locations, notes..." type="text"/>
+          <button id="clearSearchBtn" onclick="clearSearch()" class="absolute right-10 text-slate-400 hover:text-slate-600 hidden p-1">
+            <i class="fa-solid fa-xmark text-xs"></i>
+          </button>
+          <div class="absolute right-2.5 flex items-center gap-0.5 pointer-events-none">
+            <kbd class="px-1.5 py-0.5 text-[10px] font-mono text-slate-500 bg-white border border-slate-200 rounded shadow-sm">⌘K</kbd>
+          </div>
+        </div>
+      </div>
+
+      <!-- Header Action Controls & View Switch -->
+      <div class="flex items-center gap-2.5 shrink-0">
+        <!-- View Toggle (Board vs Table) -->
+        <div class="bg-slate-100 p-0.5 rounded-lg border border-slate-200 flex items-center text-xs font-semibold">
+          <button id="viewBtnBoard" onclick="switchView('board')" class="px-2.5 py-1.5 rounded-md bg-white text-brand-700 shadow-sm flex items-center gap-1.5 transition-all">
+            <i class="fa-solid fa-table-columns text-xs"></i>
+            <span>Board</span>
+          </button>
+          <button id="viewBtnTable" onclick="switchView('table')" class="px-2.5 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-1.5">
+            <i class="fa-solid fa-list-check text-xs"></i>
+            <span>Table</span>
+          </button>
+        </div>
+
+        <!-- Add Role Primary Button -->
+        <button onclick="openNewAppModal()" class="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-white bg-brand-600 hover:bg-brand-700 active:bg-brand-800 rounded-lg shadow-sm shadow-brand-600/30 transition-all">
+          <i class="fa-solid fa-plus text-[11px]"></i>
+          <span>Log Application</span>
+        </button>
+
+        <!-- Auxiliary Action Dropdowns -->
+        <div class="flex items-center gap-1">
+          <button onclick="exportDataCSV()" class="w-8 h-8 flex items-center justify-center text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg border border-slate-200/80 transition-colors" title="Export Pipeline CSV">
+            <i class="fa-solid fa-cloud-arrow-down text-xs"></i>
+          </button>
+          <button onclick="resetToDefaults()" class="w-8 h-8 flex items-center justify-center text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg border border-slate-200/80 transition-colors" title="Reset to Verified 55 Defaults">
+            <i class="fa-solid fa-rotate text-xs"></i>
+          </button>
+        </div>
+
+        <!-- Sync Indicator pill -->
+        <div class="hidden 2xl:flex items-center gap-1.5 pl-2 text-[11px] text-slate-500 font-medium">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span id="stat-synced-pill">55 Roles Synced</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- END: Executive Header -->
+
+  <!-- BEGIN: Pipeline Metrics Strip -->
+  <section class="bg-white border-b border-slate-200 px-4 lg:px-6 py-2.5 shadow-[0_2px_4px_rgba(0,0,0,0.02)] shrink-0">
+    <div class="flex flex-wrap items-center justify-between gap-y-3 gap-x-6">
+      <!-- High-Impact KPI Micro-Cards -->
+      <div class="flex items-center flex-wrap gap-4 lg:gap-6 divide-x divide-slate-100 text-xs">
+        <!-- Total Pipeline -->
+        <div class="flex items-center gap-2.5">
+          <div class="w-7 h-7 rounded-lg bg-blue-50 text-brand-600 flex items-center justify-center font-bold">
+            <i class="fa-solid fa-briefcase text-xs"></i>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Total Pipeline</div>
+            <div class="font-bold text-slate-900 text-sm leading-none flex items-center gap-1.5 mt-0.5">
+              <span id="statTotal">55 Roles</span>
+              <span class="text-[10px] font-semibold text-emerald-600 bg-emerald-50 px-1 rounded">Active</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recruiter Screening -->
+        <div class="flex items-center gap-2.5 pl-4 lg:pl-6">
+          <div class="w-7 h-7 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center font-bold">
+            <i class="fa-solid fa-headset text-xs"></i>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Recruiter Screens</div>
+            <div class="font-bold text-slate-900 text-sm leading-none flex items-center gap-1.5 mt-0.5">
+              <span id="statScreening">3 Active</span>
+              <span id="statScreeningRate" class="text-[10px] font-medium text-slate-500">(conv.)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical & HM -->
+        <div class="flex items-center gap-2.5 pl-4 lg:pl-6">
+          <div class="w-7 h-7 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center font-bold">
+            <i class="fa-solid fa-code-merge text-xs"></i>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Tech &amp; HM Round</div>
+            <div class="font-bold text-slate-900 text-sm leading-none flex items-center gap-1.5 mt-0.5">
+              <span id="statTechnical">0 High-Priority</span>
+              <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Final / Offer -->
+        <div class="flex items-center gap-2.5 pl-4 lg:pl-6">
+          <div class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
+            <i class="fa-solid fa-award text-xs"></i>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Final / Comp Neg.</div>
+            <div class="font-bold text-slate-900 text-sm leading-none flex items-center gap-1 mt-0.5">
+              <span id="statOffer">0 In Discussion</span>
+              <i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Target Comp Range -->
+        <div class="hidden xl:flex items-center gap-2.5 pl-4 lg:pl-6">
+          <div class="w-7 h-7 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center font-bold">
+            <i class="fa-solid fa-sack-dollar text-xs"></i>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Target Range</div>
+            <div class="font-bold text-slate-900 text-xs leading-none mt-0.5">
+              ₹28L - ₹36L CTC <span class="text-slate-400 font-normal">($65k+ Remote)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pipeline Segmented Conversion Bar -->
+      <div class="hidden md:flex items-center gap-3">
+        <div class="text-right">
+          <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Pipeline Velocity</div>
+          <div id="velocityText" class="text-[11px] font-semibold text-slate-700">0% Active Progression</div>
+        </div>
+        <div class="w-44 h-2.5 bg-slate-100 rounded-full overflow-hidden flex ring-1 ring-slate-200">
+          <div id="bar-applied" class="bg-blue-400 h-full transition-all duration-300" style="width: 70%" title="Applied"></div>
+          <div id="bar-screening" class="bg-amber-400 h-full transition-all duration-300" style="width: 15%" title="Screening"></div>
+          <div id="bar-technical" class="bg-purple-500 h-full transition-all duration-300" style="width: 10%" title="Technical/HM"></div>
+          <div id="bar-offer" class="bg-emerald-500 h-full transition-all duration-300" style="width: 5%" title="Final/Offer"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: Pipeline Metrics Strip -->
+
+  <!-- BEGIN: Filter & Channel Toolbar -->
+  <section class="bg-white/80 backdrop-blur-md border-b border-slate-200 px-4 lg:px-6 py-2 shrink-0">
+    <div class="flex flex-wrap items-center justify-between gap-3">
+      
+      <!-- Platform Channels Filter Group -->
+      <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5 text-xs font-semibold text-slate-600">
+        <span class="text-slate-400 mr-1 flex items-center gap-1 text-[11px]">
+          <i class="fa-solid fa-filter text-[10px]"></i> Channel:
+        </span>
+        <button onclick="setPlatformFilter('all')" data-platform="all" class="platform-filter-pill px-2.5 py-1 rounded-full bg-slate-900 text-white shadow-sm flex items-center gap-1 transition-all">
+          <span>All</span>
+          <span id="count-all" class="bg-slate-700 text-white px-1.5 py-0.2 rounded-full text-[10px]">55</span>
+        </button>
+        <button onclick="setPlatformFilter('LinkedIn')" data-platform="LinkedIn" class="platform-filter-pill px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200/70 text-slate-700 border border-slate-200 transition-colors flex items-center gap-1">
+          <i class="fa-brands fa-linkedin text-[11px] text-blue-600"></i>
+          <span>LinkedIn</span>
+          <span id="count-LinkedIn" class="bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded-full text-[10px]">0</span>
+        </button>
+        <button onclick="setPlatformFilter('Hirist')" data-platform="Hirist" class="platform-filter-pill px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200/70 text-slate-700 border border-slate-200 transition-colors flex items-center gap-1">
+          <span>Hirist</span>
+          <span id="count-Hirist" class="bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded-full text-[10px]">0</span>
+        </button>
+        <button onclick="setPlatformFilter('Naukri')" data-platform="Naukri" class="platform-filter-pill px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200/70 text-slate-700 border border-slate-200 transition-colors flex items-center gap-1">
+          <span>Naukri</span>
+          <span id="count-Naukri" class="bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded-full text-[10px]">0</span>
+        </button>
+        <button onclick="setPlatformFilter('DirectEmail')" data-platform="DirectEmail" class="platform-filter-pill px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200/70 text-slate-700 border border-slate-200 transition-colors flex items-center gap-1">
+          <span>Direct Pitch</span>
+          <span id="count-DirectEmail" class="bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded-full text-[10px]">0</span>
+        </button>
+        <button onclick="setPlatformFilter('Indeed')" data-platform="Indeed" class="platform-filter-pill px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200/70 text-slate-700 border border-slate-200 transition-colors flex items-center gap-1">
+          <span>Indeed</span>
+          <span id="count-Indeed" class="bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded-full text-[10px]">0</span>
+        </button>
+        <button onclick="setPlatformFilter('Cutshort')" data-platform="Cutshort" class="platform-filter-pill px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200/70 text-slate-700 border border-slate-200 transition-colors flex items-center gap-1">
+          <span>Cutshort</span>
+          <span id="count-Cutshort" class="bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded-full text-[10px]">0</span>
+        </button>
+      </div>
+
+      <!-- Quick Location & Filter Pills -->
+      <div class="flex items-center gap-2 text-xs">
+        <div class="flex items-center bg-slate-100 rounded-lg p-0.5 border border-slate-200">
+          <span class="px-2 py-1 text-[11px] text-slate-500 font-medium">Work Mode:</span>
+          <button id="mode-all" onclick="setWorkModeFilter('all')" class="mode-filter-btn px-2 py-0.5 rounded bg-white font-semibold text-slate-700 shadow-xs">All</button>
+          <button id="mode-remote" onclick="setWorkModeFilter('remote')" class="mode-filter-btn px-2 py-0.5 text-slate-600 hover:text-slate-900">Remote</button>
+          <button id="mode-hybrid" onclick="setWorkModeFilter('hybrid')" class="mode-filter-btn px-2 py-0.5 text-slate-600 hover:text-slate-900">Hybrid / Onsite</button>
+        </div>
+
+        <!-- Sort Control -->
+        <div class="relative inline-block text-left">
+          <select id="sortSelect" onchange="handleSortChange(this.value)" class="bg-white border border-slate-200 rounded-lg text-slate-700 hover:bg-slate-50 font-medium text-xs py-1.5 pl-2.5 pr-7 focus:ring-1 focus:ring-brand-500 focus:outline-none">
+            <option value="newest">Velocity (Newest First)</option>
+            <option value="company">Company (A to Z)</option>
+            <option value="stage">Pipeline Stage</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: Filter & Channel Toolbar -->
+
+  <!-- BEGIN: Interactive Kanban Board View -->
+  <main id="boardView" class="flex-1 overflow-x-auto overflow-y-hidden bg-dot-grid p-4 lg:p-6">
+    <div id="pipelineContainer" class="h-full flex items-start gap-4 lg:gap-5 min-w-[1950px] pb-4">
+      <!-- Dynamically Rendered 6 Pipeline Swimlanes -->
+    </div>
+  </main>
+  <!-- END: Interactive Kanban Board View -->
+
+  <!-- BEGIN: Interactive Table View -->
+  <main id="tableView" class="flex-1 overflow-y-auto bg-dot-grid p-4 lg:p-6 hidden">
+    <div class="max-w-7xl mx-auto bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden">
+      <div class="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50/50">
+        <div>
+          <h2 class="text-sm font-bold text-slate-900">Pipeline Applications Table</h2>
+          <p class="text-xs text-slate-500">Showing <span id="tableFilteredCount" class="font-bold text-slate-800">55</span> active candidate records</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="exportDataCSV()" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-700 bg-white hover:bg-slate-50 rounded-lg border border-slate-200 shadow-xs">
+            <i class="fa-solid fa-file-csv text-slate-500"></i>
+            <span>Export CSV</span>
+          </button>
+        </div>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-slate-50/90 border-b border-slate-200 text-slate-500 uppercase tracking-wider font-semibold text-[10px]">
+            <tr>
+              <th class="py-3 px-5">Company</th>
+              <th class="py-3 px-5">Target Role</th>
+              <th class="py-3 px-5">Channel</th>
+              <th class="py-3 px-5">Work Mode & Location</th>
+              <th class="py-3 px-5">Pipeline Stage</th>
+              <th class="py-3 px-5">Applied Date</th>
+              <th class="py-3 px-5">Recruiter / Activity</th>
+              <th class="py-3 px-5 text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody" class="divide-y divide-slate-100">
+            <!-- Dynamically populated table rows -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  <!-- END: Interactive Table View -->
+
+  <!-- BEGIN: Application Details / Edit Modal -->
+  <div id="appModal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs flex items-center justify-center p-4 z-50 hidden">
+    <div class="bg-white rounded-2xl shadow-modal max-w-xl w-full p-6 border border-slate-200 transform transition-all">
+      <div class="flex items-start justify-between pb-4 border-b border-slate-100">
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 id="modalCompany" class="text-lg font-bold text-slate-900">Company Name</h3>
+            <span id="modalPlatformBadge"></span>
+          </div>
+          <p id="modalRole" class="text-xs font-semibold text-brand-600 mt-0.5">Role Title</p>
+        </div>
+        <button onclick="closeAppModal()" class="w-8 h-8 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 flex items-center justify-center">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <div class="py-4 space-y-4 max-h-[70vh] overflow-y-auto">
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Pipeline Stage</label>
+            <select id="modalStageSelect" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 font-semibold focus:ring-2 focus:ring-brand-500/20 focus:outline-none">
+              <option value="applied">Applied / In Review</option>
+              <option value="screening">Recruiter Screening</option>
+              <option value="technical">Technical / HM Round</option>
+              <option value="final">Final / Leadership</option>
+              <option value="offer">Offer Extended 🎉</option>
+              <option value="archived">Archived / Closed</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Interview Date (Optional)</label>
+            <input id="modalInterviewDate" type="date" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"/>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Recruiter / Contact Name</label>
+            <input id="modalContactPerson" type="text" placeholder="e.g. Kartheek G" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"/>
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Contact Email / Phone</label>
+            <input id="modalContactInfo" type="text" placeholder="e.g. recruiter@company.com" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"/>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Location / Work Mode</label>
+          <input id="modalLocation" type="text" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"/>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Delivery Notes &amp; Outreach Context</label>
+          <textarea id="modalNotes" rows="3" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none resize-none leading-relaxed"></textarea>
+        </div>
+
+        <div id="modalMeta" class="text-[11px] text-slate-400 font-mono bg-slate-50 px-3 py-2 rounded-lg border border-slate-100">
+          Created: Nov 10, 2026 • ID: app-1
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+        <button onclick="deleteCurrentApp()" class="px-3.5 py-2 text-xs font-semibold text-rose-600 hover:text-rose-700 hover:bg-rose-50 rounded-lg transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-trash-can text-xs"></i>
+          <span>Delete</span>
+        </button>
+        <div class="flex items-center gap-2">
+          <button onclick="closeAppModal()" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded-lg transition-colors">
+            Cancel
+          </button>
+          <button onclick="saveAppModalChanges()" class="px-4 py-2 text-xs font-bold text-white bg-brand-600 hover:bg-brand-700 active:bg-brand-800 rounded-lg shadow-sm shadow-brand-600/30 transition-all">
+            Save Changes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: Application Details / Edit Modal -->
+
+  <!-- BEGIN: Log New Application Modal -->
+  <div id="newAppModal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs flex items-center justify-center p-4 z-50 hidden">
+    <div class="bg-white rounded-2xl shadow-modal max-w-lg w-full p-6 border border-slate-200 transform transition-all">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+        <div>
+          <h3 class="text-base font-bold text-slate-900">Log New Application</h3>
+          <p class="text-xs text-slate-500 mt-0.5">Track a new target Scrum Master or Agile Delivery role</p>
+        </div>
+        <button onclick="closeNewAppModal()" class="w-8 h-8 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 flex items-center justify-center">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <div class="py-4 space-y-3.5">
+        <div>
+          <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Company Name *</label>
+          <input id="newCompany" type="text" placeholder="e.g. Barclays, Deloitte, Cisco" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"/>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Role Title *</label>
+          <input id="newRole" type="text" value="Senior Scrum Master" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"/>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Channel / Platform</label>
+            <select id="newPlatform" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none">
+              <option value="LinkedIn">LinkedIn</option>
+              <option value="Hirist">Hirist</option>
+              <option value="Naukri">Naukri</option>
+              <option value="DirectEmail">Direct Pitch</option>
+              <option value="Indeed">Indeed</option>
+              <option value="Cutshort">Cutshort</option>
+              <option value="DirectATS">Direct ATS</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Initial Stage</label>
+            <select id="newStage" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none">
+              <option value="applied">Applied / In Review</option>
+              <option value="screening">Recruiter Screening</option>
+              <option value="technical">Technical / HM Round</option>
+              <option value="final">Final / Leadership</option>
+              <option value="offer">Offer Extended 🎉</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Location &amp; Work Mode</label>
+          <input id="newLocation" type="text" value="Hybrid • Bengaluru" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"/>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Notes / Outreach Context</label>
+          <textarea id="newNotes" rows="2.5" placeholder="Application links, recruiter names, compensation discussions..." class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none resize-none leading-relaxed"></textarea>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-100 flex items-center justify-end gap-2">
+        <button onclick="closeNewAppModal()" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded-lg transition-colors">
+          Cancel
+        </button>
+        <button onclick="addNewApplication()" class="px-4 py-2 text-xs font-bold text-white bg-brand-600 hover:bg-brand-700 active:bg-brand-800 rounded-lg shadow-sm shadow-brand-600/30 transition-all">
+          Create Application
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- END: Log New Application Modal -->
+
+  <!-- BEGIN: Interactive Engine & Seed Dataset -->
+  <script>
+    // Verified Seed Application Dataset (55 Verified Live Roles)
+    const defaultApplications = [
+            { id: "app-1", company: "ITC Infotech", role: "Senior Scrum Master", location: "Hybrid • Bengaluru", platform: "DirectEmail", stage: "screening", date: "2026-11-06", contact: "Kartheek G (kartheek.g@itcinfotech.com)", notes: "Direct outreach email sent to recruiter with full candidate profile and resume reference. Follow-up scheduled." },
+            { id: "app-2", company: "Themesoft Inc.", role: "Scrum Master", location: "Remote • Ontario / Global", platform: "LinkedIn", stage: "applied", date: "2026-11-06", contact: "", notes: "Submitted via LinkedIn Easy Apply. Global remote client delivery." },
+            { id: "app-3", company: "Miratech (Req 4482521057)", role: "Scrum Master", location: "Remote • India / Global", platform: "LinkedIn", stage: "applied", date: "2026-11-06", contact: "", notes: "Applied via LinkedIn Easy Apply with full notice and gross compensation details." },
+            { id: "app-4", company: "Miratech (Req 4482503638)", role: "Scrum Master", location: "Remote • India / Global", platform: "LinkedIn", stage: "applied", date: "2026-11-06", contact: "", notes: "Applied via LinkedIn Easy Apply." },
+            { id: "app-5", company: "Claidroid", role: "Scrum Master – Automation & Agile Delivery", location: "Hybrid • Thiruvananthapuram", platform: "LinkedIn", stage: "applied", date: "2026-11-06", contact: "", notes: "Confirmed applied via LinkedIn Easy Apply." },
+            { id: "app-6", company: "Magnet HR Tech Digital", role: "Scrum Master", location: "On-site • Bengaluru", platform: "LinkedIn", stage: "applied", date: "2026-11-06", contact: "", notes: "Applied via LinkedIn with 0 days notice and Bengaluru location confirmed." },
+            { id: "app-7", company: "Magnet HR Tech Digital", role: "Scrum Master", location: "On-site • Pune Division", platform: "LinkedIn", stage: "applied", date: "2026-11-06", contact: "", notes: "Applied via LinkedIn." },
+            { id: "app-8", company: "ValueLabs", role: "IAM Scrum Master", location: "Remote • India", platform: "LinkedIn", stage: "applied", date: "2026-11-06", contact: "", notes: "Confirmed applied." },
+            { id: "app-9", company: "Barclays", role: "Scrum Master - AVP", location: "Hybrid • Bengaluru", platform: "LinkedIn", stage: "applied", date: "2026-11-06", contact: "", notes: "Confirmed applied." },
+            { id: "app-10", company: "Persistent Systems", role: "Senior Scrum Master", location: "On-site • Pune City", platform: "LinkedIn", stage: "applied", date: "2026-11-06", contact: "", notes: "Confirmed applied." },
+            { id: "app-11", company: "Capgemini", role: "FBS Scrum Master II.", location: "Hybrid • Hyderabad", platform: "LinkedIn", stage: "applied", date: "2026-11-06", contact: "", notes: "Confirmed applied." },
+            { id: "app-12", company: "ArcelorMittal Digital Consulting", role: "Scrum Master / Agile Delivery Lead", location: "On-site • Hyderabad", platform: "LinkedIn", stage: "applied", date: "2026-11-06", contact: "", notes: "Confirmed applied." },
+            { id: "app-13", company: "Nagarro", role: "AGILE-COACH / Scrum Master", location: "Hybrid • Bengaluru", platform: "Naukri", stage: "applied", date: "2026-11-06", contact: "", notes: "Confirmed applied via Naukri (HTTP 200)." },
+            { id: "app-14", company: "TekWissen", role: "Agile Delivery Manager", location: "Hybrid • Bengaluru", platform: "Naukri", stage: "applied", date: "2026-11-06", contact: "", notes: "Confirmed applied via Naukri." },
+            { id: "app-15", company: "CGI", role: "ServiceNow Scrum Master", location: "Hybrid • Hyderabad", platform: "Naukri", stage: "applied", date: "2026-11-06", contact: "", notes: "Confirmed applied via Naukri." },
+            { id: "app-16", company: "SG Analytics", role: "Senior Agile BA / Scrum Master", location: "Hybrid • Bengaluru", platform: "Naukri", stage: "applied", date: "2026-11-06", contact: "", notes: "Confirmed applied via Naukri." },
+            { id: "app-17", company: "UST", role: "Scrum Master I", location: "Hybrid • Maharashtra", platform: "Indeed", stage: "applied", date: "2026-11-06", contact: "", notes: "Confirmed applied via Indeed." },
+            { id: "app-18", company: "Staffnixcom", role: "Senior Project Manager - IT / Agile", location: "Hybrid • Bengaluru", platform: "Cutshort", stage: "screening", date: "2026-11-06", contact: "Mayank Choudhary", notes: "Direct conversational application submitted on Cutshort. Chat opened with founder/hiring lead." },
+            { id: "app-19", company: "Pantheon Inc", role: "Scrum Master – Enterprise Data & AI", location: "Remote • Global (India/Brazil/HU)", platform: "Indeed", stage: "applied", date: "2026-11-06", contact: "", notes: "Confirmed submitted via Indeed SmartApply (Technical screening & verification complete)." },
+            { id: "app-20", company: "Fulcrum Digital Inc", role: "Agile Scrum Master", location: "On-site • Pune Division", platform: "LinkedIn", stage: "applied", date: "2026-11-06", contact: "", notes: "Confirmed applied." },
+            { id: "app-21", company: "Vaisesika", role: "Scrum Master", location: "Hybrid • Bangalore Rural", platform: "LinkedIn", stage: "applied", date: "2026-11-06", contact: "", notes: "Confirmed applied." },
+            { id: "app-22", company: "Innova ESI", role: "Scrum Master", location: "On-site • Mumbai", platform: "LinkedIn", stage: "applied", date: "2026-11-06", contact: "", notes: "Confirmed applied." },
+            { id: "app-23", company: "Jobgether", role: "Scrum Master", location: "Remote • Worldwide", platform: "LinkedIn", stage: "applied", date: "2026-11-06", contact: "", notes: "Confirmed applied." },
+            { id: "app-24", company: "JiBe ERP", role: "Scrum Master", location: "On-site • Navi Mumbai", platform: "LinkedIn", stage: "applied", date: "2026-11-06", contact: "", notes: "Confirmed applied." },
+            { id: "app-25", company: "TechDoQuest", role: "Scrum Master Data Strategy", location: "Remote • India", platform: "LinkedIn", stage: "applied", date: "2026-11-07", contact: "", notes: "Submitted via LinkedIn Easy Apply. Jira 5y, Azure 3y, CCTC 20 LPA, Immediate Joiner (0 NP)." },
+            { id: "app-26", company: "Mizuho", role: "Fixed Income / Derivs Dev - Scrum Master", location: "Hybrid • Pune City", platform: "LinkedIn", stage: "applied", date: "2026-11-07", contact: "", notes: "Submitted via LinkedIn Easy Apply. Banking & Capital Markets. Overlap till 1 PM NY Time confirmed." },
+            { id: "app-27", company: "Allianz", role: "Scrum Master - Agile Methodologies", location: "Hybrid • Pune / Maharashtra", platform: "Hirist", stage: "applied", date: "2026-11-07", contact: "Tony Francis (HR)", notes: "Submitted via Hirist. 0% variable pay, No stock compensation confirmed." },
+            { id: "app-28", company: "Hiring Eye", role: "Senior Scrum Master - Agile Delivery", location: "On-site • Bangalore", platform: "Hirist", stage: "applied", date: "2026-11-07", contact: "", notes: "Submitted via Hirist with completed technical screening (CTC 20/25L, 0 NP, 5y Scrum, 6y Jira, 7y SDLC). 25-30 LPA range." },
+            { id: "app-29", company: "bswift", role: "Scrum Master - Project Management", location: "Hybrid • Bangalore", platform: "Hirist", stage: "applied", date: "2026-11-07", contact: "", notes: "Submitted via Hirist 1-click apply." },
+            { id: "app-30", company: "Allshore Technologies", role: "Technical Scrum Master - Agile Methodologies", location: "Hybrid • Multiple Locations", platform: "Hirist", stage: "applied", date: "2026-11-07", contact: "", notes: "Submitted via Hirist." },
+            { id: "app-31", company: "Allshore Technologies", role: "Technical Scrum Master", location: "Hybrid • Hyderabad", platform: "Hirist", stage: "applied", date: "2026-11-07", contact: "", notes: "Submitted via Hirist." },
+            { id: "app-32", company: "Talent Carpet HR Solutions", role: "Agile Delivery Lead", location: "Contractual • Chennai", platform: "Hirist", stage: "applied", date: "2026-11-07", contact: "", notes: "Submitted via Hirist. Cross-functional agile delivery across cloud, devops & QA." },
+            { id: "app-33", company: "Capgemini", role: "FBS Scrum Master II", location: "Hybrid • Hyderabad", platform: "LinkedIn", stage: "applied", date: "2026-11-07", contact: "", notes: "Submitted via LinkedIn Easy Apply. Capgemini Financial Services Business (FBS). 4-7 yrs exp." },
+            { id: "app-34", company: "ANSR", role: "Scrum Lead, IT [T500-30575]", location: "On-site • Hyderabad", platform: "LinkedIn", stage: "applied", date: "2026-11-07", contact: "", notes: "Submitted via LinkedIn Easy Apply. IT Scrum Lead for Global Delivery." },
+            { id: "app-35", company: "Exalto Consulting", role: "Scrum Master (LIMS/ELN)", location: "Remote • India / Global", platform: "LinkedIn", stage: "applied", date: "2026-11-07", contact: "", notes: "Submitted via LinkedIn Easy Apply. 100% remote 12-month contract." },
+            { id: "app-36", company: "UST", role: "Senior Scrum Master", location: "On-site • Bengaluru", platform: "LinkedIn", stage: "applied", date: "2026-11-07", contact: "", notes: "Submitted via LinkedIn Easy Apply. Confirmed 0-day immediate joiner requirement and 5-day onsite availability." },
+            { id: "app-37", company: "ANSR", role: "Scrum Lead, IT [T500-30214]", location: "On-site • Hyderabad", platform: "LinkedIn", stage: "applied", date: "2026-11-07", contact: "", notes: "Submitted via LinkedIn Easy Apply. Verified job posting." },
+            { id: "app-38", company: "ANSR", role: "Scrum Lead, IT [T500-30295]", location: "On-site • Hyderabad", platform: "LinkedIn", stage: "applied", date: "2026-11-07", contact: "", notes: "Submitted via LinkedIn Easy Apply. Global technology team delivery." },
+            { id: "app-39", company: "DigiHelic", role: "Agile Scrum Master - ServiceNow", location: "Hybrid • Multiple Locations", platform: "Hirist", stage: "applied", date: "2026-11-09", contact: "", notes: "Submitted via Hirist 1-click apply. ServiceNow ITOM/ITSM & Agile delivery frameworks." },
+            { id: "app-40", company: "Scaling Theory Technologies", role: "Agile Delivery & Release Manager", location: "On-site • Bangalore", platform: "Hirist", stage: "applied", date: "2026-11-09", contact: "", notes: "Submitted via Hirist. Completed screening: 0 Days notice period (Immediate Joiner)." },
+            { id: "app-41", company: "Papigen", role: "Project Manager / Scrum Master – SAFe Agile (Finance Technology)", location: "Hybrid • Chennai", platform: "LinkedIn", stage: "applied", date: "2026-11-09", contact: "", notes: "Submitted via LinkedIn Easy Apply. Completed 7-page screening (0 days notice, 20L CCTC / 25L ECTC, SAFe 6.0 SSM, Azure DevOps 4y)." },
+            { id: "app-42", company: "Papigen", role: "Scrum Master / Project Manager", location: "Hybrid • Chennai", platform: "LinkedIn", stage: "applied", date: "2026-11-09", contact: "", notes: "Submitted via LinkedIn Easy Apply. Completed 7-page screening (0 days notice, 20L/25L, 4y SM exp, CSM & SAFe SSM certified)." },
+            { id: "app-43", company: "Canviza Services Private Limited", role: "Scrum Master", location: "On-site • Greater Kolkata Area", platform: "LinkedIn", stage: "applied", date: "2026-11-09", contact: "", notes: "Submitted via LinkedIn Easy Apply. Completed screening: Bachelor's Degree confirmed, 0-Day Notice (Immediate Joiner)." },
+            { id: "app-44", company: "RED Global", role: "DADAI Portfolio Scrum Master/220", location: "Remote • India / Global", platform: "LinkedIn", stage: "applied", date: "2026-11-10", contact: "", notes: "Submitted via LinkedIn Easy Apply. Completed 5-part screening: Jira 5y, SM/Coach 4y, Scrum 4y, Kanban 4y, SAFe 4y, 0-Day Notice." },
+            { id: "app-45", company: "BE Consultancy Group", role: "Senior Business Analyst / Agile Lead – Digital Marketplaces & AI (USD Contractor)", location: "Remote • India / Europe (USD)", platform: "LinkedIn", stage: "applied", date: "2026-11-10", contact: "", notes: "Submitted via LinkedIn Easy Apply. 100% Remote USD contractor agreement. Completed 12-question screening: 7y IT, 4y BA, 4y AppDev, 3y AI/ML features, 3y Data/Lifecycle, CSM & SAFe certified." },
+            { id: "app-46", company: "Netscribes", role: "Technical Project Manager", location: "Hybrid • Mumbai Metropolitan Region", platform: "LinkedIn", stage: "applied", date: "2026-11-10", contact: "", notes: "Submitted via LinkedIn Easy Apply. Mumbai engineering pod delivery leadership. Completed screening: 5y PM, 7y SDLC & Agile, 0 Days notice (Immediate Joiner), Mumbai confirmed." },
+            { id: "app-47", company: "Jobgether", role: "Product Owner (SAFe Enterprise)", location: "Remote • India", platform: "LinkedIn", stage: "applied", date: "2026-11-10", contact: "", notes: "Submitted via LinkedIn Easy Apply. Mature agile enterprise delivery in SAFe environment. Completed screening: Location confirmed Mumbai, India." },
+            { id: "app-48", company: "ERP Logic Israel, SAP Partner", role: "Scrum Master", location: "Remote • India", platform: "LinkedIn", stage: "applied", date: "2026-11-11", contact: "", notes: "Submitted via LinkedIn Easy Apply. 100% Remote Scrum Master role. Screening: Bachelor's Degree: Yes, Notice period: 0 Days (Immediate Joiner), SM Exp: 5y, CSM & SAFe certified: Yes, Data/BI/Enterprise exp: Yes." },
+            { id: "app-49", company: "robusta", role: "Scrum Master - Remote - 3 Months - Octopus by RTG", location: "Remote • India", platform: "Indeed", stage: "applied", date: "2026-11-11", contact: "", notes: "Submitted via Indeed SmartApply. 100% Remote Scrum Master role. Screening: Notice: 0 Days (Immediate Joiner), CCTC ₹20L / ECTC ₹25L, SM Exp: 5y, 3 Squads (7-9 members), Scrum/Kanban/SAFe 6.0, 3m contract: True." },
+            { id: "app-50", company: "Kroll", role: "Scrum Master", location: "New Delhi • Hybrid / Remote", platform: "Naukri", stage: "applied", date: "2026-11-11", contact: "", notes: "Submitted via 1-click Naukri application directly inside Google Chrome session. Full CSM & SAFe profile and resume submitted. Fresh opening posted Nov 11, 2026." },
+            { id: "app-51", company: "Deloitte India", role: "Senior Consultant | APM: SafeScrum Master", location: "Bengaluru • Finance Transformation", platform: "Email / InVirtual", stage: "screening", date: "2026-11-10", contact: "Talent Acquisition Team", notes: "15-minute Preliminary Virtual Screening successfully completed on Nov 12, 2026. Highlighted SAFe® 6 SSM, BFSI delivery leadership (68% to 88% predictability), and multi-squad ART facilitation. Awaiting Technical / Hiring Manager evaluation schedule." },
+            { id: "app-52", company: "Concentrix", role: "Scrum Master (Technical Delivery & Agile KPI)", location: "Mumbai • Remote / Hybrid", platform: "Direct Email / LinkedIn", stage: "applied", date: "2026-11-11", contact: "Pavithra Prashanth (Manager - TA, Pavithra.mahantesh@concentrix.com)", notes: "Direct outreach to TA Manager via LinkedIn lead with Balaji_Palani_Scrum_Master_Resume.pdf attached. Addressed all mandatory skills: SDLC, Micro Frontends, Cloud/CI-CD, Jira/ADO, KPI metrics, and 0-Day Immediate Joiner." },
+            { id: "app-53", company: "VeersaTech", role: "Scrum Master - Noida", location: "Noida • Remote / Hybrid", platform: "Veersa LOOPIN", stage: "applied", date: "2026-11-11", contact: "", notes: "Submitted via Veersa LOOPIN portal (careers/70). Full profile populated: CSM & SAFe SSM, 7y IT / 4y SM, 0-Day Notice, ₹20L/₹25L, Anna University (2016), live portfolio linked." },
+            { id: "app-54", company: "Haparz", role: "Scrum Master (E-commerce Domain)", location: "Remote • India", platform: "Direct Email / LinkedIn", stage: "applied", date: "2026-11-11", contact: "Jansi Rani Velmurugan (TA / Recruiter, jansi@haparz.com)", notes: "Direct application to recruiter from organic LinkedIn hiring post with Balaji_Palani_Scrum_Master_Resume.pdf attached. Tailored for E-commerce & FinTech agile delivery, backlog grooming, sprint predictability, and 0-Day Notice." },
+            { id: "app-55", company: "Xtivia", role: "Scrum Master / Agile Delivery Lead", location: "Remote / Hybrid • India", platform: "Direct Email / LinkedIn", stage: "applied", date: "2026-11-11", contact: "Nanda S. (Technical Recruiter, nandamath097@gmail.com)", notes: "Direct outreach to technical recruiter from LinkedIn feed with Balaji_Palani_Scrum_Master_Resume.pdf attached. Focused on SDLC leadership, CI/CD, multi-squad SAFe PI planning, velocity forecasting, and 0-Day immediate availability." }
+        ];
+
+    // 6 Pipeline Stages Configuration
+    const stages = [
+      { id: "applied", title: "Applied / In Review", color: "blue", border: "border-blue-200/80", dot: "bg-blue-500 ring-4 ring-blue-100", badge: "bg-blue-100 text-blue-800" },
+      { id: "screening", title: "Recruiter Screening", color: "amber", border: "border-amber-200/80", dot: "bg-amber-500 ring-4 ring-amber-100", badge: "bg-amber-100 text-amber-800" },
+      { id: "technical", title: "Tech & HM Round", color: "purple", border: "border-purple-200/80", dot: "bg-purple-500 ring-4 ring-purple-100", badge: "bg-purple-100 text-purple-800" },
+      { id: "final", title: "Final / Leadership", color: "indigo", border: "border-indigo-200/80", dot: "bg-indigo-500 ring-4 ring-indigo-100", badge: "bg-indigo-100 text-indigo-800" },
+      { id: "offer", title: "Offer Extended 🎉", color: "emerald", border: "border-emerald-200/80", dot: "bg-emerald-500 ring-4 ring-emerald-100", badge: "bg-emerald-100 text-emerald-800" },
+      { id: "archived", title: "Archived / Closed", color: "slate", border: "border-slate-200/80", dot: "bg-slate-400 ring-4 ring-slate-100", badge: "bg-slate-200 text-slate-700" }
+    ];
+
+    let applications = [];
+    let currentPlatformFilter = 'all';
+    let currentWorkModeFilter = 'all';
+    let currentSearchQuery = '';
+    let currentSort = 'newest';
+    let currentView = 'board';
+    let selectedAppId = null;
+
+    // Initialize Data with local storage fallback
+    function initData() {
+      try {
+        const stored = localStorage.getItem('apptracker_data_v6');
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          const existingIds = new Set(parsed.map(a => a.id));
+          let updated = false;
+          defaultApplications.forEach(defApp => {
+            if (!existingIds.has(defApp.id)) {
+              parsed.push(defApp);
+              updated = true;
+            }
+          });
+          applications = parsed;
+          if (updated) saveData();
+        } else {
+          applications = [...defaultApplications];
+          saveData();
+        }
+      } catch (e) {
+        console.error("Storage error:", e);
+        applications = [...defaultApplications];
+      }
+      window.applications = applications;
+    }
+
+    function saveData() {
+      try {
+        localStorage.setItem('apptracker_data_v6', JSON.stringify(applications));
+      } catch (e) {
+        console.error("Save error:", e);
+      }
+      window.applications = applications;
+      updateKPIs();
+    }
+
+    // Update KPI Counters & Progress Bars
+    function updateKPIs() {
+      const total = applications.length;
+      const screeningCount = applications.filter(a => a.stage === 'screening').length;
+      const technicalCount = applications.filter(a => a.stage === 'technical').length;
+      const offerCount = applications.filter(a => a.stage === 'offer' || a.stage === 'final').length;
+      const appliedCount = applications.filter(a => a.stage === 'applied').length;
+
+      document.getElementById('statTotal').innerText = `${total} Roles`;
+      const pill = document.getElementById('stat-synced-pill');
+      if (pill) pill.innerText = `${total} Roles Synced`;
+
+      document.getElementById('statScreening').innerText = `${screeningCount} Active`;
+      const screeningRate = total > 0 ? Math.round((screeningCount / total) * 100) : 0;
+      document.getElementById('statScreeningRate').innerText = `(${screeningRate}% conv.)`;
+
+      document.getElementById('statTechnical').innerText = `${technicalCount} High-Priority`;
+      document.getElementById('statOffer').innerText = `${offerCount} In Discussion`;
+
+      // Velocity Bar calculation
+      const advancedCount = screeningCount + technicalCount + offerCount;
+      const velocityRate = total > 0 ? ((advancedCount / total) * 100).toFixed(1) : 0;
+      const velText = document.getElementById('velocityText');
+      if (velText) velText.innerText = `${velocityRate}% Stage Progression`;
+
+      if (total > 0) {
+        const pApplied = (appliedCount / total) * 100;
+        const pScreening = (screeningCount / total) * 100;
+        const pTechnical = (technicalCount / total) * 100;
+        const pOffer = (offerCount / total) * 100;
+
+        document.getElementById('bar-applied').style.width = `${pApplied}%`;
+        document.getElementById('bar-screening').style.width = `${pScreening}%`;
+        document.getElementById('bar-technical').style.width = `${pTechnical}%`;
+        document.getElementById('bar-offer').style.width = `${pOffer}%`;
+      }
+
+      // Dynamic platform counts
+      document.getElementById('count-all').innerText = total;
+      ['LinkedIn', 'Hirist', 'Naukri', 'DirectEmail', 'Indeed', 'Cutshort'].forEach(p => {
+        const el = document.getElementById(`count-${p}`);
+        if (el) el.innerText = applications.filter(a => a.platform === p).length;
+      });
+    }
+
+    // Filter Logic
+    function getFilteredApplications() {
+      return applications.filter(app => {
+        // Platform Filter
+        const matchesPlatform = currentPlatformFilter === 'all' || 
+          app.platform.toLowerCase() === currentPlatformFilter.toLowerCase() ||
+          (currentPlatformFilter === 'DirectEmail' && (app.platform === 'DirectEmail' || app.platform === 'DirectATS'));
+
+        // Work Mode Filter
+        let matchesMode = true;
+        const loc = (app.location || '').toLowerCase();
+        if (currentWorkModeFilter === 'remote') {
+          matchesMode = loc.includes('remote');
+        } else if (currentWorkModeFilter === 'hybrid') {
+          matchesMode = loc.includes('hybrid') || loc.includes('onsite') || (!loc.includes('remote'));
+        }
+
+        // Search Query
+        const q = currentSearchQuery.toLowerCase().trim();
+        const matchesSearch = !q || 
+          app.company.toLowerCase().includes(q) ||
+          app.role.toLowerCase().includes(q) ||
+          (app.location && app.location.toLowerCase().includes(q)) ||
+          (app.notes && app.notes.toLowerCase().includes(q)) ||
+          (app.contact && app.contact.toLowerCase().includes(q));
+
+        return matchesPlatform && matchesMode && matchesSearch;
+      }).sort((a, b) => {
+        if (currentSort === 'company') {
+          return a.company.localeCompare(b.company);
+        } else if (currentSort === 'stage') {
+          const stageOrder = { applied: 1, screening: 2, technical: 3, final: 4, offer: 5, archived: 6 };
+          return (stageOrder[a.stage] || 99) - (stageOrder[b.stage] || 99);
+        } else {
+          // Default: velocity / newest first (extract id numeric suffix or date)
+          const numA = parseInt(a.id.replace('app-', '')) || 0;
+          const numB = parseInt(b.id.replace('app-', '')) || 0;
+          return numB - numA;
+        }
+      });
+    }
+
+    // Platform Badge Styler
+    function getPlatformBadge(platform) {
+      switch(platform) {
+        case 'LinkedIn':
+          return '<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 text-brand-600 border border-blue-200">LinkedIn</span>';
+        case 'Hirist':
+          return '<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-purple-50 text-purple-700 border border-purple-200">Hirist</span>';
+        case 'Naukri':
+          return '<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-cyan-50 text-cyan-700 border border-cyan-200">Naukri</span>';
+        case 'Indeed':
+          return '<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-200">Indeed</span>';
+        case 'Cutshort':
+          return '<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-amber-50 text-amber-800 border border-amber-200">Cutshort</span>';
+        case 'DirectATS':
+          return '<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-amber-50 text-amber-800 border border-amber-200">Direct ATS</span>';
+        case 'DirectEmail':
+          return '<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">Direct Pitch</span>';
+        default:
+          return `<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-200">${platform}</span>`;
+      }
+    }
+
+    // Render Kanban Board
+    function renderBoard() {
+      const container = document.getElementById('pipelineContainer');
+      container.innerHTML = '';
+      const filtered = getFilteredApplications();
+
+      stages.forEach(stage => {
+        const stageApps = filtered.filter(a => a.stage === stage.id);
+
+        const col = document.createElement('div');
+        col.className = `flex-1 flex flex-col h-full bg-slate-100/90 rounded-2xl border ${stage.border} shadow-xs min-w-[320px] max-w-[370px] select-none`;
+        col.dataset.stageId = stage.id;
+        col.ondragover = handleDragOver;
+        col.ondragleave = handleDragLeave;
+        col.ondrop = handleDrop;
+
+        col.innerHTML = `
+          <!-- Column Header -->
+          <div class="p-3.5 border-b border-slate-200/80 flex items-center justify-between bg-white/70 rounded-t-2xl backdrop-blur-xs">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full ${stage.dot}"></span>
+              <h3 class="font-bold text-slate-900 text-xs uppercase tracking-wider">${stage.title}</h3>
+              <span class="${stage.badge} text-[11px] font-bold px-2 py-0.5 rounded-full">${stageApps.length}</span>
+            </div>
+          </div>
+          <!-- Cards Scrollable Container -->
+          <div id="cards-${stage.id}" class="p-3 space-y-3 overflow-y-auto kanban-scroll flex-1 max-h-[calc(100vh-250px)] min-h-[460px]">
+          </div>
+        `;
+
+        container.appendChild(col);
+
+        const cardsContainer = col.querySelector(`#cards-${stage.id}`);
+        if (stageApps.length === 0) {
+          cardsContainer.innerHTML = `
+            <div class="h-36 border border-dashed border-slate-300/80 rounded-2xl flex flex-col items-center justify-center text-slate-400 text-xs font-medium gap-1">
+              <i class="fa-solid fa-inbox text-slate-300 text-base"></i>
+              <span>No applications</span>
+            </div>
+          `;
+        } else {
+          stageApps.forEach(app => {
+            cardsContainer.appendChild(createCard(app));
+          });
+        }
+      });
+    }
+
+    // Create Interactive Card Element
+    function createCard(app) {
+      const card = document.createElement('div');
+      card.className = 'bg-white rounded-xl p-3.5 border border-slate-200/90 shadow-card hover:shadow-md hover:border-brand-500/50 transition-all cursor-pointer group pipeline-card';
+      card.id = app.id;
+      card.draggable = true;
+      card.ondragstart = handleDragStart;
+      card.ondragend = handleDragEnd;
+      card.onclick = (e) => {
+        if (e.target.closest('button')) return;
+        openAppModal(app.id);
+      };
+
+      const isRemote = (app.location || '').toLowerCase().includes('remote');
+      const locIcon = isRemote ? 'fa-globe' : 'fa-location-dot';
+
+      card.innerHTML = `
+        <div class="flex items-start justify-between gap-2">
+          <div>
+            <span class="font-bold text-slate-900 group-hover:text-brand-600 transition-colors text-sm leading-tight">${app.company}</span>
+            <p class="text-xs font-semibold text-slate-700 mt-0.5">${app.role}</p>
+          </div>
+          ${getPlatformBadge(app.platform)}
+        </div>
+
+        <div class="mt-2 flex items-center gap-2 text-[11px] text-slate-500">
+          <span class="flex items-center gap-1">
+            <i class="fa-solid ${locIcon} text-slate-400"></i>
+            <span>${app.location || 'Remote'}</span>
+          </span>
+        </div>
+
+        ${app.contact ? `
+          <div class="mt-2 text-[10px] text-emerald-800 flex items-center gap-1.5 font-medium bg-emerald-50 px-2 py-1 rounded-lg border border-emerald-200 truncate">
+            <i class="fa-solid fa-user-tie text-emerald-600"></i>
+            <span class="truncate">${app.contact}</span>
+          </div>
+        ` : ''}
+
+        ${app.interviewDate ? `
+          <div class="mt-2 text-[10px] text-amber-800 flex items-center gap-1.5 font-semibold bg-amber-50 px-2 py-1 rounded-lg border border-amber-200">
+            <i class="fa-solid fa-calendar-check text-amber-600"></i>
+            <span>Interview: ${app.interviewDate}</span>
+          </div>
+        ` : ''}
+
+        ${app.notes ? `
+          <div class="mt-2 p-2 bg-slate-50 rounded-lg text-[11px] text-slate-600 border border-slate-100 leading-relaxed line-clamp-2">
+            ${app.notes}
+          </div>
+        ` : ''}
+
+        <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px]">
+          <span class="text-slate-400 font-mono text-[10px]">${app.date || 'Active'}</span>
+          <button class="text-brand-600 font-semibold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+            <span>Details</span>
+            <i class="fa-solid fa-chevron-right text-[9px]"></i>
+          </button>
+        </div>
+      `;
+
+      return card;
+    }
+
+    // Render Table View
+    function renderTable() {
+      const tbody = document.getElementById('tableBody');
+      tbody.innerHTML = '';
+      const filtered = getFilteredApplications();
+      document.getElementById('tableFilteredCount').innerText = filtered.length;
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="8" class="text-center py-12 text-slate-400 font-medium">
+              No applications match your filter criteria.
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      filtered.forEach(app => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-slate-50 transition cursor-pointer';
+        tr.onclick = (e) => {
+          if (e.target.closest('select') || e.target.closest('button')) return;
+          openAppModal(app.id);
+        };
+
+        tr.innerHTML = `
+          <td class="py-3.5 px-5 font-bold text-slate-900">${app.company}</td>
+          <td class="py-3.5 px-5 text-slate-800 font-medium">${app.role}</td>
+          <td class="py-3.5 px-5">${getPlatformBadge(app.platform)}</td>
+          <td class="py-3.5 px-5 text-slate-500 text-xs">${app.location || 'Remote'}</td>
+          <td class="py-3.5 px-5">
+            <select onchange="updateStage('${app.id}', this.value)" class="bg-slate-50 text-slate-800 text-xs px-2.5 py-1.5 rounded-lg border border-slate-200 focus:outline-none focus:border-brand-500 font-semibold">
+              ${stages.map(s => `<option value="${s.id}" ${s.id === app.stage ? 'selected' : ''}>${s.title}</option>`).join('')}
+            </select>
+          </td>
+          <td class="py-3.5 px-5 text-slate-400 text-xs font-mono">${app.date || 'Active'}</td>
+          <td class="py-3.5 px-5 text-slate-600 max-w-xs truncate">
+            ${app.contact ? `<span class="text-emerald-700 font-semibold">[${app.contact}]</span> ` : ''}
+            <span>${app.notes || '—'}</span>
+          </td>
+          <td class="py-3.5 px-5 text-right">
+            <button onclick="openAppModal('${app.id}')" class="text-brand-600 hover:text-brand-800 font-semibold text-xs px-2.5 py-1.5 rounded-lg hover:bg-brand-50 transition">
+              Edit →
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Switch View (Board vs Table)
+    function switchView(view) {
+      currentView = view;
+      const btnBoard = document.getElementById('viewBtnBoard');
+      const btnTable = document.getElementById('viewBtnTable');
+      const boardEl = document.getElementById('boardView');
+      const tableEl = document.getElementById('tableView');
+
+      if (view === 'board') {
+        btnBoard.className = 'px-2.5 py-1.5 rounded-md bg-white text-brand-700 shadow-sm flex items-center gap-1.5 transition-all';
+        btnTable.className = 'px-2.5 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-1.5';
+        boardEl.classList.remove('hidden');
+        tableEl.classList.add('hidden');
+      } else {
+        btnTable.className = 'px-2.5 py-1.5 rounded-md bg-white text-brand-700 shadow-sm flex items-center gap-1.5 transition-all';
+        btnBoard.className = 'px-2.5 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-1.5';
+        boardEl.classList.add('hidden');
+        tableEl.classList.remove('hidden');
+      }
+      render();
+    }
+
+    // Filter Controls
+    function setPlatformFilter(platform) {
+      currentPlatformFilter = platform;
+      document.querySelectorAll('.platform-filter-pill').forEach(btn => {
+        if (btn.dataset.platform === platform) {
+          btn.className = 'platform-filter-pill px-2.5 py-1 rounded-full bg-slate-900 text-white shadow-sm flex items-center gap-1 transition-all';
+          const badge = btn.querySelector('span:last-child');
+          if (badge) badge.className = 'bg-slate-700 text-white px-1.5 py-0.2 rounded-full text-[10px]';
+        } else {
+          btn.className = 'platform-filter-pill px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200/70 text-slate-700 border border-slate-200 transition-colors flex items-center gap-1';
+          const badge = btn.querySelector('span:last-child');
+          if (badge) badge.className = 'bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded-full text-[10px]';
+        }
+      });
+      render();
+    }
+
+    function setWorkModeFilter(mode) {
+      currentWorkModeFilter = mode;
+      document.querySelectorAll('.mode-filter-btn').forEach(btn => {
+        btn.className = 'mode-filter-btn px-2 py-0.5 text-slate-600 hover:text-slate-900';
+      });
+      const activeBtn = document.getElementById(`mode-${mode}`);
+      if (activeBtn) {
+        activeBtn.className = 'mode-filter-btn px-2 py-0.5 rounded bg-white font-semibold text-slate-700 shadow-xs';
+      }
+      render();
+    }
+
+    function handleSortChange(sortVal) {
+      currentSort = sortVal;
+      render();
+    }
+
+    function handleSearch() {
+      const query = document.getElementById('searchInput').value;
+      currentSearchQuery = query;
+      const clearBtn = document.getElementById('clearSearchBtn');
+      if (query.trim()) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+      render();
+    }
+
+    function clearSearch() {
+      document.getElementById('searchInput').value = '';
+      currentSearchQuery = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      render();
+    }
+
+    // Drag & Drop
+    let draggedAppId = null;
+
+    function handleDragStart(e) {
+      draggedAppId = e.target.id;
+      e.dataTransfer.setData('text/plain', e.target.id);
+      e.target.classList.add('is-dragging');
+    }
+
+    function handleDragEnd(e) {
+      e.target.classList.remove('is-dragging');
+      document.querySelectorAll('[data-stage-id]').forEach(col => col.classList.remove('drag-target-active'));
+    }
+
+    function handleDragOver(e) {
+      e.preventDefault();
+      const col = e.currentTarget;
+      col.classList.add('drag-target-active');
+    }
+
+    function handleDragLeave(e) {
+      e.currentTarget.classList.remove('drag-target-active');
+    }
+
+    function handleDrop(e) {
+      e.preventDefault();
+      const col = e.currentTarget;
+      col.classList.remove('drag-target-active');
+      const targetStage = col.dataset.stageId;
+      const appId = e.dataTransfer.getData('text/plain') || draggedAppId;
+
+      if (appId && targetStage) {
+        const app = applications.find(a => a.id === appId);
+        if (app && app.stage !== targetStage) {
+          app.stage = targetStage;
+          saveData();
+          render();
+        }
+      }
+    }
+
+    function updateStage(appId, newStage) {
+      const app = applications.find(a => a.id === appId);
+      if (app) {
+        app.stage = newStage;
+        saveData();
+        render();
+      }
+    }
+
+    // Modal Details & Edit
+    function openAppModal(id) {
+      selectedAppId = id;
+      const app = applications.find(a => a.id === id);
+      if (!app) return;
+
+      document.getElementById('modalCompany').innerText = app.company;
+      document.getElementById('modalRole').innerText = app.role;
+      document.getElementById('modalPlatformBadge').innerHTML = getPlatformBadge(app.platform);
+      document.getElementById('modalStageSelect').value = app.stage;
+      document.getElementById('modalInterviewDate').value = app.interviewDate || '';
+      document.getElementById('modalContactPerson').value = app.contactPerson || (app.contact ? app.contact.split('(')[0].trim() : '');
+      document.getElementById('modalContactInfo').value = app.contactInfo || '';
+      document.getElementById('modalLocation').value = app.location || '';
+      document.getElementById('modalNotes').value = app.notes || '';
+      document.getElementById('modalMeta').innerText = `Created: ${app.date || 'Active'} • ID: ${app.id}`;
+
+      document.getElementById('appModal').classList.remove('hidden');
+    }
+
+    function closeAppModal() {
+      document.getElementById('appModal').classList.add('hidden');
+      selectedAppId = null;
+    }
+
+    function saveAppModalChanges() {
+      if (!selectedAppId) return;
+      const app = applications.find(a => a.id === selectedAppId);
+      if (!app) return;
+
+      app.stage = document.getElementById('modalStageSelect').value;
+      app.interviewDate = document.getElementById('modalInterviewDate').value;
+      app.contactPerson = document.getElementById('modalContactPerson').value.trim();
+      app.contactInfo = document.getElementById('modalContactInfo').value.trim();
+      if (app.contactPerson) {
+        app.contact = app.contactInfo ? `${app.contactPerson} (${app.contactInfo})` : app.contactPerson;
+      } else {
+        app.contact = "";
+      }
+      app.location = document.getElementById('modalLocation').value.trim() || app.location;
+      app.notes = document.getElementById('modalNotes').value.trim();
+
+      saveData();
+      closeAppModal();
+      render();
+    }
+
+    function deleteCurrentApp() {
+      if (!selectedAppId) return;
+      const app = applications.find(a => a.id === selectedAppId);
+      if (!app) return;
+
+      if (confirm(`Delete application for ${app.company} (${app.role})?`)) {
+        applications = applications.filter(a => a.id !== selectedAppId);
+        saveData();
+        closeAppModal();
+        render();
+      }
+    }
+
+    // Log New Application Modal
+    function openNewAppModal() {
+      document.getElementById('newCompany').value = '';
+      document.getElementById('newRole').value = 'Senior Scrum Master';
+      document.getElementById('newPlatform').value = 'LinkedIn';
+      document.getElementById('newStage').value = 'applied';
+      document.getElementById('newLocation').value = 'Hybrid • Bengaluru';
+      document.getElementById('newNotes').value = '';
+      document.getElementById('newAppModal').classList.remove('hidden');
+    }
+
+    function closeNewAppModal() {
+      document.getElementById('newAppModal').classList.add('hidden');
+    }
+
+    function addNewApplication() {
+      const company = document.getElementById('newCompany').value.trim();
+      const role = document.getElementById('newRole').value.trim();
+      if (!company || !role) {
+        alert("Please enter Company Name and Role Title.");
+        return;
+      }
+
+      const newApp = {
+        id: "app-" + Date.now(),
+        company: company,
+        role: role,
+        platform: document.getElementById('newPlatform').value,
+        stage: document.getElementById('newStage').value,
+        location: document.getElementById('newLocation').value.trim() || "Remote",
+        date: new Date().toISOString().split('T')[0],
+        notes: document.getElementById('newNotes').value.trim(),
+        contact: ""
+      };
+
+      applications.unshift(newApp);
+      saveData();
+      closeNewAppModal();
+      render();
+    }
+
+    // CSV Export & Reset
+    function exportDataCSV() {
+      const headers = ["ID", "Company", "Role", "Platform", "Stage", "Location", "Date", "Contact", "Notes"];
+      const rows = applications.map(a => [
+        `"${a.id}"`,
+        `"${(a.company || '').replace(/"/g, '""')}"`,
+        `"${(a.role || '').replace(/"/g, '""')}"`,
+        `"${(a.platform || '').replace(/"/g, '""')}"`,
+        `"${(a.stage || '').replace(/"/g, '""')}"`,
+        `"${(a.location || '').replace(/"/g, '""')}"`,
+        `"${(a.date || '').replace(/"/g, '""')}"`,
+        `"${(a.contact || '').replace(/"/g, '""')}"`,
+        `"${(a.notes || '').replace(/"/g, '""')}"`
+      ]);
+
+      const csvContent = "data:text/csv;charset=utf-8," + [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+      const a = document.createElement('a');
+      a.setAttribute("href", encodeURI(csvContent));
+      a.setAttribute("download", `Balaji_ScrumMaster_Pipeline_${new Date().toISOString().split('T')[0]}.csv`);
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    }
+
+    function resetToDefaults() {
+      if (confirm("Reset CRM to default 55 verified applications? Custom edits will be refreshed.")) {
+        applications = [...defaultApplications];
+        saveData();
+        render();
+      }
+    }
+
+    // Keyboard Shortcuts
+    document.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) searchInput.focus();
+      }
+      if (e.key === 'Escape') {
+        closeAppModal();
+        closeNewAppModal();
+      }
+    });
+
+    // Master Render Trigger
+    function render() {
+      if (currentView === 'board') {
+        renderBoard();
+      } else {
+        renderTable();
+      }
+      updateKPIs();
+    }
+
+    // Initialize Engine
+    initData();
+    render();
+  </script>
+  <!-- END: Interactive Engine & Seed Dataset -->
+
+</body>
+</html>
