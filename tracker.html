@@ -1,552 +1,1188 @@
 <!DOCTYPE html>
-<html class="h-full bg-slate-50" lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>AppTracker Pro | Executive Agile Recruitment CRM - Balaji Palani</title>
-  
-  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
-  
-  <!-- FontAwesome 6 Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-  
-  <!-- Tailwind CSS v3 with Forms & Container Plugins -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
-          },
-          colors: {
-            brand: {
-              50: '#eff6ff',
-              100: '#dbeafe',
-              500: '#3b82f6',
-              600: '#2563eb',
-              700: '#1d4ed8',
-              800: '#1e40af',
-              900: '#1e3a8a',
-            }
-          },
-          boxShadow: {
-            'subtle': '0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.04)',
-            'card': '0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -2px rgba(0, 0, 0, 0.03)',
-            'modal': '0 25px 50px -12px rgba(15, 23, 42, 0.25)',
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Balaji Palani • AppTracker Pro Enterprise CRM</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }
+.kanban-card { cursor: grab; transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease; }
+.kanban-card:active { cursor: grabbing; }
+.kanban-card.is-dragging { opacity: 0.45; transform: scale(0.98); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+.kanban-column.drag-over { background-color: #e2f4ea !important; outline: 2px dashed #3b6750; outline-offset: -2px; }
+.kanban-column.drag-over .card-drop-zone { background-color: rgba(59, 103, 80, 0.05); }
+</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-container": "#b35c41", "on-primary-container": "#fffbff", "tertiary-fixed": "#ffdbd1", "tertiary": "#96432a", "on-error": "#ffffff", "primary-fixed": "#ffdbd0", "on-surface-variant": "#55433e", "surface-tint": "#97472e", "tertiary-container": "#b55b40", "surface-variant": "#dee2ec", "tertiary-fixed-dim": "#ffb59f", "primary": "#94452c", "outline": "#88726c", "on-surface": "#171c23", "on-secondary-fixed-variant": "#234f3a", "inverse-primary": "#ffb59f", "secondary-container": "#bdeed0", "secondary-fixed": "#bdeed0", "on-primary-fixed-variant": "#793019", "inverse-on-surface": "#edf1fb", "surface-container-lowest": "#ffffff", "secondary-fixed-dim": "#a2d1b5", "on-tertiary-container": "#fffbff", "on-tertiary-fixed-variant": "#7a2f17", "on-secondary-fixed": "#002113", "on-background": "#171c23", "on-primary": "#ffffff", "surface-container-highest": "#dee2ec", "outline-variant": "#dbc1ba", "surface-dim": "#d6dae4", "on-error-container": "#93000a", "surface-container-high": "#e4e8f2", "on-secondary": "#ffffff", "background": "#f8f9ff", "on-primary-fixed": "#3a0a00", "primary-fixed-dim": "#ffb59f", "surface-container-low": "#f0f4fd", "inverse-surface": "#2c3138", "surface": "#f8f9ff", "on-tertiary": "#ffffff", "error": "#ba1a1a", "secondary": "#3b6750", "surface-container": "#eaeef8", "error-container": "#ffdad6", "on-secondary-container": "#416d56", "on-tertiary-fixed": "#3b0a00", "surface-bright": "#f8f9ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xs": "0.25rem", "margin-mobile": "1.25rem", "gutter": "1.5rem", "space-sm": "0.5rem", "space-md": "1rem", "gutter-mobile": "1rem", "margin": "3rem", "space-xl": "2.5rem", "space-lg": "1.5rem" }, "fontFamily": { "headline-xl": [ "Newsreader" ], "display-lg-mobile": [ "Newsreader" ], "label-sm": [ "JetBrains Mono" ], "display-lg": [ "Newsreader" ], "headline-md": [ "Newsreader" ], "label-md": [ "JetBrains Mono" ], "headline-sm": [ "Hanken Grotesk" ], "body-lg": [ "Hanken Grotesk" ], "body-sm": [ "Hanken Grotesk" ], "body-xl": [ "Newsreader" ], "body-md": [ "Hanken Grotesk" ], "label-lg": [ "Hanken Grotesk" ], "headline-lg": [ "Newsreader" ], "headline-xl-mobile": [ "Newsreader" ] }, "fontSize": { "headline-xl": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "400" } ], "display-lg-mobile": [ "38px", { "lineHeight": "46px", "letterSpacing": "-0.02em", "fontWeight": "400" } ], "label-sm": [ "10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" } ], "display-lg": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.025em", "fontWeight": "400" } ], "headline-md": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "headline-sm": [ "19px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-lg": [ "16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" } ], "body-sm": [ "12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" } ], "body-xl": [ "20px", { "lineHeight": "32px", "letterSpacing": "-0.005em", "fontWeight": "400" } ], "body-md": [ "14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "400" } ], "headline-xl-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "400" } ] } } } };</script></head>
+<!-- Cryptographic SHA-256 Security Gate Overlay -->
+<div id="pin-lock-overlay" class="fixed inset-0 z-[9999] bg-background/95 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300">
+  <div class="bg-surface-container-lowest border border-surface-variant rounded-2xl max-w-md w-full p-6 sm:p-8 shadow-2xl flex flex-col items-center text-center animate-fade-in">
+    <div class="w-14 h-14 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center mb-4 border border-secondary/20 shadow-sm">
+      <span class="material-symbols-outlined text-[28px] text-secondary">lock</span>
+    </div>
+    
+    <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Private Operating Telemetry</span>
+    <h2 class="font-serif text-2xl font-normal text-on-surface mt-1 mb-2">Balaji Palani • AppTracker Pro</h2>
+    
+    <div class="bg-surface-container-low p-3.5 rounded-xl text-left border border-surface-variant/60 mb-5 w-full">
+      <div class="flex items-start gap-2.5">
+        <span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">verified_user</span>
+        <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          <strong class="text-on-surface font-semibold">Confidential Candidate Ledger:</strong> This dashboard tracks private salary targets, recruiter debrief notes, and real-time interview stages. Access is restricted strictly to <span class="font-semibold text-on-surface">Balaji Palani</span>.
+        </p>
+      </div>
+    </div>
+    
+    <form onsubmit="handleSecuritySubmit(event)" class="w-full space-y-3">
+      <div class="relative w-full">
+        <input type="password" id="sec-input" autofocus placeholder="Enter Balaji's Security Password" class="w-full text-center text-base tracking-wider font-mono py-2.5 px-4 rounded-xl bg-surface border border-surface-variant text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/30 focus:border-secondary transition shadow-inner">
+      </div>
+      <p id="sec-error" class="text-xs text-error hidden font-medium flex items-center justify-center gap-1 pt-1">
+        <span class="material-symbols-outlined text-[14px]">error</span>
+        <span>Incorrect password. Verification failed.</span>
+      </p>
+      <button type="submit" class="w-full py-2.5 px-4 rounded-xl bg-secondary hover:bg-secondary-fixed-variant text-on-secondary font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow-sm transition-colors">
+        <span class="material-symbols-outlined text-[16px]">key</span>
+        <span>Unlock Confidential Pipeline</span>
+      </button>
+      <a href="index.html" class="inline-flex items-center gap-1 text-xs font-mono text-on-surface-variant hover:text-secondary pt-2 transition-colors">
+        <span class="material-symbols-outlined text-[14px]">arrow_back</span>
+        <span>Return to Public Career Hub</span>
+      </a>
+    </form>
+  </div>
+</div>
+
+<body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0 flex-shrink-0"><a class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md whitespace-nowrap" href="https://layyzee.github.io/"><span class="material-symbols-outlined text-[16px]">arrow_back</span><span>Main Portfolio</span></a><a class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md whitespace-nowrap" href="index.html"><span class="material-symbols-outlined text-[16px]">hub</span><span>Career Hub</span></a><div class="flex items-center gap-space-sm"><div class="flex items-center justify-center w-8 h-8 rounded bg-primary text-on-primary font-headline-sm text-headline-sm flex-shrink-0">A</div><div class="flex flex-col whitespace-nowrap"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface font-semibold">AppTracker Pro</span><span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-label-sm uppercase font-semibold whitespace-nowrap">ENTERPRISE CRM V2.4</span></div><span class="font-label-sm text-label-sm text-on-surface-variant">Balaji Palani • Senior Scrum Master &amp; Agile Delivery Pipeline</span></div></div><nav class="hidden xl:flex items-center gap-space-xs ml-space-sm" data-active-classes="bg-surface-container text-on-surface font-semibold"><button aria-current="page" class="px-space-md py-space-xs rounded transition-colors bg-surface-container text-on-surface font-semibold whitespace-nowrap" id="nav-kanban-btn" onclick="switchView('kanban')" type="button">Kanban Board</button><button class="px-space-md py-space-xs rounded text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md whitespace-nowrap" id="nav-table-btn" onclick="switchView('table')" type="button">Table Directory</button><a class="px-space-md py-space-xs rounded text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md whitespace-nowrap" data-path="sprint-metrics" href="#">Velocity &amp; Telemetry</a><a class="px-space-md py-space-xs rounded text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md whitespace-nowrap" data-path="interviews-calendar" href="#">Cadence Schedule</a></nav></div><div class="flex items-center gap-space-sm flex-shrink-0"><button class="hidden md:flex items-center gap-space-sm px-space-md py-space-xs rounded bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors font-label-sm text-label-sm whitespace-nowrap" type="button"><span class="material-symbols-outlined text-[14px]">search</span><span>Search Pipeline</span><kbd class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">⌘K</kbd></button><div class="flex items-center p-0.5 rounded bg-surface-container-low"><button aria-label="Kanban View" class="p-space-xs rounded bg-surface-container-lowest text-on-surface shadow-[0_1px_4px_rgba(0,0,0,0.04)]" id="header-kanban-btn" onclick="switchView('kanban')" type="button"><span class="material-symbols-outlined text-[18px]">view_kanban</span></button><button aria-label="Table View" class="p-space-xs rounded text-on-surface-variant hover:text-on-surface transition-colors" id="header-table-btn" onclick="switchView('table')" type="button"><span class="material-symbols-outlined text-[18px]">table_chart</span></button></div><button class="flex items-center gap-1.5 px-space-md py-space-xs rounded bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container transition-colors font-label-md text-label-md whitespace-nowrap flex-shrink-0" onclick="document.getElementById('logModal').classList.remove('hidden')" type="button"><span class="material-symbols-outlined text-[16px]">add</span><span>+ Log Application</span></button><div class="flex items-center gap-space-sm pl-space-xs border-l border-surface-container"><div class="flex flex-col items-end whitespace-nowrap"><div class="flex items-center gap-space-xs"><span class="font-label-md text-label-md text-on-surface font-semibold">Balaji Palani</span><span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-label-sm whitespace-nowrap"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>0 Days Notice (Immediate)</span></div><span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase whitespace-nowrap">SAFE 6.0 | PSM II | PMP</span></div><img alt="Balaji Palani" class="w-9 h-9 rounded-full object-cover ring-1 ring-surface-container-highest flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCimJJKvSA57oHovpxiV1148BkY6-cHzlN-tESPeH0d9FzFc2nj9t7k9xx3BIEiSh57P_O5x4UEAp5I4BiszCm0jxnsCN0mO9X8idIzfvK1ETbESdYWzR0eVSVgK7shUaWHN4DEoTKQYleuPJiU_K58m_tOPigkAn1ry5OuzdX0_bwiUD7nxex8N2KHdXurSBwE_Dazs-xTg7izf8-CzA7LWNo4PIZbPzUN0ignAoXMStbKeP4RwqDq"/></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Calm Ambient Header Glow (contained) -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 left-1/4 w-96 h-96 rounded-full bg-secondary-container/30 blur-3xl pointer-events-none"></div>
+<div class="absolute -top-20 right-1/4 w-80 h-80 rounded-full bg-primary-fixed/30 blur-3xl pointer-events-none"></div>
+<!-- Top Command Editorial Ribbon -->
+<div class="w-full px-margin py-space-lg flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+            Operational Cadence • Q4 2026
+          </span>
+<span class="inline-flex items-center gap-1.5 px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+            Live CRM Active
+          </span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+          Enterprise Pipeline Telemetry
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Curated opportunities, recruiter cadence scheduling, and technical evaluation telemetry for Balaji Palani (SAFe® 6.0 SSM, PSM II). Immediate joiner availability (0 Days Notice).
+        </p>
+</div>
+<!-- Quick Executive Bio Badge -->
+<div class="flex items-center gap-space-md p-space-sm rounded-xl bg-surface-container-low shadow-sm">
+<img alt="Balaji Palani" class="w-12 h-12 rounded-lg object-cover shadow-sm ring-2 ring-surface-container-lowest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCimJJKvSA57oHovpxiV1148BkY6-cHzlN-tESPeH0d9FzFc2nj9t7k9xx3BIEiSh57P_O5x4UEAp5I4BiszCm0jxnsCN0mO9X8idIzfvK1ETbESdYWzR0eVSVgK7shUaWHN4DEoTKQYleuPJiU_K58m_tOPigkAn1ry5OuzdX0_bwiUD7nxex8N2KHdXurSBwE_Dazs-xTg7izf8-CzA7LWNo4PIZbPzUN0ignAoXMStbKeP4RwqDq"/>
+<div class="flex flex-col min-w-0 pr-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Balaji Palani</span>
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Principal Delivery Lead &amp; Agile Coach</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Ready: 0 Days Notice • Immediate CTC Negotiation</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 1: Executive Telemetry Bar (KPI Metric Bento) -->
+<section class="w-full px-margin pb-space-lg">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+<!-- Metric 1: Total Pipeline -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Total Pipeline</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">folder_special</span>
+</div>
+</div>
+<div class="mt-space-md">
+<span class="font-headline-lg text-headline-lg text-on-surface font-headline-xl" id="kpi-total-roles">55</span>
+<span class="font-label-md text-label-md text-on-surface-variant ml-1">Roles Tracked</span>
+</div>
+<div class="mt-space-sm flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[14px]">trending_up</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">+14 added this week</span>
+</div>
+</div>
+<!-- Metric 2: Recruiter Screens (Active) -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-secondary-container/40 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Recruiter Screens</span>
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+            Active
+          </div>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg text-secondary font-headline-xl" id="kpi-recruiter-screens">3</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">in cadence</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span id="kpi-stage-conv">Stage Conv: 5.5%</span>
+<span class="text-secondary font-semibold truncate ml-2" id="kpi-active-companies">Deloitte • Staffnix • ITC</span>
+</div>
+</div>
+<!-- Metric 3: Technical & HM Evaluation -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Tech &amp; HM Round</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+</div>
+</div>
+<div class="mt-space-md">
+<span class="font-headline-lg text-headline-lg text-on-surface font-headline-xl" id="kpi-tech-hm">0</span>
+<span class="font-label-md text-label-md text-on-surface-variant ml-1">In Evaluation</span>
+</div>
+<div class="mt-space-sm flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+<span id="kpi-tech-note">1 Scheduled for Nov 17</span>
+</div>
+</div>
+<!-- Metric 4: Final / Comp Negotiation -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Executive / Comp</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">handshake</span>
+</div>
+</div>
+<div class="mt-space-md">
+<span class="font-headline-lg text-headline-lg text-on-surface font-headline-xl" id="kpi-final-comp">0</span>
+<span class="font-label-md text-label-md text-on-surface-variant ml-1">In Discussion</span>
+</div>
+<div class="mt-space-sm flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Immediate joining readiness</span>
+</div>
+</div>
+<!-- Metric 5: Target Comp CTC & Velocity Index -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-primary text-on-primary shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider opacity-85">Target Compensation</span>
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+<div class="mt-space-sm">
+<div class="font-headline-md text-headline-md font-headline-xl tracking-tight leading-snug">
+            ₹28L – ₹36L CTC
+          </div>
+<div class="font-label-sm text-label-sm opacity-90 mt-0.5 font-sans">
+            $65,000+ USD Remote Equivalent
+          </div>
+</div>
+<div class="mt-space-sm pt-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm mb-1 opacity-90">
+<span>Stage Progression</span>
+<span class="font-semibold" id="kpi-progression-percent">5.5% active</span>
+</div>
+<div class="w-full bg-white/20 h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full transition-all duration-300" id="kpi-progression-bar" style="width: 5.5%"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Interactive Filter & Control Strip -->
+<section class="w-full px-margin pb-space-md">
+<div class="flex flex-col gap-space-md p-space-md rounded-xl bg-surface-container-lowest shadow-sm">
+<!-- Upper Strip: Search, View Mode, Quick Triggers -->
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<!-- Search Input -->
+<div class="relative flex-1 max-w-lg">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full pl-10 pr-12 py-2 rounded-lg bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-md text-body-md focus:outline-none focus:bg-surface-container transition-colors" placeholder="Filter by role title, target enterprise, or hub city... (⌘K)" type="text"/>
+<kbd class="absolute right-3 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">⌘K</kbd>
+</div>
+<!-- Controls: Views, Sorter, Log Application CTA -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- View Toggle Switcher -->
+<div class="flex items-center p-1 rounded-lg bg-surface-container-low"><button class="flex items-center gap-1.5 px-space-sm py-1 rounded bg-surface-container-lowest text-on-surface shadow-sm font-label-md text-label-md" id="filter-kanban-btn" onclick="switchView('kanban')" type="button"><span class="material-symbols-outlined text-[16px]">view_kanban</span><span>Kanban</span></button><button class="flex items-center gap-1.5 px-space-sm py-1 rounded text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" id="filter-table-btn" onclick="switchView('table')" type="button"><span class="material-symbols-outlined text-[16px]">view_list</span><span>Table (55)</span></button></div>
+<!-- Sort Select -->
+<div class="flex items-center gap-1 px-space-sm py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">sort</span>
+<select class="bg-transparent border-none focus:outline-none text-on-surface font-label-md text-label-md cursor-pointer pr-1">
+<option>Velocity (Newest First)</option>
+<option>Company Name (A–Z)</option>
+<option>Highest Priority Stage</option>
+<option>Compensation Potential</option>
+</select>
+</div>
+<!-- Export CSV -->
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export CSV</span>
+</button>
+<!-- Primary CTA: Log Application -->
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary transition-colors font-label-md text-label-md shadow-sm" onclick="document.getElementById('logModal').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>+ Log New Application</span>
+</button>
+</div>
+</div>
+<!-- Lower Filter Bar: Source Channels & Work Arrangement Pills -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pt-space-xs">
+<!-- Channels Pills -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 md:pb-0 scrollbar-none">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mr-1">Source:</span>
+<button class="px-space-sm py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm whitespace-nowrap shadow-sm" type="button">
+            All (55)
+          </button>
+<button class="px-space-sm py-0.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm whitespace-nowrap transition-colors" type="button">
+            LinkedIn (32)
+          </button>
+<button class="px-space-sm py-0.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm whitespace-nowrap transition-colors" type="button">
+            Hirist (8)
+          </button>
+<button class="px-space-sm py-0.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm whitespace-nowrap transition-colors" type="button">
+            Naukri (5)
+          </button>
+<button class="px-space-sm py-0.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm whitespace-nowrap transition-colors" type="button">
+            Indeed (3)
+          </button>
+<button class="px-space-sm py-0.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm whitespace-nowrap transition-colors" type="button">
+            Direct Pitch (1)
+          </button>
+<button class="px-space-sm py-0.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm whitespace-nowrap transition-colors" type="button">
+            Cutshort (1)
+          </button>
+</div>
+<!-- Work Mode Filter Switch -->
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mr-1">Mode:</span>
+<button class="px-2.5 py-0.5 rounded-full bg-surface-container-low text-on-surface font-label-sm text-label-sm font-semibold" type="button">
+            All Modes
+          </button>
+<button class="px-2.5 py-0.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors" type="button">
+            Remote Only
+          </button>
+<button class="px-2.5 py-0.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors" type="button">
+            Hybrid / Bengaluru
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: The Enterprise Kanban Pipeline Board -->
+<section class="w-full px-margin pb-space-xl overflow-x-auto" id="kanbanViewContainer"><div class="flex items-start gap-space-md min-w-[1580px]">
+<!-- COLUMN 1: APPLIED / IN REVIEW (52) -->
+<div class="kanban-column flex-1 flex flex-col gap-space-sm min-w-[270px] p-space-sm rounded-xl bg-surface-container-low transition-colors duration-150" data-base-count="49" data-stage-id="applied" data-stage-title="Applied / In Review">
+<div class="flex items-center justify-between px-space-xs py-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+<span class="font-label-md text-label-md font-semibold text-on-surface tracking-wide">Applied / In Review</span>
+</div>
+<span class="column-count-badge px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-semibold">52</span>
+</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm px-space-xs pb-1">Submissions pending recruiter dispatch</div>
+<div class="card-drop-zone flex flex-col gap-space-sm min-h-[300px] max-h-[820px] overflow-y-auto pr-1 rounded-lg">
+<div class="kanban-card flex flex-col p-space-md rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all group select-none" data-card-id="xtivia" data-company="Xtivia" draggable="true" onclick="openDetailModal('xtivia')">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Xtivia</span>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-0.5">Scrum Master / Agile Delivery Lead</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">LinkedIn</span>
+</div>
+<div class="mt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>Remote / Hybrid • India</span>
+</div>
+<div class="mt-space-sm p-space-xs rounded bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-1 font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[13px]">person</span>
+<span>Nanda S. (Technical Recruiter)</span>
+</div>
+<p class="mt-1 line-clamp-2">Direct outreach from LinkedIn feed with resume. High synergy with SAFe 6.0 PI Planning credentials.</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Nov 11, 2026</span>
+<span class="text-primary group-hover:underline flex items-center gap-0.5 font-medium">Review dossier <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+</div>
+</div>
+<div class="kanban-card flex flex-col p-space-md rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all group select-none" data-card-id="haparz" data-company="Haparz" draggable="true" onclick="openDetailModal('haparz')">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Haparz</span>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-0.5">Scrum Master (E-commerce Domain)</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">LinkedIn</span>
+</div>
+<div class="mt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">wifi</span>
+<span>100% Remote • Pan-India</span>
+</div>
+<div class="mt-space-sm p-space-xs rounded bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-1 font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[13px]">person</span>
+<span>Jansi Rani Velmurugan</span>
+</div>
+<p class="mt-1 line-clamp-2">Applied via LinkedIn Easy Apply with custom cover note emphasizing Jira velocity improvements.</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Nov 10, 2026</span>
+<span class="text-primary group-hover:underline flex items-center gap-0.5 font-medium">Review dossier <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+</div>
+</div>
+<div class="kanban-card flex flex-col p-space-md rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all group select-none" data-card-id="veersatech" data-company="VeersaTech" draggable="true" onclick="openDetailModal('veersatech')">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">VeersaTech</span>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-0.5">Scrum Master (Loopin Search)</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Hirist</span>
+</div>
+<div class="mt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">apartment</span>
+<span>Noida • Hybrid / Flexible</span>
+</div>
+<div class="mt-space-sm p-space-xs rounded bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-1 font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[13px]">person</span>
+<span>Priya M. (Senior Talent Partner)</span>
+</div>
+<p class="mt-1 line-clamp-2">Submitted through Hirist. Matched 94% on Scrum rituals &amp; stakeholder leadership requirements.</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Nov 09, 2026</span>
+<span class="text-primary group-hover:underline flex items-center gap-0.5 font-medium">Review dossier <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+</div>
+</div>
+<div class="archive-stub p-space-sm rounded-lg bg-surface-container text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">+ 49 additional archived applications in directory</span>
+</div>
+<div class="empty-state-placeholder hidden flex-col items-center justify-center p-space-lg rounded-lg bg-surface-container-lowest/60 text-center min-h-[180px]">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">inbox</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface text-[15px]">No Applications Here</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-[200px]">Drag an application card here to track reviews.</p>
+</div>
+</div>
+</div>
+<!-- COLUMN 2: RECRUITER SCREENING (3 Active) -->
+<div class="kanban-column flex-1 flex flex-col gap-space-sm min-w-[280px] p-space-sm rounded-xl bg-secondary-container/20 ring-1 ring-secondary/20 shadow-sm transition-colors duration-150" data-stage-id="screening" data-stage-title="Recruiter Screening">
+<div class="flex items-center justify-between px-space-xs py-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-md text-label-md font-bold text-on-surface tracking-wide">Recruiter Screening</span>
+</div>
+<span class="column-count-badge px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold shadow-sm"><span id="kpi-screening-count">3 Active</span>
+</div>
+<div class="text-secondary font-label-sm text-label-sm px-space-xs pb-1 font-medium">High-conversion active dialogue phase</div>
+<div class="card-drop-zone flex flex-col gap-space-sm min-h-[300px] max-h-[820px] overflow-y-auto pr-1 rounded-lg">
+<div class="kanban-card flex flex-col p-space-md rounded-lg bg-surface-container-lowest shadow-md ring-1 ring-secondary/30 transition-all group select-none hover:-translate-y-0.5" data-card-id="deloitte" data-company="Deloitte India" draggable="true" onclick="openDetailModal('deloitte')">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors font-bold">Deloitte India</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-[9px] uppercase font-bold">Priority</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-semibold mt-0.5">Senior Consultant | APM: SafeScrum Master</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Direct ATS</span>
+</div>
+<div class="mt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">domain</span>
+<span>Bengaluru • Finance Transformation</span>
+</div>
+<div class="mt-space-sm p-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm">
+<div class="flex items-center justify-between text-secondary font-semibold pb-1">
+<span class="flex items-center gap-1 font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px]">check_circle</span><span>Screen Completed (Nov 12)</span></span>
+<span class="font-label-sm text-label-sm font-bold">₹32L - ₹36L CTC</span>
+</div>
+<p class="text-on-surface-variant">15-minute preliminary screening successfully cleared with TA Team. Highlighted SAFe® / SSM BFSI delivery background. Next: Hiring Manager Panel.</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between font-label-sm text-label-sm">
+<div class="flex items-center gap-1 text-secondary font-medium"><span class="material-symbols-outlined text-[14px]">event</span><span>HM Round Queued</span></div>
+<button class="px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm shadow-sm group-hover:bg-primary-container" onclick="event.stopPropagation(); openDetailModal('deloitte')" type="button">View Dossier</button>
+</div>
+</div>
+<div class="kanban-card flex flex-col p-space-md rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all group select-none" data-card-id="staffnix" data-company="Staffnixcom" draggable="true" onclick="openDetailModal('staffnix')">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Staffnixcom</span>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-0.5">Senior Project Manager - IT / Agile</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Cutshort</span>
+</div>
+<div class="mt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">apartment</span>
+<span>Hybrid • Bengaluru Tech Corridor</span>
+</div>
+<div class="mt-space-sm p-space-xs rounded bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-1 font-semibold text-on-surface"><span class="material-symbols-outlined text-[13px]">person</span><span>Mayank Choudhary</span></div>
+<p class="mt-1 line-clamp-2">Direct conversational intro on Cutshort. Discussion on scaled team dynamics and 0-day joiner readiness.</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Nov 11, 2026</span>
+<span class="text-primary group-hover:underline flex items-center gap-0.5 font-medium">Follow-up pending <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+</div>
+</div>
+<div class="kanban-card flex flex-col p-space-md rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all group select-none" data-card-id="itc" data-company="ITC Infotech" draggable="true" onclick="openDetailModal('itc')">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">ITC Infotech</span>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-0.5">Senior Scrum Master</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Direct Pitch</span>
+</div>
+<div class="mt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">domain</span>
+<span>Bengaluru Hub • Hybrid</span>
+</div>
+<div class="mt-space-sm p-space-xs rounded bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-1 font-semibold text-on-surface"><span class="material-symbols-outlined text-[13px]">person</span><span>Ananya Roy (Executive Talent)</span></div>
+<p class="mt-1 line-clamp-2">Screening scheduled. Profile shared directly with Practice Head for Banking &amp; Financial Services portfolio.</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="text-secondary font-medium">Call Nov 14, 2026</span>
+<span class="text-primary group-hover:underline flex items-center gap-0.5 font-medium">Dossier <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+</div>
+</div>
+<div class="empty-state-placeholder hidden flex-col items-center justify-center p-space-lg rounded-lg bg-surface-container-lowest/60 text-center min-h-[180px]">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">perm_phone_msg</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface text-[15px]">No Screening Calls</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-[200px]">Drag an application here once a recruiter phone screen is initiated.</p>
+</div>
+</div>
+</div>
+<!-- COLUMN 3: TECH & HM ROUND (0) -->
+<div class="kanban-column flex-1 flex flex-col gap-space-sm min-w-[270px] p-space-sm rounded-xl bg-surface-container-low transition-colors duration-150" data-stage-id="tech-hm" data-stage-title="Tech &amp; HM Round">
+<div class="flex items-center justify-between px-space-xs py-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+<span class="font-label-md text-label-md font-semibold text-on-surface tracking-wide">Tech &amp; HM Round</span>
+</div>
+<span class="column-count-badge px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">0</span>
+</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm px-space-xs pb-1">Engineering Leadership &amp; Case Study</div>
+<div class="card-drop-zone flex flex-col gap-space-sm min-h-[300px] max-h-[820px] overflow-y-auto pr-1 rounded-lg">
+<div class="empty-state-placeholder flex flex-col items-center justify-center p-space-lg rounded-lg bg-surface-container-lowest/60 text-center min-h-[220px]">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface text-[16px]">No Live Evaluations</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-[200px]">Applications in Recruiter Screening can be dragged here once technical panel confirms.</p>
+<div class="mt-space-sm flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">sync</span>
+<span>Awaiting HM dispatch</span>
+</div>
+</div>
+</div>
+</div>
+<!-- COLUMN 4: FINAL / LEADERSHIP (0) -->
+<div class="kanban-column flex-1 flex flex-col gap-space-sm min-w-[270px] p-space-sm rounded-xl bg-surface-container-low transition-colors duration-150" data-stage-id="leadership" data-stage-title="Final / Leadership">
+<div class="flex items-center justify-between px-space-xs py-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+<span class="font-label-md text-label-md font-semibold text-on-surface tracking-wide">Final / Leadership</span>
+</div>
+<span class="column-count-badge px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">0</span>
+</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm px-space-xs pb-1">Executive alignment &amp; offer design</div>
+<div class="card-drop-zone flex flex-col gap-space-sm min-h-[300px] max-h-[820px] overflow-y-auto pr-1 rounded-lg">
+<div class="empty-state-placeholder flex flex-col items-center justify-center p-space-lg rounded-lg bg-surface-container-lowest/60 text-center min-h-[220px]">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">handshake</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface text-[16px]">No Final Rounds</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-[200px]">Executive sponsor and stakeholder calibration sessions will reflect here once HM clears.</p>
+<div class="mt-space-sm flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>Standby</span>
+</div>
+</div>
+</div>
+</div>
+<!-- COLUMN 5: OFFER EXTENDED 🎉 (0) -->
+<div class="kanban-column flex-1 flex flex-col gap-space-sm min-w-[270px] p-space-sm rounded-xl bg-surface-container-low transition-colors duration-150" data-stage-id="offer" data-stage-title="Offer Extended">
+<div class="flex items-center justify-between px-space-xs py-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md font-semibold text-on-surface tracking-wide">Offer Extended 🎉</span>
+</div>
+<span class="column-count-badge px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">0</span>
+</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm px-space-xs pb-1">Immediate sign-off ready</div>
+<div class="card-drop-zone flex flex-col gap-space-sm min-h-[300px] max-h-[820px] overflow-y-auto pr-1 rounded-lg">
+<div class="empty-state-placeholder flex flex-col items-center justify-center p-space-lg rounded-lg bg-surface-container-lowest shadow-sm text-center min-h-[220px]">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-secondary mb-2">
+<span class="material-symbols-outlined text-[20px]">celebration</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface text-[16px]">0 Days Notice Period</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Zero pending buy-out dependencies. Available for immediate mobilization.</p>
+<div class="mt-space-sm w-full p-space-xs rounded bg-surface-container-low flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Target:</span>
+<span class="font-semibold text-secondary">Immediate Mobilization</span>
+</div>
+</div>
+</div>
+</div>
+<!-- COLUMN 6: ARCHIVED / CLOSED (0) -->
+<div class="kanban-column flex-1 flex flex-col gap-space-sm min-w-[270px] p-space-sm rounded-xl bg-surface-container-low transition-colors duration-150" data-stage-id="archived" data-stage-title="Archived / Closed">
+<div class="flex items-center justify-between px-space-xs py-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-outline"></span>
+<span class="font-label-md text-label-md font-semibold text-on-surface tracking-wide">Archived / Closed</span>
+</div>
+<span class="column-count-badge px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">0</span>
+</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm px-space-xs pb-1">Dormant or concluded pipelines</div>
+<div class="card-drop-zone flex flex-col gap-space-sm min-h-[300px] max-h-[820px] overflow-y-auto pr-1 rounded-lg">
+<div class="empty-state-placeholder flex flex-col items-center justify-center p-space-lg rounded-lg bg-surface-container-lowest/60 text-center min-h-[220px]">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">archive</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface text-[16px]">No Closed Roles</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-[200px]">Positions with completed cycles or withdrawn applications will be organized here.</p>
+</div>
+</div>
+</div>
+</div></section><section class="hidden w-full px-margin pb-space-xl" id="tableViewContainer"><div class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm border border-surface-container overflow-hidden"><div class="p-space-md border-b border-surface-container flex flex-col md:flex-row md:items-center justify-between gap-space-sm bg-surface-container-low"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[20px]">table_chart</span></div><div><h2 class="font-headline-sm text-headline-sm text-on-surface">Pipeline Applications Directory</h2><p class="font-label-sm text-label-sm text-on-surface-variant">Displaying 55 verified target roles, calibrated compensation bands, and cadence history</p></div></div><div class="flex items-center gap-space-xs"><span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-secondary inline-block mr-1"></span><span id="table-active-count">3</span> In Active Stages</span><span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm"><span id="table-total-count">52</span> Submissions</span></div></div><div class="w-full overflow-x-auto scrollbar-none"><table class="w-full text-left border-collapse min-w-[1080px]"><thead><tr class="border-b border-surface-container bg-surface-container-low/70 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"><th class="py-3 px-4 font-semibold">Company &amp; ID</th><th class="py-3 px-4 font-semibold">Target Role</th><th class="py-3 px-4 font-semibold">Channel</th><th class="py-3 px-4 font-semibold">Arrangement &amp; Hub</th><th class="py-3 px-4 font-semibold">Compensation</th><th class="py-3 px-4 font-semibold">Current Stage</th><th class="py-3 px-4 font-semibold">Latest Contact / Recruiter</th><th class="py-3 px-4 font-semibold text-right">Actions</th></tr></thead><tbody id="tableBody" class="divide-y divide-surface-container font-body-sm text-body-sm"><tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer group" onclick="openDetailModal('deloitte')"><td class="py-3.5 px-4"><div class="flex items-center gap-2.5"><div class="w-8 h-8 rounded bg-primary-container text-on-primary-container flex items-center justify-center font-headline-sm font-bold text-[14px]">D</div><div><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm text-[16px] text-on-surface font-bold group-hover:text-primary transition-colors">Deloitte India</span><span class="px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-[9px] uppercase font-bold">Priority</span></div><span class="font-label-sm text-label-sm text-on-surface-variant">DEL-2026-904</span></div></div></td><td class="py-3.5 px-4 font-medium text-on-surface">Senior Consultant | APM: SafeScrum Master</td><td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Direct ATS</span></td><td class="py-3.5 px-4 text-on-surface-variant"><div class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-secondary">apartment</span><span>Hybrid • Bengaluru, KA</span></div></td><td class="py-3.5 px-4 font-semibold text-secondary">₹32L – ₹36L CTC</td><td class="py-3.5 px-4"><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold" id="table-stage-deloitte"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>Recruiter Screening (Cleared)</span></td><td class="py-3.5 px-4 text-on-surface-variant"><div class="flex flex-col"><span class="font-medium text-on-surface">TA Lead (Finance Transf.)</span><span class="font-label-sm text-label-sm text-secondary">Nov 12, 2026 • HM Queued</span></div></td><td class="py-3.5 px-4 text-right"><div class="flex items-center justify-end gap-1"><button class="px-2.5 py-1 rounded bg-primary text-on-primary hover:bg-primary-container text-label-sm font-label-sm transition-colors shadow-sm" onclick="event.stopPropagation(); openDetailModal('deloitte')" type="button">Review Dossier</button></div></td></tr><tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer group" onclick="openDetailModal('staffnix')"><td class="py-3.5 px-4"><div class="flex items-center gap-2.5"><div class="w-8 h-8 rounded bg-surface-container text-on-surface flex items-center justify-center font-headline-sm font-bold text-[14px]">S</div><div><span class="font-headline-sm text-headline-sm text-[16px] text-on-surface font-medium group-hover:text-primary transition-colors">Staffnixcom</span><div class="font-label-sm text-label-sm text-on-surface-variant">STF-8114</div></div></div></td><td class="py-3.5 px-4 font-medium text-on-surface">Senior Project Manager - IT / Agile</td><td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Cutshort</span></td><td class="py-3.5 px-4 text-on-surface-variant"><div class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">domain</span><span>Hybrid • Bengaluru</span></div></td><td class="py-3.5 px-4 font-medium text-on-surface">₹28L – ₹32L CTC</td><td class="py-3.5 px-4"><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm font-medium" id="table-stage-staffnix">Recruiter Screen (Nov 11)</span></td><td class="py-3.5 px-4 text-on-surface-variant"><div class="flex flex-col"><span class="font-medium text-on-surface">Mayank Choudhary</span><span class="font-label-sm text-label-sm text-on-surface-variant">Follow-up pending</span></div></td><td class="py-3.5 px-4 text-right"><div class="flex items-center justify-end gap-1"><button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface text-label-sm font-label-sm transition-colors" onclick="event.stopPropagation(); openDetailModal('staffnix')" type="button">Dossier</button></div></td></tr><tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer group" onclick="openDetailModal('itc')"><td class="py-3.5 px-4"><div class="flex items-center gap-2.5"><div class="w-8 h-8 rounded bg-surface-container text-on-surface flex items-center justify-center font-headline-sm font-bold text-[14px]">I</div><div><span class="font-headline-sm text-headline-sm text-[16px] text-on-surface font-medium group-hover:text-primary transition-colors">ITC Infotech</span><div class="font-label-sm text-label-sm text-on-surface-variant">ITC-7720</div></div></div></td><td class="py-3.5 px-4 font-medium text-on-surface">Senior Scrum Master</td><td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Direct Pitch</span></td><td class="py-3.5 px-4 text-on-surface-variant"><div class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">apartment</span><span>Hybrid • Bengaluru Hub</span></div></td><td class="py-3.5 px-4 font-medium text-on-surface">₹30L – ₹34L CTC</td><td class="py-3.5 px-4"><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm font-medium" id="table-stage-itc">Screen Scheduled</span></td><td class="py-3.5 px-4 text-on-surface-variant"><div class="flex flex-col"><span class="font-medium text-on-surface">Ananya Roy</span><span class="font-label-sm text-label-sm text-secondary">Call Nov 14, 2026</span></div></td><td class="py-3.5 px-4 text-right"><div class="flex items-center justify-end gap-1"><button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface text-label-sm font-label-sm transition-colors" onclick="event.stopPropagation(); openDetailModal('itc')" type="button">Dossier</button></div></td></tr><tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer group" onclick="openDetailModal('xtivia')"><td class="py-3.5 px-4"><div class="flex items-center gap-2.5"><div class="w-8 h-8 rounded bg-surface-container text-on-surface flex items-center justify-center font-headline-sm font-bold text-[14px]">X</div><div><span class="font-headline-sm text-headline-sm text-[16px] text-on-surface font-medium group-hover:text-primary transition-colors">Xtivia</span><div class="font-label-sm text-label-sm text-on-surface-variant">XT-3011</div></div></div></td><td class="py-3.5 px-4 font-medium text-on-surface">Scrum Master / Agile Delivery Lead</td><td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">LinkedIn</span></td><td class="py-3.5 px-4 text-on-surface-variant"><div class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">location_on</span><span>Remote / Hybrid • India</span></div></td><td class="py-3.5 px-4 font-medium text-on-surface">₹28L – ₹32L CTC</td><td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm" id="table-stage-xtivia">Applied / In Review</span></td><td class="py-3.5 px-4 text-on-surface-variant"><div class="flex flex-col"><span class="font-medium text-on-surface">Nanda S.</span><span class="font-label-sm text-label-sm text-on-surface-variant">Nov 11, 2026</span></div></td><td class="py-3.5 px-4 text-right"><div class="flex items-center justify-end gap-1"><button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface text-label-sm font-label-sm transition-colors" onclick="event.stopPropagation(); openDetailModal('xtivia')" type="button">Dossier</button></div></td></tr><tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer group" onclick="openDetailModal('haparz')"><td class="py-3.5 px-4"><div class="flex items-center gap-2.5"><div class="w-8 h-8 rounded bg-surface-container text-on-surface flex items-center justify-center font-headline-sm font-bold text-[14px]">H</div><div><span class="font-headline-sm text-headline-sm text-[16px] text-on-surface font-medium group-hover:text-primary transition-colors">Haparz</span><div class="font-label-sm text-label-sm text-on-surface-variant">HP-1904</div></div></div></td><td class="py-3.5 px-4 font-medium text-on-surface">Scrum Master (E-commerce Domain)</td><td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">LinkedIn</span></td><td class="py-3.5 px-4 text-on-surface-variant"><div class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">wifi</span><span>100% Remote • Pan-India</span></div></td><td class="py-3.5 px-4 font-medium text-on-surface">₹26L – ₹30L CTC</td><td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm" id="table-stage-haparz">Applied / In Review</span></td><td class="py-3.5 px-4 text-on-surface-variant"><div class="flex flex-col"><span class="font-medium text-on-surface">Jansi Rani Velmurugan</span><span class="font-label-sm text-label-sm text-on-surface-variant">Nov 10, 2026</span></div></td><td class="py-3.5 px-4 text-right"><div class="flex items-center justify-end gap-1"><button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface text-label-sm font-label-sm transition-colors" onclick="event.stopPropagation(); openDetailModal('haparz')" type="button">Dossier</button></div></td></tr><tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer group" onclick="openDetailModal('veersatech')"><td class="py-3.5 px-4"><div class="flex items-center gap-2.5"><div class="w-8 h-8 rounded bg-surface-container text-on-surface flex items-center justify-center font-headline-sm font-bold text-[14px]">V</div><div><span class="font-headline-sm text-headline-sm text-[16px] text-on-surface font-medium group-hover:text-primary transition-colors">VeersaTech</span><div class="font-label-sm text-label-sm text-on-surface-variant">VT-0518</div></div></div></td><td class="py-3.5 px-4 font-medium text-on-surface">Scrum Master (Loopin Search)</td><td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Hirist</span></td><td class="py-3.5 px-4 text-on-surface-variant"><div class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">apartment</span><span>Noida • Hybrid / Flexible</span></div></td><td class="py-3.5 px-4 font-medium text-on-surface">₹28L – ₹32L CTC</td><td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm" id="table-stage-veersatech">Applied / In Review</span></td><td class="py-3.5 px-4 text-on-surface-variant"><div class="flex flex-col"><span class="font-medium text-on-surface">Priya M.</span><span class="font-label-sm text-label-sm text-on-surface-variant">Nov 09, 2026</span></div></td><td class="py-3.5 px-4 text-right"><div class="flex items-center justify-end gap-1"><button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface text-label-sm font-label-sm transition-colors" onclick="event.stopPropagation(); openDetailModal('veersatech')" type="button">Dossier</button></div></td></tr></tbody></table></div><div class="p-space-sm border-t border-surface-container bg-surface-container-low/40 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"><span>Showing 6 highlighted active opportunities of 55 entries</span><button class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors font-medium" type="button">Load all 55 archived records</button></div></div></section>
+<!-- MODAL / SLIDE-OVER 1: APPLICATION DOSSIER PREVIEW (Deloitte India Example) -->
+<div class="hidden fixed inset-0 z-50 overflow-y-auto bg-on-surface/40 backdrop-blur-sm flex items-center justify-center p-space-md" id="detailModal">
+<div class="relative w-full max-w-3xl rounded-xl bg-surface-container-lowest shadow-2xl p-space-lg flex flex-col gap-space-md">
+<!-- Modal Header -->
+<div class="flex items-start justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md text-headline-md font-bold" id="modal-company-avatar">
+            D
+          </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface" id="modal-company-name">Deloitte India</span>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold" id="modal-stage-badge">Recruiter Screened</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant" id="modal-role-title">Senior Consultant | APM: SafeScrum Master (Finance Transformation)</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" onclick="closeDetailModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Dossier Body Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Left 2 Cols: Details & Notes -->
+<div class="md:col-span-2 flex flex-col gap-space-md">
+<!-- Stage Advancement Controller -->
+<div class="flex flex-col gap-1 p-space-sm rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Active Stage Pipeline</span>
+<div class="flex items-center gap-2 mt-1">
+<select class="flex-1 py-1.5 px-space-sm rounded bg-surface-container-lowest text-on-surface font-label-md text-label-md focus:outline-none" id="modal-stage-select">
+<option value="applied">Stage 1: Applied / In Review</option>
+<option selected="" value="screening">Stage 2: Recruiter Screening (Cleared)</option>
+<option value="tech-hm">Stage 3: Technical &amp; HM Evaluation</option>
+<option value="leadership">Stage 4: Executive Leadership Round</option>
+<option value="offer">Stage 5: Offer Extended</option>
+<option value="archived">Stage 6: Archived / Closed</option>
+</select>
+<button class="px-space-md py-1.5 rounded bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold hover:opacity-90 transition-opacity" onclick="advanceStageFromModal()" type="button">
+                Advance Stage
+              </button>
+</div>
+</div>
+<!-- Debrief Notes -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Recruiter Screening Debrief</span>
+<div class="p-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm leading-relaxed" id="modal-debrief-notes">
+<p>Preliminary interview on Nov 12, 2026. Emphasized 10+ years driving cross-functional agile teams, SAFe® 6.0 Scrum Master accreditation, and experience orchestrating multi-squad PI Plannings across 4 global time zones.</p>
+<p class="mt-2 text-secondary font-medium">Recruiter confirmed target compensation ₹32L–₹36L is within sanctioned band. Advancing to Hiring Manager Panel for deep-dive technical delivery scenarios.</p>
+</div>
+</div>
+<!-- Interview Prep Briefing & Talking Points -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Key Talking Points for HM Round</span>
+<ul class="flex flex-col gap-1.5 p-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">check</span>
+<span>Scaled Agile Framework (SAFe 6.0) implementation in enterprise BFSI regulatory domains.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">check</span>
+<span>Resolving cross-team sprint blockers with Jira Align and automated velocity burndowns.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">check</span>
+<span>Availability: 0 Days notice (Immediate start) with clean documentation handover.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Right Col: Metadata & Contacts -->
+<div class="flex flex-col gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Application Metadata</span>
+<div class="flex flex-col gap-space-xs font-label-sm text-label-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Location:</span>
+<span class="text-on-surface font-semibold" id="modal-meta-location">Bengaluru, KA</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Arrangement:</span>
+<span class="text-on-surface font-semibold" id="modal-meta-mode">Hybrid (2 days/wk)</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Source Channel:</span>
+<span class="text-on-surface font-semibold" id="modal-meta-channel">Deloitte Careers ATS</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Target CTC:</span>
+<span class="text-secondary font-bold" id="modal-meta-ctc">₹32,00,000 - ₹36,00,000</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Notice Period:</span>
+<span class="text-secondary font-semibold">0 Days (Immediate)</span>
+</div>
+</div>
+<div class="pt-space-xs border-t border-surface-container flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Point of Contact</span>
+<div class="font-body-sm text-body-sm text-on-surface font-medium" id="modal-poc-name">Talent Acquisition Lead</div>
+<a class="font-label-sm text-label-sm text-primary hover:underline" href="mailto:careers@deloitte.com" id="modal-poc-email">careers-recruiter@deloitte.com</a>
+</div>
+<div class="mt-auto pt-space-sm flex flex-col gap-space-xs">
+<button class="w-full py-1.5 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors" onclick="showToast('Hiring manager debrief invite sent to calendar.'); closeDetailModal();" type="button">
+              Schedule HM Debrief
+            </button>
+<button class="w-full py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" onclick="closeDetailModal()" type="button">
+              Close Dossier
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL / DRAWER 2: + LOG NEW APPLICATION FORM PREVIEW -->
+<div class="hidden fixed inset-0 z-50 overflow-y-auto bg-on-surface/40 backdrop-blur-sm flex items-center justify-center p-space-md" id="logModal"><div class="relative w-full max-w-xl rounded-xl bg-surface-container-lowest shadow-2xl p-space-lg flex flex-col gap-space-md"><div class="flex items-start justify-between pb-space-sm border-b border-surface-container"><div class="flex flex-col"><h3 class="font-headline-md text-headline-md text-on-surface">Log New Application</h3><p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Track a new target Scrum Master or Agile Delivery role</p></div><button class="w-8 h-8 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" onclick="document.getElementById('logModal').classList.add('hidden')" type="button"><span class="material-symbols-outlined text-[18px]">close</span></button></div><form class="flex flex-col gap-space-md" onsubmit="handleNewApplication(event)"><div class="flex flex-col gap-1"><label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">COMPANY NAME *</label><input class="w-full px-space-sm py-2 rounded bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container transition-colors" id="new-app-company" placeholder="e.g. Barclays, Deloitte, Cisco" required="" type="text"/></div><div class="flex flex-col gap-1"><label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">ROLE TITLE *</label><input class="w-full px-space-sm py-2 rounded bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container transition-colors" id="new-app-title" placeholder="Senior Scrum Master" required="" type="text" value="Senior Scrum Master"/></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md"><div class="flex flex-col gap-1"><label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">CHANNEL / PLATFORM</label><select class="w-full px-space-sm py-2 rounded bg-surface-container-low text-on-surface font-label-md text-label-md focus:outline-none focus:bg-surface-container cursor-pointer" id="new-app-channel"><option>LinkedIn</option><option>Hirist</option><option>Naukri</option><option>Direct Pitch</option><option>Indeed</option><option>Cutshort</option><option>Direct ATS</option></select></div><div class="flex flex-col gap-1"><label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">INITIAL STAGE</label><select class="w-full px-space-sm py-2 rounded bg-surface-container-low text-on-surface font-label-md text-label-md focus:outline-none focus:bg-surface-container cursor-pointer" id="new-app-stage"><option value="applied">Applied / In Review</option><option value="screening">Recruiter Screening</option><option value="tech-hm">Tech &amp; HM Round</option><option value="leadership">Final / Leadership</option><option value="offer">Offer Extended 🎉</option><option value="archived">Archived / Closed</option></select></div></div><div class="flex flex-col gap-1"><label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">LOCATION &amp; WORK MODE</label><input class="w-full px-space-sm py-2 rounded bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container transition-colors" id="new-app-location" placeholder="Hybrid • Bengaluru" type="text" value="Hybrid • Bengaluru"/></div><div class="flex flex-col gap-1"><label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">NOTES / OUTREACH CONTEXT</label><textarea class="w-full px-space-sm py-2 rounded bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container transition-colors" id="new-app-notes" placeholder="Application links, recruiter names, compensation discussions..." rows="3"></textarea></div><div class="flex items-center justify-end gap-space-sm pt-space-xs border-t border-surface-container"><button class="px-space-md py-2 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" onclick="document.getElementById('logModal').classList.add('hidden')" type="button">Cancel</button><button class="px-space-md py-2 rounded bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md shadow-sm transition-colors font-medium" type="submit">Create Application</button></div></form></div></div>
+<!-- Subtle Floating Toast Notification matching Calm Editorial (Porcelain & Pine) -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 pointer-events-none transition-all duration-300 ease-out" id="kanbanToast">
+<div class="flex items-center gap-space-sm px-space-md py-3 rounded-xl bg-surface-container-lowest text-on-surface shadow-lg border border-secondary/30 ring-1 ring-secondary/20 backdrop-blur-md">
+<div class="w-7 h-7 rounded-full bg-secondary-container text-secondary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</div>
+<div class="flex flex-col min-w-0 pr-space-xs">
+<span class="font-label-md text-label-md font-semibold text-on-surface" id="toastTitle">Pipeline Updated</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate" id="toastMessage">Moved card successfully</span>
+</div>
+<button class="ml-1 text-on-surface-variant hover:text-on-surface" onclick="hideToast()" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- Interactive JavaScript Controller for Native Drag and Drop & Pipeline Telemetry -->
+<script>
+    let draggedCard = null;
+    let toastTimeout = null;
+    let currentModalRoleKey = 'deloitte';
+
+    // Mock application data for modal previews
+    const rolesData = {
+      deloitte: {
+        company: 'Deloitte India',
+        avatarText: 'D',
+        badge: 'Recruiter Screened',
+        role: 'Senior Consultant | APM: SafeScrum Master (Finance Transformation)',
+        location: 'Bengaluru, KA',
+        mode: 'Hybrid (2 days/wk)',
+        channel: 'Direct ATS',
+        ctc: '₹32,00,000 - ₹36,00,000',
+        poc: 'TA Lead (Finance Transf.)',
+        email: 'careers-recruiter@deloitte.com',
+        notes: '<p>Preliminary interview on Nov 12, 2026. Emphasized 10+ years driving cross-functional agile teams, SAFe® 6.0 Scrum Master accreditation, and experience orchestrating multi-squad PI Plannings across 4 global time zones.</p><p class="mt-2 text-secondary font-medium">Recruiter confirmed target compensation ₹32L–₹36L is within sanctioned band. Advancing to Hiring Manager Panel for deep-dive technical delivery scenarios.</p>'
+      },
+      staffnix: {
+        company: 'Staffnixcom',
+        avatarText: 'S',
+        badge: 'Recruiter Screen',
+        role: 'Senior Project Manager - IT / Agile',
+        location: 'Bengaluru Tech Corridor',
+        mode: 'Hybrid',
+        channel: 'Cutshort',
+        ctc: '₹28,00,000 - ₹32,00,000',
+        poc: 'Mayank Choudhary',
+        email: 'mayank@staffnix.com',
+        notes: '<p>Direct conversational outreach on Cutshort. Discussed high velocity multi-scrum team structures and immediate readiness for deployment.</p>'
+      },
+      itc: {
+        company: 'ITC Infotech',
+        avatarText: 'I',
+        badge: 'Screen Scheduled',
+        role: 'Senior Scrum Master',
+        location: 'Bengaluru Hub',
+        mode: 'Hybrid',
+        channel: 'Direct Pitch',
+        ctc: '₹30,00,000 - ₹34,00,000',
+        poc: 'Ananya Roy (Executive Talent)',
+        email: 'talent@itcinfotech.com',
+        notes: '<p>Screening booked for Nov 14. Practice head interested in BFSI enterprise agile transformation case studies.</p>'
+      },
+      xtivia: {
+        company: 'Xtivia',
+        avatarText: 'X',
+        badge: 'Applied / In Review',
+        role: 'Scrum Master / Agile Delivery Lead',
+        location: 'Pan-India',
+        mode: 'Remote / Hybrid',
+        channel: 'LinkedIn',
+        ctc: '₹28,00,000 - ₹32,00,000',
+        poc: 'Nanda S. (Technical Recruiter)',
+        email: 'nanda@xtivia.com',
+        notes: '<p>Direct application submitted with custom cover briefing highlighting SAFe 6.0 PI planning mastery.</p>'
+      },
+      haparz: {
+        company: 'Haparz',
+        avatarText: 'H',
+        badge: 'Applied / In Review',
+        role: 'Scrum Master (E-commerce Domain)',
+        location: 'Pan-India',
+        mode: '100% Remote',
+        channel: 'LinkedIn',
+        ctc: '₹26,00,000 - ₹30,00,000',
+        poc: 'Jansi Rani Velmurugan',
+        email: 'recruitment@haparz.com',
+        notes: '<p>Applied via LinkedIn Easy Apply. High Jira backlog grooming alignment.</p>'
+      },
+      veersatech: {
+        company: 'VeersaTech',
+        avatarText: 'V',
+        badge: 'Applied / In Review',
+        role: 'Scrum Master (Loopin Search)',
+        location: 'Noida',
+        mode: 'Hybrid / Flexible',
+        channel: 'Hirist',
+        ctc: '₹28,00,000 - ₹32,00,000',
+        poc: 'Priya M. (Senior Talent Partner)',
+        email: 'priya@veersatech.com',
+        notes: '<p>Submitted via Hirist platform. Matched 94% on Scrum ceremonies and impediment removal.</p>'
+      }
+    };
+
+    function showToast(title, message) {
+      const toast = document.getElementById('kanbanToast');
+      const toastTitle = document.getElementById('toastTitle');
+      const toastMsg = document.getElementById('toastMessage');
+      if (!toast) return;
+
+      if (toastTitle) toastTitle.textContent = title;
+      if (toastMsg) toastMsg.textContent = message || '';
+
+      toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        hideToast();
+      }, 4200);
+    }
+
+    function hideToast() {
+      const toast = document.getElementById('kanbanToast');
+      if (!toast) return;
+      toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }
+
+    // Update column badge counters and empty placeholder visibility
+    function updateColumnTelemetry() {
+      const columns = document.querySelectorAll('.kanban-column');
+      let activeScreensCount = 0;
+      let techHmCount = 0;
+      let leadershipCount = 0;
+      let offerCount = 0;
+      let activeCompanies = [];
+
+      columns.forEach(column => {
+        const stageId = column.getAttribute('data-stage-id');
+        const dropZone = column.querySelector('.card-drop-zone');
+        const cards = dropZone.querySelectorAll('.kanban-card');
+        const countBadge = column.querySelector('.column-count-badge');
+        const emptyState = dropZone.querySelector('.empty-state-placeholder');
+        const baseCount = parseInt(column.getAttribute('data-base-count') || '0', 10);
+        const totalInColumn = baseCount + cards.length;
+
+        if (countBadge) {
+          if (stageId === 'screening') {
+            countBadge.textContent = totalInColumn + ' Active';
+          } else {
+            countBadge.textContent = totalInColumn;
           }
         }
+
+        // Handle empty state visibility
+        if (emptyState) {
+          if (cards.length === 0 && baseCount === 0) {
+            emptyState.classList.remove('hidden');
+            emptyState.classList.add('flex');
+          } else {
+            emptyState.classList.add('hidden');
+            emptyState.classList.remove('flex');
+          }
+        }
+
+        // Tally KPI metrics
+        if (stageId === 'screening') {
+          activeScreensCount = cards.length;
+          cards.forEach(c => {
+            const cName = c.getAttribute('data-company');
+            if (cName) activeCompanies.push(cName.split(' ')[0]);
+          });
+        } else if (stageId === 'tech-hm') {
+          techHmCount = cards.length;
+        } else if (stageId === 'leadership') {
+          leadershipCount = cards.length;
+        } else if (stageId === 'offer') {
+          offerCount = cards.length;
+        }
+      });
+
+      // Synchronize KPI counters in the top Bento bar
+      const kpiScreens = document.getElementById('kpi-recruiter-screens');
+      if (kpiScreens) kpiScreens.textContent = activeScreensCount;
+
+      const kpiTech = document.getElementById('kpi-tech-hm');
+      if (kpiTech) kpiTech.textContent = techHmCount;
+
+      const kpiFinal = document.getElementById('kpi-final-comp');
+      if (kpiFinal) kpiFinal.textContent = leadershipCount + offerCount;
+
+      const kpiCompanies = document.getElementById('kpi-active-companies');
+      if (kpiCompanies) {
+        kpiCompanies.textContent = activeCompanies.length > 0 ? activeCompanies.join(' • ') : 'No live screens';
+      }
+
+      // Synchronize table directory badge counters
+      const tableActive = document.getElementById('table-active-count');
+      if (tableActive) tableActive.textContent = activeScreensCount + techHmCount + leadershipCount + offerCount;
+    }
+
+    // Initialize HTML5 Drag & Drop listeners
+    function setupKanbanDragAndDrop() {
+      const cards = document.querySelectorAll('.kanban-card');
+      const columns = document.querySelectorAll('.kanban-column');
+
+      cards.forEach(card => {
+        // Prevent click events on buttons/links from interfering with drag
+        const interactiveEls = card.querySelectorAll('button, a, input, select');
+        interactiveEls.forEach(el => {
+          el.addEventListener('mousedown', e => e.stopPropagation());
+        });
+
+        card.addEventListener('dragstart', (e) => {
+          draggedCard = card;
+          card.classList.add('is-dragging');
+          e.dataTransfer.effectAllowed = 'move';
+          const cardId = card.getAttribute('data-card-id') || 'item';
+          const company = card.getAttribute('data-company') || 'Application';
+          e.dataTransfer.setData('text/plain', JSON.stringify({ id: cardId, company: company }));
+        });
+
+        card.addEventListener('dragend', () => {
+          if (draggedCard) {
+            draggedCard.classList.remove('is-dragging');
+          }
+          columns.forEach(col => col.classList.remove('drag-over'));
+          draggedCard = null;
+        });
+      });
+
+      columns.forEach(column => {
+        column.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          e.dataTransfer.dropEffect = 'move';
+          if (!column.classList.contains('drag-over')) {
+            column.classList.add('drag-over');
+          }
+        });
+
+        column.addEventListener('dragleave', (e) => {
+          // Verify we really left the column container
+          if (!column.contains(e.relatedTarget)) {
+            column.classList.remove('drag-over');
+          }
+        });
+
+        column.addEventListener('drop', (e) => {
+          e.preventDefault();
+          column.classList.remove('drag-over');
+
+          if (!draggedCard) return;
+
+          const dropZone = column.querySelector('.card-drop-zone');
+          const sourceColumn = draggedCard.closest('.kanban-column');
+          const stageTitle = column.getAttribute('data-stage-title') || 'New Stage';
+          const companyName = draggedCard.getAttribute('data-company') || 'Application';
+          const cardId = draggedCard.getAttribute('data-card-id');
+
+          if (dropZone && draggedCard.parentNode !== dropZone) {
+            // Insert before empty placeholder or archive stub if present
+            const emptyState = dropZone.querySelector('.empty-state-placeholder');
+            const archiveStub = dropZone.querySelector('.archive-stub');
+
+            if (archiveStub) {
+              dropZone.insertBefore(draggedCard, archiveStub);
+            } else if (emptyState) {
+              dropZone.insertBefore(draggedCard, emptyState);
+            } else {
+              dropZone.appendChild(draggedCard);
+            }
+
+            // Update matching row in Table view if exists
+            if (cardId) {
+              const tableStageCell = document.getElementById('table-stage-' + cardId);
+              if (tableStageCell) {
+                tableStageCell.textContent = stageTitle;
+              }
+            }
+
+            updateColumnTelemetry();
+            showToast('Pipeline Status Updated', 'Moved ' + companyName + ' to ' + stageTitle);
+          }
+        });
+      });
+    }
+
+    function openDetailModal(roleKey) {
+      currentModalRoleKey = roleKey;
+      const modal = document.getElementById('detailModal');
+      const data = rolesData[roleKey];
+
+      if (data) {
+        const modalAvatar = document.getElementById('modal-company-avatar');
+        const modalName = document.getElementById('modal-company-name');
+        const modalBadge = document.getElementById('modal-stage-badge');
+        const modalRole = document.getElementById('modal-role-title');
+        const modalLoc = document.getElementById('modal-meta-location');
+        const modalMode = document.getElementById('modal-meta-mode');
+        const modalChan = document.getElementById('modal-meta-channel');
+        const modalCtc = document.getElementById('modal-meta-ctc');
+        const modalPoc = document.getElementById('modal-poc-name');
+        const modalEmail = document.getElementById('modal-poc-email');
+        const modalNotes = document.getElementById('modal-debrief-notes');
+
+        if (modalAvatar) modalAvatar.textContent = data.avatarText;
+        if (modalName) modalName.textContent = data.company;
+        if (modalBadge) modalBadge.textContent = data.badge;
+        if (modalRole) modalRole.textContent = data.role;
+        if (modalLoc) modalLoc.textContent = data.location;
+        if (modalMode) modalMode.textContent = data.mode;
+        if (modalChan) modalChan.textContent = data.channel;
+        if (modalCtc) modalCtc.textContent = data.ctc;
+        if (modalPoc) modalPoc.textContent = data.poc;
+        if (modalEmail) {
+          modalEmail.textContent = data.email;
+          modalEmail.href = 'mailto:' + data.email;
+        }
+        if (modalNotes) modalNotes.innerHTML = data.notes;
+      }
+
+      if (modal) {
+        modal.classList.remove('hidden');
       }
     }
+
+    function advanceStageFromModal() {
+      const select = document.getElementById('modal-stage-select');
+      if (!select) return;
+      const targetStageId = select.value;
+      const targetCol = document.querySelector(`.kanban-column[data-stage-id="${targetStageId}"]`);
+      const card = document.querySelector(`.kanban-card[data-card-id="${currentModalRoleKey}"]`);
+
+      if (targetCol && card) {
+        const dropZone = targetCol.querySelector('.card-drop-zone');
+        const emptyState = dropZone.querySelector('.empty-state-placeholder');
+        const archiveStub = dropZone.querySelector('.archive-stub');
+
+        if (archiveStub) {
+          dropZone.insertBefore(card, archiveStub);
+        } else if (emptyState) {
+          dropZone.insertBefore(card, emptyState);
+        } else {
+          dropZone.appendChild(card);
+        }
+
+        const stageTitle = targetCol.getAttribute('data-stage-title') || 'New Stage';
+        const companyName = card.getAttribute('data-company') || 'Application';
+        updateColumnTelemetry();
+        closeDetailModal();
+        showToast('Pipeline Advanced', 'Moved ' + companyName + ' to ' + stageTitle);
+      } else {
+        closeDetailModal();
+        showToast('Stage Updated', 'Updated application parameters successfully.');
+      }
+    }
+
+    function closeDetailModal() {
+      const modal = document.getElementById('detailModal');
+      if (modal) {
+        modal.classList.add('hidden');
+      }
+    }
+
+    function handleNewApplication(e) {
+      e.preventDefault();
+      const compInput = document.getElementById('new-app-company');
+      const titleInput = document.getElementById('new-app-title');
+      const channelSelect = document.getElementById('new-app-channel');
+      const stageSelect = document.getElementById('new-app-stage');
+      const locInput = document.getElementById('new-app-location');
+      const notesInput = document.getElementById('new-app-notes');
+
+      const company = compInput.value || 'New Opportunity';
+      const roleTitle = titleInput.value || 'Senior Scrum Master';
+      const channel = channelSelect.value || 'LinkedIn';
+      const stageId = stageSelect.value || 'applied';
+      const location = locInput.value || 'Bengaluru';
+      const notes = notesInput.value || 'Application submitted via recruitment pipeline.';
+
+      const targetCol = document.querySelector(`.kanban-column[data-stage-id="${stageId}"]`);
+      if (targetCol) {
+        const dropZone = targetCol.querySelector('.card-drop-zone');
+        const cardKey = 'app-' + Date.now();
+
+        // Create new draggable card element
+        const cardEl = document.createElement('div');
+        cardEl.className = 'kanban-card flex flex-col p-space-md rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all group select-none';
+        cardEl.setAttribute('draggable', 'true');
+        cardEl.setAttribute('data-card-id', cardKey);
+        cardEl.setAttribute('data-company', company);
+        cardEl.onclick = function() { openDetailModal('deloitte'); };
+
+        cardEl.innerHTML = `
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex flex-col">
+              <span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">${company}</span>
+              <span class="font-body-md text-body-md text-on-surface font-medium mt-0.5">${roleTitle}</span>
+            </div>
+            <span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">${channel}</span>
+          </div>
+          <div class="mt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+            <span class="material-symbols-outlined text-[14px]">location_on</span>
+            <span>${location}</span>
+          </div>
+          <div class="mt-space-sm p-space-xs rounded bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm">
+            <p class="line-clamp-2">${notes}</p>
+          </div>
+          <div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+            <span>Just Now</span>
+            <span class="text-primary group-hover:underline flex items-center gap-0.5 font-medium">Review dossier <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+          </div>
+        `;
+
+        const emptyState = dropZone.querySelector('.empty-state-placeholder');
+        const archiveStub = dropZone.querySelector('.archive-stub');
+        if (archiveStub) {
+          dropZone.insertBefore(cardEl, archiveStub);
+        } else if (emptyState) {
+          dropZone.insertBefore(cardEl, emptyState);
+        } else {
+          dropZone.appendChild(cardEl);
+        }
+
+        // Increment total count in Telemetry Bento
+        const totalKPI = document.getElementById('kpi-total-roles');
+        if (totalKPI) {
+          const cur = parseInt(totalKPI.textContent || '55', 10);
+          totalKPI.textContent = cur + 1;
+        }
+
+        setupKanbanDragAndDrop();
+        updateColumnTelemetry();
+        showToast('Application Logged', `${company} added to ${targetCol.getAttribute('data-stage-title')}`);
+      }
+
+      document.getElementById('logModal').classList.add('hidden');
+      compInput.value = '';
+      notesInput.value = '';
+    }
+
+    // Keyboard shortcut for Cmd/Ctrl + K search focus
+    window.addEventListener('keydown', function(e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        const searchInput = document.querySelector('input[type="text"]');
+        if (searchInput) searchInput.focus();
+      }
+      if (e.key === 'Escape') {
+        closeDetailModal();
+        const logModal = document.getElementById('logModal');
+        if (logModal) logModal.classList.add('hidden');
+      }
+    });
+
+    // Initialize when DOM content is ready
+    document.addEventListener('DOMContentLoaded', function() {
+      setupKanbanDragAndDrop();
+      updateColumnTelemetry();
+    });
+    // Fallback immediate execution
+    setupKanbanDragAndDrop();
+    updateColumnTelemetry();
   </script>
-  
-  <style>
-    /* Subtle dot-matrix engineering background */
-    .bg-dot-grid {
-      background-image: radial-gradient(rgba(148, 163, 184, 0.22) 1px, transparent 1px);
-      background-size: 24px 24px;
+<script>
+
+  // ----------------------------------------------------
+  // 1. Cryptographic SHA-256 Gate Authentication Logic
+  // ----------------------------------------------------
+  const AUTHORIZED_HASHES = [
+    "1f498bac4b23bacc32684c7a2f3abeca22d55509ecfa6853e1d428c0443218c2", // 7540
+    "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4", // 1234
+    "31e10f6e3da054766c12049fc935f500cd073829736c606b0bd8440537b1f34f", // balaji
+    "2ed29e232ab66b788a16cf2499c230527ce0f016e8c8c7b73e1e1d2bccd7c123"  // balaji2026
+  ];
+
+  async function computeSHA256(str) {
+    const buffer = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+    return Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, "0")).join("");
+  }
+
+  async function handleSecuritySubmit(e) {
+    if (e) e.preventDefault();
+    const input = document.getElementById("sec-input").value.trim();
+    const errorEl = document.getElementById("sec-error");
+    if (!input) return;
+
+    try {
+      const hash = await computeSHA256(input);
+      if (AUTHORIZED_HASHES.includes(hash)) {
+        sessionStorage.setItem("tracker_auth_hash", hash);
+        const overlay = document.getElementById("pin-lock-overlay");
+        if (overlay) {
+          overlay.style.opacity = "0";
+          overlay.style.pointerEvents = "none";
+          setTimeout(() => { overlay.style.display = "none"; }, 300);
+        }
+      } else {
+        if (errorEl) errorEl.classList.remove("hidden");
+        document.getElementById("sec-input").value = "";
+      }
+    } catch (err) {
+      if (input === "7540" || input === "balaji" || input === "1234" || input === "balaji2026") {
+        sessionStorage.setItem("tracker_auth_hash", "authorized");
+        const overlay = document.getElementById("pin-lock-overlay");
+        if (overlay) overlay.style.display = "none";
+      } else {
+        if (errorEl) errorEl.classList.remove("hidden");
+      }
     }
-    
-    /* Sleek custom scrollbars for independent kanban swimlanes */
-    .kanban-scroll::-webkit-scrollbar {
-      width: 5px;
-      height: 5px;
+  }
+
+  // Auto-unlock if session active
+  (function checkAuth() {
+    const saved = sessionStorage.getItem("tracker_auth_hash");
+    if (saved && (AUTHORIZED_HASHES.includes(saved) || saved === "authorized")) {
+      const overlay = document.getElementById("pin-lock-overlay");
+      if (overlay) overlay.style.display = "none";
     }
-    .kanban-scroll::-webkit-scrollbar-track {
-      background: rgba(241, 245, 249, 0.6);
-      border-radius: 9999px;
-    }
-    .kanban-scroll::-webkit-scrollbar-thumb {
-      background: rgba(203, 213, 225, 0.85);
-      border-radius: 9999px;
-    }
-    .kanban-scroll::-webkit-scrollbar-thumb:hover {
-      background: rgba(148, 163, 184, 1);
-    }
+  })();
 
-    /* Drag and Drop States */
-    .pipeline-card {
-      transition: all 0.15s ease-in-out;
-    }
-    .pipeline-card.is-dragging {
-      opacity: 0.45;
-      transform: scale(0.98);
-    }
-    .drag-target-active {
-      background-color: rgba(219, 234, 254, 0.65) !important;
-      border-color: #3b82f6 !important;
-      outline: 2px dashed #2563eb !important;
-      outline-offset: -2px;
-    }
-
-    /* Shimmer & badge pulse effects */
-    @keyframes pulse-subtle {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.85; transform: scale(0.98); }
-    }
-    .status-pulse {
-      animation: pulse-subtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-  </style>
-</head>
-<body class="h-full font-sans antialiased text-slate-800 bg-[#f8faff] flex flex-col min-h-screen overflow-hidden">
-
-  <!-- BEGIN: Executive Header -->
-  <header class="bg-white border-b border-slate-200/90 shadow-sm z-30 shrink-0 select-none">
-    <div class="px-4 lg:px-6 py-2.5 flex items-center justify-between gap-4">
-      
-      <!-- Brand & Profile Anchor -->
-      <div class="flex items-center gap-3.5 shrink-0">
-        <!-- Back to Career Hub Button -->
-        <a class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200/80 rounded-lg border border-slate-200 transition-all duration-150 group" href="index.html">
-          <i class="fa-solid fa-arrow-left text-slate-500 group-hover:-translate-x-0.5 transition-transform text-[11px]"></i>
-          <span>Career Hub</span>
-        </a>
-        <div class="h-5 w-px bg-slate-200 mx-0.5"></div>
-        
-        <!-- AppTracker Pro Enterprise Logo & Monogram -->
-        <div class="flex items-center gap-2.5">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-700 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-brand-600/20">
-            <i class="fa-solid fa-chart-kanban text-sm"></i>
-          </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="font-bold text-slate-900 tracking-tight text-base leading-none">AppTracker<span class="text-brand-600">Pro</span></span>
-              <span class="px-1.5 py-0.5 bg-blue-50 text-brand-700 border border-brand-200 text-[10px] font-bold rounded tracking-wider uppercase">ENTERPRISE CRM v2.4</span>
-            </div>
-            <p class="text-[11px] font-medium text-slate-500 leading-tight mt-0.5">Balaji Palani • Senior Scrum Master &amp; Agile Delivery Pipeline</p>
-          </div>
-        </div>
-
-        <!-- Balaji's Live Profile Badge -->
-        <div class="hidden xl:flex items-center gap-2.5 ml-2 pl-3 border-l border-slate-200">
-          <img alt="Balaji Palani" class="w-8 h-8 rounded-full object-cover ring-2 ring-emerald-500/40" src="./assets/img/my-pic.jpg" onerror="this.src='https://github.com/layyzee.png'"/>
-          <div class="leading-tight">
-            <div class="flex items-center gap-1.5">
-              <span class="text-xs font-bold text-slate-800">Balaji Palani</span>
-              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
-                0 Days Notice (Immediate)
-              </span>
-            </div>
-            <span class="text-[10px] text-slate-400 font-mono">SAFe 6.0 | PSM II | PMP</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Quick Search Bar with Hotkey -->
-      <div class="flex-1 max-w-xl mx-2 hidden md:block">
-        <div class="relative flex items-center">
-          <i class="fa-solid fa-magnifying-glass absolute left-3.5 text-slate-400 text-xs"></i>
-          <input id="searchInput" oninput="handleSearch()" class="w-full text-xs bg-slate-50 hover:bg-white focus:bg-white border border-slate-200 rounded-xl pl-9 pr-14 py-2 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-600 transition-all shadow-inner" placeholder="Search 55+ companies, roles, recruiters, locations, notes..." type="text"/>
-          <button id="clearSearchBtn" onclick="clearSearch()" class="absolute right-10 text-slate-400 hover:text-slate-600 hidden p-1">
-            <i class="fa-solid fa-xmark text-xs"></i>
-          </button>
-          <div class="absolute right-2.5 flex items-center gap-0.5 pointer-events-none">
-            <kbd class="px-1.5 py-0.5 text-[10px] font-mono text-slate-500 bg-white border border-slate-200 rounded shadow-sm">⌘K</kbd>
-          </div>
-        </div>
-      </div>
-
-      <!-- Header Action Controls & View Switch -->
-      <div class="flex items-center gap-2.5 shrink-0">
-        <!-- View Toggle (Board vs Table) -->
-        <div class="bg-slate-100 p-0.5 rounded-lg border border-slate-200 flex items-center text-xs font-semibold">
-          <button id="viewBtnBoard" onclick="switchView('board')" class="px-2.5 py-1.5 rounded-md bg-white text-brand-700 shadow-sm flex items-center gap-1.5 transition-all">
-            <i class="fa-solid fa-table-columns text-xs"></i>
-            <span>Board</span>
-          </button>
-          <button id="viewBtnTable" onclick="switchView('table')" class="px-2.5 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-1.5">
-            <i class="fa-solid fa-list-check text-xs"></i>
-            <span>Table</span>
-          </button>
-        </div>
-
-        <!-- Add Role Primary Button -->
-        <button onclick="openNewAppModal()" class="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-white bg-brand-600 hover:bg-brand-700 active:bg-brand-800 rounded-lg shadow-sm shadow-brand-600/30 transition-all">
-          <i class="fa-solid fa-plus text-[11px]"></i>
-          <span>Log Application</span>
-        </button>
-
-        <!-- Auxiliary Action Dropdowns -->
-        <div class="flex items-center gap-1">
-          <button onclick="exportDataCSV()" class="w-8 h-8 flex items-center justify-center text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg border border-slate-200/80 transition-colors" title="Export Pipeline CSV">
-            <i class="fa-solid fa-cloud-arrow-down text-xs"></i>
-          </button>
-          <button onclick="resetToDefaults()" class="w-8 h-8 flex items-center justify-center text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg border border-slate-200/80 transition-colors" title="Reset to Verified 55 Defaults">
-            <i class="fa-solid fa-rotate text-xs"></i>
-          </button>
-        </div>
-
-        <!-- Sync Indicator pill -->
-        <div class="hidden 2xl:flex items-center gap-1.5 pl-2 text-[11px] text-slate-500 font-medium">
-          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-          <span id="stat-synced-pill">55 Roles Synced</span>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- END: Executive Header -->
-
-  <!-- BEGIN: Pipeline Metrics Strip -->
-  <section class="bg-white border-b border-slate-200 px-4 lg:px-6 py-2.5 shadow-[0_2px_4px_rgba(0,0,0,0.02)] shrink-0">
-    <div class="flex flex-wrap items-center justify-between gap-y-3 gap-x-6">
-      <!-- High-Impact KPI Micro-Cards -->
-      <div class="flex items-center flex-wrap gap-4 lg:gap-6 divide-x divide-slate-100 text-xs">
-        <!-- Total Pipeline -->
-        <div class="flex items-center gap-2.5">
-          <div class="w-7 h-7 rounded-lg bg-blue-50 text-brand-600 flex items-center justify-center font-bold">
-            <i class="fa-solid fa-briefcase text-xs"></i>
-          </div>
-          <div>
-            <div class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Total Pipeline</div>
-            <div class="font-bold text-slate-900 text-sm leading-none flex items-center gap-1.5 mt-0.5">
-              <span id="statTotal">55 Roles</span>
-              <span class="text-[10px] font-semibold text-emerald-600 bg-emerald-50 px-1 rounded">Active</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Recruiter Screening -->
-        <div class="flex items-center gap-2.5 pl-4 lg:pl-6">
-          <div class="w-7 h-7 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center font-bold">
-            <i class="fa-solid fa-headset text-xs"></i>
-          </div>
-          <div>
-            <div class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Recruiter Screens</div>
-            <div class="font-bold text-slate-900 text-sm leading-none flex items-center gap-1.5 mt-0.5">
-              <span id="statScreening">3 Active</span>
-              <span id="statScreeningRate" class="text-[10px] font-medium text-slate-500">(conv.)</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Technical & HM -->
-        <div class="flex items-center gap-2.5 pl-4 lg:pl-6">
-          <div class="w-7 h-7 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center font-bold">
-            <i class="fa-solid fa-code-merge text-xs"></i>
-          </div>
-          <div>
-            <div class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Tech &amp; HM Round</div>
-            <div class="font-bold text-slate-900 text-sm leading-none flex items-center gap-1.5 mt-0.5">
-              <span id="statTechnical">0 High-Priority</span>
-              <span class="w-2 h-2 rounded-full bg-purple-500"></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Final / Offer -->
-        <div class="flex items-center gap-2.5 pl-4 lg:pl-6">
-          <div class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
-            <i class="fa-solid fa-award text-xs"></i>
-          </div>
-          <div>
-            <div class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Final / Comp Neg.</div>
-            <div class="font-bold text-slate-900 text-sm leading-none flex items-center gap-1 mt-0.5">
-              <span id="statOffer">0 In Discussion</span>
-              <i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- Target Comp Range -->
-        <div class="hidden xl:flex items-center gap-2.5 pl-4 lg:pl-6">
-          <div class="w-7 h-7 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center font-bold">
-            <i class="fa-solid fa-sack-dollar text-xs"></i>
-          </div>
-          <div>
-            <div class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Target Range</div>
-            <div class="font-bold text-slate-900 text-xs leading-none mt-0.5">
-              ₹28L - ₹36L CTC <span class="text-slate-400 font-normal">($65k+ Remote)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pipeline Segmented Conversion Bar -->
-      <div class="hidden md:flex items-center gap-3">
-        <div class="text-right">
-          <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Pipeline Velocity</div>
-          <div id="velocityText" class="text-[11px] font-semibold text-slate-700">0% Active Progression</div>
-        </div>
-        <div class="w-44 h-2.5 bg-slate-100 rounded-full overflow-hidden flex ring-1 ring-slate-200">
-          <div id="bar-applied" class="bg-blue-400 h-full transition-all duration-300" style="width: 70%" title="Applied"></div>
-          <div id="bar-screening" class="bg-amber-400 h-full transition-all duration-300" style="width: 15%" title="Screening"></div>
-          <div id="bar-technical" class="bg-purple-500 h-full transition-all duration-300" style="width: 10%" title="Technical/HM"></div>
-          <div id="bar-offer" class="bg-emerald-500 h-full transition-all duration-300" style="width: 5%" title="Final/Offer"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- END: Pipeline Metrics Strip -->
-
-  <!-- BEGIN: Filter & Channel Toolbar -->
-  <section class="bg-white/80 backdrop-blur-md border-b border-slate-200 px-4 lg:px-6 py-2 shrink-0">
-    <div class="flex flex-wrap items-center justify-between gap-3">
-      
-      <!-- Platform Channels Filter Group -->
-      <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5 text-xs font-semibold text-slate-600">
-        <span class="text-slate-400 mr-1 flex items-center gap-1 text-[11px]">
-          <i class="fa-solid fa-filter text-[10px]"></i> Channel:
-        </span>
-        <button onclick="setPlatformFilter('all')" data-platform="all" class="platform-filter-pill px-2.5 py-1 rounded-full bg-slate-900 text-white shadow-sm flex items-center gap-1 transition-all">
-          <span>All</span>
-          <span id="count-all" class="bg-slate-700 text-white px-1.5 py-0.2 rounded-full text-[10px]">55</span>
-        </button>
-        <button onclick="setPlatformFilter('LinkedIn')" data-platform="LinkedIn" class="platform-filter-pill px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200/70 text-slate-700 border border-slate-200 transition-colors flex items-center gap-1">
-          <i class="fa-brands fa-linkedin text-[11px] text-blue-600"></i>
-          <span>LinkedIn</span>
-          <span id="count-LinkedIn" class="bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded-full text-[10px]">0</span>
-        </button>
-        <button onclick="setPlatformFilter('Hirist')" data-platform="Hirist" class="platform-filter-pill px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200/70 text-slate-700 border border-slate-200 transition-colors flex items-center gap-1">
-          <span>Hirist</span>
-          <span id="count-Hirist" class="bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded-full text-[10px]">0</span>
-        </button>
-        <button onclick="setPlatformFilter('Naukri')" data-platform="Naukri" class="platform-filter-pill px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200/70 text-slate-700 border border-slate-200 transition-colors flex items-center gap-1">
-          <span>Naukri</span>
-          <span id="count-Naukri" class="bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded-full text-[10px]">0</span>
-        </button>
-        <button onclick="setPlatformFilter('DirectEmail')" data-platform="DirectEmail" class="platform-filter-pill px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200/70 text-slate-700 border border-slate-200 transition-colors flex items-center gap-1">
-          <span>Direct Pitch</span>
-          <span id="count-DirectEmail" class="bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded-full text-[10px]">0</span>
-        </button>
-        <button onclick="setPlatformFilter('Indeed')" data-platform="Indeed" class="platform-filter-pill px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200/70 text-slate-700 border border-slate-200 transition-colors flex items-center gap-1">
-          <span>Indeed</span>
-          <span id="count-Indeed" class="bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded-full text-[10px]">0</span>
-        </button>
-        <button onclick="setPlatformFilter('Cutshort')" data-platform="Cutshort" class="platform-filter-pill px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200/70 text-slate-700 border border-slate-200 transition-colors flex items-center gap-1">
-          <span>Cutshort</span>
-          <span id="count-Cutshort" class="bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded-full text-[10px]">0</span>
-        </button>
-      </div>
-
-      <!-- Quick Location & Filter Pills -->
-      <div class="flex items-center gap-2 text-xs">
-        <div class="flex items-center bg-slate-100 rounded-lg p-0.5 border border-slate-200">
-          <span class="px-2 py-1 text-[11px] text-slate-500 font-medium">Work Mode:</span>
-          <button id="mode-all" onclick="setWorkModeFilter('all')" class="mode-filter-btn px-2 py-0.5 rounded bg-white font-semibold text-slate-700 shadow-xs">All</button>
-          <button id="mode-remote" onclick="setWorkModeFilter('remote')" class="mode-filter-btn px-2 py-0.5 text-slate-600 hover:text-slate-900">Remote</button>
-          <button id="mode-hybrid" onclick="setWorkModeFilter('hybrid')" class="mode-filter-btn px-2 py-0.5 text-slate-600 hover:text-slate-900">Hybrid / Onsite</button>
-        </div>
-
-        <!-- Sort Control -->
-        <div class="relative inline-block text-left">
-          <select id="sortSelect" onchange="handleSortChange(this.value)" class="bg-white border border-slate-200 rounded-lg text-slate-700 hover:bg-slate-50 font-medium text-xs py-1.5 pl-2.5 pr-7 focus:ring-1 focus:ring-brand-500 focus:outline-none">
-            <option value="newest">Velocity (Newest First)</option>
-            <option value="company">Company (A to Z)</option>
-            <option value="stage">Pipeline Stage</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- END: Filter & Channel Toolbar -->
-
-  <!-- BEGIN: Interactive Kanban Board View -->
-  <main id="boardView" class="flex-1 overflow-x-auto overflow-y-hidden bg-dot-grid p-4 lg:p-6">
-    <div id="pipelineContainer" class="h-full flex items-start gap-4 lg:gap-5 min-w-[1950px] pb-4">
-      <!-- Dynamically Rendered 6 Pipeline Swimlanes -->
-    </div>
-  </main>
-  <!-- END: Interactive Kanban Board View -->
-
-  <!-- BEGIN: Interactive Table View -->
-  <main id="tableView" class="flex-1 overflow-y-auto bg-dot-grid p-4 lg:p-6 hidden">
-    <div class="max-w-7xl mx-auto bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden">
-      <div class="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50/50">
-        <div>
-          <h2 class="text-sm font-bold text-slate-900">Pipeline Applications Table</h2>
-          <p class="text-xs text-slate-500">Showing <span id="tableFilteredCount" class="font-bold text-slate-800">55</span> active candidate records</p>
-        </div>
-        <div class="flex items-center gap-2">
-          <button onclick="exportDataCSV()" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-700 bg-white hover:bg-slate-50 rounded-lg border border-slate-200 shadow-xs">
-            <i class="fa-solid fa-file-csv text-slate-500"></i>
-            <span>Export CSV</span>
-          </button>
-        </div>
-      </div>
-      <div class="overflow-x-auto">
-        <table class="w-full text-left text-xs">
-          <thead class="bg-slate-50/90 border-b border-slate-200 text-slate-500 uppercase tracking-wider font-semibold text-[10px]">
-            <tr>
-              <th class="py-3 px-5">Company</th>
-              <th class="py-3 px-5">Target Role</th>
-              <th class="py-3 px-5">Channel</th>
-              <th class="py-3 px-5">Work Mode & Location</th>
-              <th class="py-3 px-5">Pipeline Stage</th>
-              <th class="py-3 px-5">Applied Date</th>
-              <th class="py-3 px-5">Recruiter / Activity</th>
-              <th class="py-3 px-5 text-right">Actions</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody" class="divide-y divide-slate-100">
-            <!-- Dynamically populated table rows -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </main>
-  <!-- END: Interactive Table View -->
-
-  <!-- BEGIN: Application Details / Edit Modal -->
-  <div id="appModal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs flex items-center justify-center p-4 z-50 hidden">
-    <div class="bg-white rounded-2xl shadow-modal max-w-xl w-full p-6 border border-slate-200 transform transition-all">
-      <div class="flex items-start justify-between pb-4 border-b border-slate-100">
-        <div>
-          <div class="flex items-center gap-2">
-            <h3 id="modalCompany" class="text-lg font-bold text-slate-900">Company Name</h3>
-            <span id="modalPlatformBadge"></span>
-          </div>
-          <p id="modalRole" class="text-xs font-semibold text-brand-600 mt-0.5">Role Title</p>
-        </div>
-        <button onclick="closeAppModal()" class="w-8 h-8 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 flex items-center justify-center">
-          <i class="fa-solid fa-xmark text-sm"></i>
-        </button>
-      </div>
-
-      <div class="py-4 space-y-4 max-h-[70vh] overflow-y-auto">
-        <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Pipeline Stage</label>
-            <select id="modalStageSelect" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 font-semibold focus:ring-2 focus:ring-brand-500/20 focus:outline-none">
-              <option value="applied">Applied / In Review</option>
-              <option value="screening">Recruiter Screening</option>
-              <option value="technical">Technical / HM Round</option>
-              <option value="final">Final / Leadership</option>
-              <option value="offer">Offer Extended 🎉</option>
-              <option value="archived">Archived / Closed</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Interview Date (Optional)</label>
-            <input id="modalInterviewDate" type="date" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"/>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Recruiter / Contact Name</label>
-            <input id="modalContactPerson" type="text" placeholder="e.g. Kartheek G" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"/>
-          </div>
-          <div>
-            <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Contact Email / Phone</label>
-            <input id="modalContactInfo" type="text" placeholder="e.g. recruiter@company.com" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"/>
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Location / Work Mode</label>
-          <input id="modalLocation" type="text" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"/>
-        </div>
-
-        <div>
-          <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Delivery Notes &amp; Outreach Context</label>
-          <textarea id="modalNotes" rows="3" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none resize-none leading-relaxed"></textarea>
-        </div>
-
-        <div id="modalMeta" class="text-[11px] text-slate-400 font-mono bg-slate-50 px-3 py-2 rounded-lg border border-slate-100">
-          Created: Nov 10, 2026 • ID: app-1
-        </div>
-      </div>
-
-      <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-        <button onclick="deleteCurrentApp()" class="px-3.5 py-2 text-xs font-semibold text-rose-600 hover:text-rose-700 hover:bg-rose-50 rounded-lg transition-colors flex items-center gap-1.5">
-          <i class="fa-solid fa-trash-can text-xs"></i>
-          <span>Delete</span>
-        </button>
-        <div class="flex items-center gap-2">
-          <button onclick="closeAppModal()" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded-lg transition-colors">
-            Cancel
-          </button>
-          <button onclick="saveAppModalChanges()" class="px-4 py-2 text-xs font-bold text-white bg-brand-600 hover:bg-brand-700 active:bg-brand-800 rounded-lg shadow-sm shadow-brand-600/30 transition-all">
-            Save Changes
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- END: Application Details / Edit Modal -->
-
-  <!-- BEGIN: Log New Application Modal -->
-  <div id="newAppModal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs flex items-center justify-center p-4 z-50 hidden">
-    <div class="bg-white rounded-2xl shadow-modal max-w-lg w-full p-6 border border-slate-200 transform transition-all">
-      <div class="flex items-center justify-between pb-4 border-b border-slate-100">
-        <div>
-          <h3 class="text-base font-bold text-slate-900">Log New Application</h3>
-          <p class="text-xs text-slate-500 mt-0.5">Track a new target Scrum Master or Agile Delivery role</p>
-        </div>
-        <button onclick="closeNewAppModal()" class="w-8 h-8 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 flex items-center justify-center">
-          <i class="fa-solid fa-xmark text-sm"></i>
-        </button>
-      </div>
-
-      <div class="py-4 space-y-3.5">
-        <div>
-          <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Company Name *</label>
-          <input id="newCompany" type="text" placeholder="e.g. Barclays, Deloitte, Cisco" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"/>
-        </div>
-
-        <div>
-          <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Role Title *</label>
-          <input id="newRole" type="text" value="Senior Scrum Master" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"/>
-        </div>
-
-        <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Channel / Platform</label>
-            <select id="newPlatform" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none">
-              <option value="LinkedIn">LinkedIn</option>
-              <option value="Hirist">Hirist</option>
-              <option value="Naukri">Naukri</option>
-              <option value="DirectEmail">Direct Pitch</option>
-              <option value="Indeed">Indeed</option>
-              <option value="Cutshort">Cutshort</option>
-              <option value="DirectATS">Direct ATS</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Initial Stage</label>
-            <select id="newStage" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none">
-              <option value="applied">Applied / In Review</option>
-              <option value="screening">Recruiter Screening</option>
-              <option value="technical">Technical / HM Round</option>
-              <option value="final">Final / Leadership</option>
-              <option value="offer">Offer Extended 🎉</option>
-            </select>
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Location &amp; Work Mode</label>
-          <input id="newLocation" type="text" value="Hybrid • Bengaluru" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"/>
-        </div>
-
-        <div>
-          <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Notes / Outreach Context</label>
-          <textarea id="newNotes" rows="2.5" placeholder="Application links, recruiter names, compensation discussions..." class="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 focus:ring-2 focus:ring-brand-500/20 focus:outline-none resize-none leading-relaxed"></textarea>
-        </div>
-      </div>
-
-      <div class="pt-4 border-t border-slate-100 flex items-center justify-end gap-2">
-        <button onclick="closeNewAppModal()" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded-lg transition-colors">
-          Cancel
-        </button>
-        <button onclick="addNewApplication()" class="px-4 py-2 text-xs font-bold text-white bg-brand-600 hover:bg-brand-700 active:bg-brand-800 rounded-lg shadow-sm shadow-brand-600/30 transition-all">
-          Create Application
-        </button>
-      </div>
-    </div>
-  </div>
-  <!-- END: Log New Application Modal -->
-
-  <!-- BEGIN: Interactive Engine & Seed Dataset -->
-  <script>
-    // Verified Seed Application Dataset (55 Verified Live Roles)
-    const defaultApplications = [
+  // ----------------------------------------------------
+  // 2. Applications Database & State
+  // ----------------------------------------------------
+  const defaultApplications = [
             { id: "app-1", company: "ITC Infotech", role: "Senior Scrum Master", location: "Hybrid • Bengaluru", platform: "DirectEmail", stage: "screening", date: "2026-11-06", contact: "Kartheek G (kartheek.g@itcinfotech.com)", notes: "Direct outreach email sent to recruiter with full candidate profile and resume reference. Follow-up scheduled." },
             { id: "app-2", company: "Themesoft Inc.", role: "Scrum Master", location: "Remote • Ontario / Global", platform: "LinkedIn", stage: "applied", date: "2026-11-06", contact: "", notes: "Submitted via LinkedIn Easy Apply. Global remote client delivery." },
             { id: "app-3", company: "Miratech (Req 4482521057)", role: "Scrum Master", location: "Remote • India / Global", platform: "LinkedIn", stage: "applied", date: "2026-11-06", contact: "", notes: "Applied via LinkedIn Easy Apply with full notice and gross compensation details." },
@@ -601,622 +1237,429 @@
             { id: "app-52", company: "Concentrix", role: "Scrum Master (Technical Delivery & Agile KPI)", location: "Mumbai • Remote / Hybrid", platform: "Direct Email / LinkedIn", stage: "applied", date: "2026-11-11", contact: "Pavithra Prashanth (Manager - TA, Pavithra.mahantesh@concentrix.com)", notes: "Direct outreach to TA Manager via LinkedIn lead with Balaji_Palani_Scrum_Master_Resume.pdf attached. Addressed all mandatory skills: SDLC, Micro Frontends, Cloud/CI-CD, Jira/ADO, KPI metrics, and 0-Day Immediate Joiner." },
             { id: "app-53", company: "VeersaTech", role: "Scrum Master - Noida", location: "Noida • Remote / Hybrid", platform: "Veersa LOOPIN", stage: "applied", date: "2026-11-11", contact: "", notes: "Submitted via Veersa LOOPIN portal (careers/70). Full profile populated: CSM & SAFe SSM, 7y IT / 4y SM, 0-Day Notice, ₹20L/₹25L, Anna University (2016), live portfolio linked." },
             { id: "app-54", company: "Haparz", role: "Scrum Master (E-commerce Domain)", location: "Remote • India", platform: "Direct Email / LinkedIn", stage: "applied", date: "2026-11-11", contact: "Jansi Rani Velmurugan (TA / Recruiter, jansi@haparz.com)", notes: "Direct application to recruiter from organic LinkedIn hiring post with Balaji_Palani_Scrum_Master_Resume.pdf attached. Tailored for E-commerce & FinTech agile delivery, backlog grooming, sprint predictability, and 0-Day Notice." },
-            { id: "app-55", company: "Xtivia", role: "Scrum Master / Agile Delivery Lead", location: "Remote / Hybrid • India", platform: "Direct Email / LinkedIn", stage: "applied", date: "2026-11-11", contact: "Nanda S. (Technical Recruiter, nandamath097@gmail.com)", notes: "Direct outreach to technical recruiter from LinkedIn feed with Balaji_Palani_Scrum_Master_Resume.pdf attached. Focused on SDLC leadership, CI/CD, multi-squad SAFe PI planning, velocity forecasting, and 0-Day immediate availability." }
+            { id: "app-55", company: "Xtivia", role: "Scrum Master / Agile Delivery Lead", location: "Remote / Hybrid • India", platform: "Direct Email / LinkedIn", stage: "applied", date: "2026-11-11", contact: "Nanda S. (Technical Recruiter, nandamath097@gmail.com)", notes: "Direct outreach to technical recruiter from LinkedIn feed with Balaji_Palani_Scrum_Master_Resume.pdf attached. Focused on SDLC leadership, CI/CD, multi-squad SAFe PI planning, velocity forecasting, and 0-Day immediate availability." },
+            { id: "app-56", company: "Career Soft Solutions Inc.", role: "Consultant – Scrum Master (Data & AI Initiatives)", location: "Bangalore / Chennai • Hybrid", platform: "Direct Email / LinkedIn", stage: "applied", date: "2026-11-12", contact: "Sidhanta Kumar Naik & Sangeeta Bhatta (sidhanta.n@careersoftusa.com)", notes: "Direct recruiter application with updated resume attached. Tailored for cross-functional engineering PODs, AWS cloud, Data/AI pipelines, CSM® & SAFe® 6 SSM, and 0-Day Immediate Joiner availability." },
+            { id: "app-57", company: "Gruen Bleen", role: "SAP Scrum Master / Agile Delivery Lead", location: "Bangalore • Hybrid / Contract", platform: "Direct Email / LinkedIn", stage: "applied", date: "2026-11-12", contact: "Prachi Sonthalia (Talent Acquisition, rmt@gruenbleen.com)", notes: "Submitted application for Job ID: 109728-1 with updated resume attached. Highlighted enterprise ceremony facilitation, backlog grooming, cross-functional risk management, and clean BGC documentation." },
+            { id: "app-58", company: "Infosys", role: "Agile / Scrum Master", location: "Pan India / Mumbai / Bengaluru", platform: "Direct Employee Referral", stage: "applied", date: "2026-11-12", contact: "Subbu (Infosys Employee Referral, subbu.refers@gmail.com)", notes: "Submitted formal referral profile and updated resume directly to verified Infosys employee for internal referral in the Agile / Scrum Master track." }
         ];
 
-    // 6 Pipeline Stages Configuration
-    const stages = [
-      { id: "applied", title: "Applied / In Review", color: "blue", border: "border-blue-200/80", dot: "bg-blue-500 ring-4 ring-blue-100", badge: "bg-blue-100 text-blue-800" },
-      { id: "screening", title: "Recruiter Screening", color: "amber", border: "border-amber-200/80", dot: "bg-amber-500 ring-4 ring-amber-100", badge: "bg-amber-100 text-amber-800" },
-      { id: "technical", title: "Tech & HM Round", color: "purple", border: "border-purple-200/80", dot: "bg-purple-500 ring-4 ring-purple-100", badge: "bg-purple-100 text-purple-800" },
-      { id: "final", title: "Final / Leadership", color: "indigo", border: "border-indigo-200/80", dot: "bg-indigo-500 ring-4 ring-indigo-100", badge: "bg-indigo-100 text-indigo-800" },
-      { id: "offer", title: "Offer Extended 🎉", color: "emerald", border: "border-emerald-200/80", dot: "bg-emerald-500 ring-4 ring-emerald-100", badge: "bg-emerald-100 text-emerald-800" },
-      { id: "archived", title: "Archived / Closed", color: "slate", border: "border-slate-200/80", dot: "bg-slate-400 ring-4 ring-slate-100", badge: "bg-slate-200 text-slate-700" }
-    ];
+  const STAGES_CONFIG = [
+    { id: "applied", title: "Applied / In Review" },
+    { id: "screening", title: "Recruiter Screening" },
+    { id: "technical", title: "Tech & HM Round" },
+    { id: "final", title: "Final / Leadership" },
+    { id: "offer", title: "Offer Extended 🎉" },
+    { id: "archived", title: "Archived / Closed" }
+  ];
 
-    let applications = [];
-    let currentPlatformFilter = 'all';
-    let currentWorkModeFilter = 'all';
-    let currentSearchQuery = '';
-    let currentSort = 'newest';
-    let currentView = 'board';
-    let selectedAppId = null;
+  let applications = [];
+  let currentPlatformFilter = "all";
+  let currentWorkModeFilter = "all";
+  let currentSearchQuery = "";
+  let currentSort = "newest";
+  let currentView = "board";
+  let selectedAppId = null;
 
-    // Initialize Data with local storage fallback
-    function initData() {
-      try {
-        const stored = localStorage.getItem('apptracker_data_v6');
-        if (stored) {
-          const parsed = JSON.parse(stored);
-          const existingIds = new Set(parsed.map(a => a.id));
-          let updated = false;
-          defaultApplications.forEach(defApp => {
-            if (!existingIds.has(defApp.id)) {
-              parsed.push(defApp);
-              updated = true;
-            }
-          });
-          applications = parsed;
-          if (updated) saveData();
-        } else {
-          applications = [...defaultApplications];
-          saveData();
-        }
-      } catch (e) {
-        console.error("Storage error:", e);
+  function loadApplications() {
+    try {
+      const stored = localStorage.getItem("apptracker_data_v6");
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        const existingIds = new Set(parsed.map(a => a.id));
+        defaultApplications.forEach(defApp => {
+          if (!existingIds.has(defApp.id)) {
+            parsed.push(defApp);
+          }
+        });
+        applications = parsed;
+      } else {
         applications = [...defaultApplications];
+        saveApplications();
       }
-      window.applications = applications;
+    } catch (e) {
+      applications = [...defaultApplications];
     }
+  }
 
-    function saveData() {
-      try {
-        localStorage.setItem('apptracker_data_v6', JSON.stringify(applications));
-      } catch (e) {
-        console.error("Save error:", e);
-      }
-      window.applications = applications;
-      updateKPIs();
+  function saveApplications() {
+    try {
+      localStorage.setItem("apptracker_data_v6", JSON.stringify(applications));
+    } catch (e) {
+      console.warn("localStorage write failed", e);
     }
+  }
 
-    // Update KPI Counters & Progress Bars
-    function updateKPIs() {
-      const total = applications.length;
-      const screeningCount = applications.filter(a => a.stage === 'screening').length;
-      const technicalCount = applications.filter(a => a.stage === 'technical').length;
-      const offerCount = applications.filter(a => a.stage === 'offer' || a.stage === 'final').length;
-      const appliedCount = applications.filter(a => a.stage === 'applied').length;
+  function getFilteredApplications() {
+    return applications.filter(app => {
+      const matchesPlatform = currentPlatformFilter === "all" || 
+        (app.platform || "").toLowerCase().includes(currentPlatformFilter.toLowerCase());
 
-      document.getElementById('statTotal').innerText = `${total} Roles`;
-      const pill = document.getElementById('stat-synced-pill');
-      if (pill) pill.innerText = `${total} Roles Synced`;
+      let matchesMode = true;
+      const loc = (app.location || "").toLowerCase();
+      if (currentWorkModeFilter === "remote") matchesMode = loc.includes("remote");
+      else if (currentWorkModeFilter === "hybrid") matchesMode = loc.includes("hybrid");
+      else if (currentWorkModeFilter === "onsite") matchesMode = loc.includes("on-site") || loc.includes("onsite");
 
-      document.getElementById('statScreening').innerText = `${screeningCount} Active`;
-      const screeningRate = total > 0 ? Math.round((screeningCount / total) * 100) : 0;
-      document.getElementById('statScreeningRate').innerText = `(${screeningRate}% conv.)`;
+      const q = currentSearchQuery.toLowerCase().trim();
+      const matchesSearch = !q || 
+        (app.company || "").toLowerCase().includes(q) ||
+        (app.role || "").toLowerCase().includes(q) ||
+        (app.location || "").toLowerCase().includes(q) ||
+        (app.contact || "").toLowerCase().includes(q) ||
+        (app.notes || "").toLowerCase().includes(q);
 
-      document.getElementById('statTechnical').innerText = `${technicalCount} High-Priority`;
-      document.getElementById('statOffer').innerText = `${offerCount} In Discussion`;
+      return matchesPlatform && matchesMode && matchesSearch;
+    });
+  }
 
-      // Velocity Bar calculation
-      const advancedCount = screeningCount + technicalCount + offerCount;
-      const velocityRate = total > 0 ? ((advancedCount / total) * 100).toFixed(1) : 0;
-      const velText = document.getElementById('velocityText');
-      if (velText) velText.innerText = `${velocityRate}% Stage Progression`;
+  // ----------------------------------------------------
+  // 3. UI Rendering
+  // ----------------------------------------------------
+  function renderAll() {
+    updateKPIs();
+    renderKanban();
+    renderTable();
+  }
 
-      if (total > 0) {
-        const pApplied = (appliedCount / total) * 100;
-        const pScreening = (screeningCount / total) * 100;
-        const pTechnical = (technicalCount / total) * 100;
-        const pOffer = (offerCount / total) * 100;
+  function updateKPIs() {
+    const total = applications.length;
+    const screeningCount = applications.filter(a => a.stage === "screening").length;
+    const technicalCount = applications.filter(a => a.stage === "technical").length;
+    const finalCount = applications.filter(a => a.stage === "final").length;
+    const offerCount = applications.filter(a => a.stage === "offer").length;
+    const appliedCount = applications.filter(a => a.stage === "applied").length;
 
-        document.getElementById('bar-applied').style.width = `${pApplied}%`;
-        document.getElementById('bar-screening').style.width = `${pScreening}%`;
-        document.getElementById('bar-technical').style.width = `${pTechnical}%`;
-        document.getElementById('bar-offer').style.width = `${pOffer}%`;
-      }
+    const totalEl = document.getElementById("kpi-total-apps");
+    if (totalEl) totalEl.innerText = `${total} Roles`;
 
-      // Dynamic platform counts
-      document.getElementById('count-all').innerText = total;
-      ['LinkedIn', 'Hirist', 'Naukri', 'DirectEmail', 'Indeed', 'Cutshort'].forEach(p => {
-        const el = document.getElementById(`count-${p}`);
-        if (el) el.innerText = applications.filter(a => a.platform === p).length;
+    const screenEl = document.getElementById("kpi-screening-count");
+    if (screenEl) screenEl.innerText = `${screeningCount} Active`;
+
+    const techEl = document.getElementById("kpi-tech-count");
+    if (techEl) techEl.innerText = `${technicalCount + finalCount} In Progress`;
+
+    const offerEl = document.getElementById("kpi-offer-count");
+    if (offerEl) offerEl.innerText = `${offerCount} Offer`;
+
+    const advancedCount = screeningCount + technicalCount + finalCount + offerCount;
+    const velocityRate = total > 0 ? ((advancedCount / total) * 100).toFixed(1) : 0;
+    const velText = document.getElementById("kpi-velocity-rate");
+    if (velText) velText.innerText = `${velocityRate}% Response`;
+  }
+
+  function renderKanban() {
+    const filtered = getFilteredApplications();
+
+    STAGES_CONFIG.forEach(stage => {
+      const stageId = stage.id === "technical" ? "tech-hm" : (stage.id === "final" ? "leadership" : stage.id);
+      const colEl = document.querySelector(`.kanban-column[data-stage-id="${stageId}"]`) || 
+                    document.querySelector(`.kanban-column[data-stage-id="${stage.id}"]`);
+      
+      if (!colEl) return;
+
+      const stageApps = filtered.filter(a => {
+        if (stageId === "tech-hm") return a.stage === "technical";
+        if (stageId === "leadership") return a.stage === "final";
+        return a.stage === stage.id;
       });
-    }
 
-    // Filter Logic
-    function getFilteredApplications() {
-      return applications.filter(app => {
-        // Platform Filter
-        const matchesPlatform = currentPlatformFilter === 'all' || 
-          app.platform.toLowerCase() === currentPlatformFilter.toLowerCase() ||
-          (currentPlatformFilter === 'DirectEmail' && (app.platform === 'DirectEmail' || app.platform === 'DirectATS'));
+      const badge = colEl.querySelector(".column-count-badge");
+      if (badge) badge.innerText = stageApps.length;
 
-        // Work Mode Filter
-        let matchesMode = true;
-        const loc = (app.location || '').toLowerCase();
-        if (currentWorkModeFilter === 'remote') {
-          matchesMode = loc.includes('remote');
-        } else if (currentWorkModeFilter === 'hybrid') {
-          matchesMode = loc.includes('hybrid') || loc.includes('onsite') || (!loc.includes('remote'));
-        }
+      const dropZone = colEl.querySelector(".card-drop-zone");
+      if (!dropZone) return;
+      dropZone.innerHTML = "";
 
-        // Search Query
-        const q = currentSearchQuery.toLowerCase().trim();
-        const matchesSearch = !q || 
-          app.company.toLowerCase().includes(q) ||
-          app.role.toLowerCase().includes(q) ||
-          (app.location && app.location.toLowerCase().includes(q)) ||
-          (app.notes && app.notes.toLowerCase().includes(q)) ||
-          (app.contact && app.contact.toLowerCase().includes(q));
-
-        return matchesPlatform && matchesMode && matchesSearch;
-      }).sort((a, b) => {
-        if (currentSort === 'company') {
-          return a.company.localeCompare(b.company);
-        } else if (currentSort === 'stage') {
-          const stageOrder = { applied: 1, screening: 2, technical: 3, final: 4, offer: 5, archived: 6 };
-          return (stageOrder[a.stage] || 99) - (stageOrder[b.stage] || 99);
-        } else {
-          // Default: velocity / newest first (extract id numeric suffix or date)
-          const numA = parseInt(a.id.replace('app-', '')) || 0;
-          const numB = parseInt(b.id.replace('app-', '')) || 0;
-          return numB - numA;
-        }
-      });
-    }
-
-    // Platform Badge Styler
-    function getPlatformBadge(platform) {
-      switch(platform) {
-        case 'LinkedIn':
-          return '<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 text-brand-600 border border-blue-200">LinkedIn</span>';
-        case 'Hirist':
-          return '<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-purple-50 text-purple-700 border border-purple-200">Hirist</span>';
-        case 'Naukri':
-          return '<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-cyan-50 text-cyan-700 border border-cyan-200">Naukri</span>';
-        case 'Indeed':
-          return '<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-200">Indeed</span>';
-        case 'Cutshort':
-          return '<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-amber-50 text-amber-800 border border-amber-200">Cutshort</span>';
-        case 'DirectATS':
-          return '<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-amber-50 text-amber-800 border border-amber-200">Direct ATS</span>';
-        case 'DirectEmail':
-          return '<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">Direct Pitch</span>';
-        default:
-          return `<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-200">${platform}</span>`;
-      }
-    }
-
-    // Render Kanban Board
-    function renderBoard() {
-      const container = document.getElementById('pipelineContainer');
-      container.innerHTML = '';
-      const filtered = getFilteredApplications();
-
-      stages.forEach(stage => {
-        const stageApps = filtered.filter(a => a.stage === stage.id);
-
-        const col = document.createElement('div');
-        col.className = `flex-1 flex flex-col h-full bg-slate-100/90 rounded-2xl border ${stage.border} shadow-xs min-w-[320px] max-w-[370px] select-none`;
-        col.dataset.stageId = stage.id;
-        col.ondragover = handleDragOver;
-        col.ondragleave = handleDragLeave;
-        col.ondrop = handleDrop;
-
-        col.innerHTML = `
-          <!-- Column Header -->
-          <div class="p-3.5 border-b border-slate-200/80 flex items-center justify-between bg-white/70 rounded-t-2xl backdrop-blur-xs">
-            <div class="flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full ${stage.dot}"></span>
-              <h3 class="font-bold text-slate-900 text-xs uppercase tracking-wider">${stage.title}</h3>
-              <span class="${stage.badge} text-[11px] font-bold px-2 py-0.5 rounded-full">${stageApps.length}</span>
-            </div>
-          </div>
-          <!-- Cards Scrollable Container -->
-          <div id="cards-${stage.id}" class="p-3 space-y-3 overflow-y-auto kanban-scroll flex-1 max-h-[calc(100vh-250px)] min-h-[460px]">
-          </div>
-        `;
-
-        container.appendChild(col);
-
-        const cardsContainer = col.querySelector(`#cards-${stage.id}`);
-        if (stageApps.length === 0) {
-          cardsContainer.innerHTML = `
-            <div class="h-36 border border-dashed border-slate-300/80 rounded-2xl flex flex-col items-center justify-center text-slate-400 text-xs font-medium gap-1">
-              <i class="fa-solid fa-inbox text-slate-300 text-base"></i>
-              <span>No applications</span>
-            </div>
-          `;
-        } else {
-          stageApps.forEach(app => {
-            cardsContainer.appendChild(createCard(app));
-          });
-        }
-      });
-    }
-
-    // Create Interactive Card Element
-    function createCard(app) {
-      const card = document.createElement('div');
-      card.className = 'bg-white rounded-xl p-3.5 border border-slate-200/90 shadow-card hover:shadow-md hover:border-brand-500/50 transition-all cursor-pointer group pipeline-card';
-      card.id = app.id;
-      card.draggable = true;
-      card.ondragstart = handleDragStart;
-      card.ondragend = handleDragEnd;
-      card.onclick = (e) => {
-        if (e.target.closest('button')) return;
-        openAppModal(app.id);
-      };
-
-      const isRemote = (app.location || '').toLowerCase().includes('remote');
-      const locIcon = isRemote ? 'fa-globe' : 'fa-location-dot';
-
-      card.innerHTML = `
-        <div class="flex items-start justify-between gap-2">
-          <div>
-            <span class="font-bold text-slate-900 group-hover:text-brand-600 transition-colors text-sm leading-tight">${app.company}</span>
-            <p class="text-xs font-semibold text-slate-700 mt-0.5">${app.role}</p>
-          </div>
-          ${getPlatformBadge(app.platform)}
-        </div>
-
-        <div class="mt-2 flex items-center gap-2 text-[11px] text-slate-500">
-          <span class="flex items-center gap-1">
-            <i class="fa-solid ${locIcon} text-slate-400"></i>
-            <span>${app.location || 'Remote'}</span>
-          </span>
-        </div>
-
-        ${app.contact ? `
-          <div class="mt-2 text-[10px] text-emerald-800 flex items-center gap-1.5 font-medium bg-emerald-50 px-2 py-1 rounded-lg border border-emerald-200 truncate">
-            <i class="fa-solid fa-user-tie text-emerald-600"></i>
-            <span class="truncate">${app.contact}</span>
-          </div>
-        ` : ''}
-
-        ${app.interviewDate ? `
-          <div class="mt-2 text-[10px] text-amber-800 flex items-center gap-1.5 font-semibold bg-amber-50 px-2 py-1 rounded-lg border border-amber-200">
-            <i class="fa-solid fa-calendar-check text-amber-600"></i>
-            <span>Interview: ${app.interviewDate}</span>
-          </div>
-        ` : ''}
-
-        ${app.notes ? `
-          <div class="mt-2 p-2 bg-slate-50 rounded-lg text-[11px] text-slate-600 border border-slate-100 leading-relaxed line-clamp-2">
-            ${app.notes}
-          </div>
-        ` : ''}
-
-        <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px]">
-          <span class="text-slate-400 font-mono text-[10px]">${app.date || 'Active'}</span>
-          <button class="text-brand-600 font-semibold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
-            <span>Details</span>
-            <i class="fa-solid fa-chevron-right text-[9px]"></i>
-          </button>
-        </div>
-      `;
-
-      return card;
-    }
-
-    // Render Table View
-    function renderTable() {
-      const tbody = document.getElementById('tableBody');
-      tbody.innerHTML = '';
-      const filtered = getFilteredApplications();
-      document.getElementById('tableFilteredCount').innerText = filtered.length;
-
-      if (filtered.length === 0) {
-        tbody.innerHTML = `
-          <tr>
-            <td colspan="8" class="text-center py-12 text-slate-400 font-medium">
-              No applications match your filter criteria.
-            </td>
-          </tr>
-        `;
+      if (stageApps.length === 0) {
+        dropZone.innerHTML = `<div class="p-4 text-center text-xs font-mono text-on-surface-variant/60 border border-dashed border-surface-variant rounded-lg">No dispatches</div>`;
         return;
       }
 
-      filtered.forEach(app => {
-        const tr = document.createElement('tr');
-        tr.className = 'hover:bg-slate-50 transition cursor-pointer';
-        tr.onclick = (e) => {
-          if (e.target.closest('select') || e.target.closest('button')) return;
-          openAppModal(app.id);
-        };
+      stageApps.forEach(app => {
+        const card = document.createElement("div");
+        card.className = "kanban-card flex flex-col p-space-md rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all group select-none border border-surface-variant/40 hover:border-primary/50 cursor-pointer";
+        card.setAttribute("draggable", "true");
+        card.setAttribute("data-card-id", app.id);
+        card.setAttribute("data-company", app.company);
+        card.onclick = () => openDetailModal(app.id);
 
-        tr.innerHTML = `
-          <td class="py-3.5 px-5 font-bold text-slate-900">${app.company}</td>
-          <td class="py-3.5 px-5 text-slate-800 font-medium">${app.role}</td>
-          <td class="py-3.5 px-5">${getPlatformBadge(app.platform)}</td>
-          <td class="py-3.5 px-5 text-slate-500 text-xs">${app.location || 'Remote'}</td>
-          <td class="py-3.5 px-5">
-            <select onchange="updateStage('${app.id}', this.value)" class="bg-slate-50 text-slate-800 text-xs px-2.5 py-1.5 rounded-lg border border-slate-200 focus:outline-none focus:border-brand-500 font-semibold">
-              ${stages.map(s => `<option value="${s.id}" ${s.id === app.stage ? 'selected' : ''}>${s.title}</option>`).join('')}
-            </select>
-          </td>
-          <td class="py-3.5 px-5 text-slate-400 text-xs font-mono">${app.date || 'Active'}</td>
-          <td class="py-3.5 px-5 text-slate-600 max-w-xs truncate">
-            ${app.contact ? `<span class="text-emerald-700 font-semibold">[${app.contact}]</span> ` : ''}
-            <span>${app.notes || '—'}</span>
-          </td>
-          <td class="py-3.5 px-5 text-right">
-            <button onclick="openAppModal('${app.id}')" class="text-brand-600 hover:text-brand-800 font-semibold text-xs px-2.5 py-1.5 rounded-lg hover:bg-brand-50 transition">
-              Edit →
-            </button>
-          </td>
+        card.innerHTML = `
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex flex-col">
+              <span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">${app.company}</span>
+              <span class="font-body-md text-body-md text-on-surface font-medium mt-0.5">${app.role}</span>
+            </div>
+            <span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm shrink-0">${app.platform}</span>
+          </div>
+          <div class="mt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+            <span class="material-symbols-outlined text-[14px]">location_on</span>
+            <span class="truncate">${app.location}</span>
+          </div>
+          ${app.contact || app.notes ? `
+          <div class="mt-space-sm p-space-xs rounded bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm">
+            ${app.contact ? `<div class="flex items-center gap-1 font-semibold text-on-surface"><span class="material-symbols-outlined text-[13px]">person</span><span class="truncate">${app.contact}</span></div>` : ""}
+            ${app.notes ? `<p class="mt-1 text-xs line-clamp-2 text-on-surface-variant">${app.notes}</p>` : ""}
+          </div>` : ""}
+          <div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm border-t border-surface-variant/40">
+            <span>${app.date}</span>
+            <span class="text-secondary font-medium flex items-center gap-1">Inspect <span class="material-symbols-outlined text-[12px]">arrow_forward</span></span>
+          </div>
         `;
-        tbody.appendChild(tr);
+        dropZone.appendChild(card);
       });
-    }
-
-    // Switch View (Board vs Table)
-    function switchView(view) {
-      currentView = view;
-      const btnBoard = document.getElementById('viewBtnBoard');
-      const btnTable = document.getElementById('viewBtnTable');
-      const boardEl = document.getElementById('boardView');
-      const tableEl = document.getElementById('tableView');
-
-      if (view === 'board') {
-        btnBoard.className = 'px-2.5 py-1.5 rounded-md bg-white text-brand-700 shadow-sm flex items-center gap-1.5 transition-all';
-        btnTable.className = 'px-2.5 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-1.5';
-        boardEl.classList.remove('hidden');
-        tableEl.classList.add('hidden');
-      } else {
-        btnTable.className = 'px-2.5 py-1.5 rounded-md bg-white text-brand-700 shadow-sm flex items-center gap-1.5 transition-all';
-        btnBoard.className = 'px-2.5 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-1.5';
-        boardEl.classList.add('hidden');
-        tableEl.classList.remove('hidden');
-      }
-      render();
-    }
-
-    // Filter Controls
-    function setPlatformFilter(platform) {
-      currentPlatformFilter = platform;
-      document.querySelectorAll('.platform-filter-pill').forEach(btn => {
-        if (btn.dataset.platform === platform) {
-          btn.className = 'platform-filter-pill px-2.5 py-1 rounded-full bg-slate-900 text-white shadow-sm flex items-center gap-1 transition-all';
-          const badge = btn.querySelector('span:last-child');
-          if (badge) badge.className = 'bg-slate-700 text-white px-1.5 py-0.2 rounded-full text-[10px]';
-        } else {
-          btn.className = 'platform-filter-pill px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200/70 text-slate-700 border border-slate-200 transition-colors flex items-center gap-1';
-          const badge = btn.querySelector('span:last-child');
-          if (badge) badge.className = 'bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded-full text-[10px]';
-        }
-      });
-      render();
-    }
-
-    function setWorkModeFilter(mode) {
-      currentWorkModeFilter = mode;
-      document.querySelectorAll('.mode-filter-btn').forEach(btn => {
-        btn.className = 'mode-filter-btn px-2 py-0.5 text-slate-600 hover:text-slate-900';
-      });
-      const activeBtn = document.getElementById(`mode-${mode}`);
-      if (activeBtn) {
-        activeBtn.className = 'mode-filter-btn px-2 py-0.5 rounded bg-white font-semibold text-slate-700 shadow-xs';
-      }
-      render();
-    }
-
-    function handleSortChange(sortVal) {
-      currentSort = sortVal;
-      render();
-    }
-
-    function handleSearch() {
-      const query = document.getElementById('searchInput').value;
-      currentSearchQuery = query;
-      const clearBtn = document.getElementById('clearSearchBtn');
-      if (query.trim()) {
-        clearBtn.classList.remove('hidden');
-      } else {
-        clearBtn.classList.add('hidden');
-      }
-      render();
-    }
-
-    function clearSearch() {
-      document.getElementById('searchInput').value = '';
-      currentSearchQuery = '';
-      document.getElementById('clearSearchBtn').classList.add('hidden');
-      render();
-    }
-
-    // Drag & Drop
-    let draggedAppId = null;
-
-    function handleDragStart(e) {
-      draggedAppId = e.target.id;
-      e.dataTransfer.setData('text/plain', e.target.id);
-      e.target.classList.add('is-dragging');
-    }
-
-    function handleDragEnd(e) {
-      e.target.classList.remove('is-dragging');
-      document.querySelectorAll('[data-stage-id]').forEach(col => col.classList.remove('drag-target-active'));
-    }
-
-    function handleDragOver(e) {
-      e.preventDefault();
-      const col = e.currentTarget;
-      col.classList.add('drag-target-active');
-    }
-
-    function handleDragLeave(e) {
-      e.currentTarget.classList.remove('drag-target-active');
-    }
-
-    function handleDrop(e) {
-      e.preventDefault();
-      const col = e.currentTarget;
-      col.classList.remove('drag-target-active');
-      const targetStage = col.dataset.stageId;
-      const appId = e.dataTransfer.getData('text/plain') || draggedAppId;
-
-      if (appId && targetStage) {
-        const app = applications.find(a => a.id === appId);
-        if (app && app.stage !== targetStage) {
-          app.stage = targetStage;
-          saveData();
-          render();
-        }
-      }
-    }
-
-    function updateStage(appId, newStage) {
-      const app = applications.find(a => a.id === appId);
-      if (app) {
-        app.stage = newStage;
-        saveData();
-        render();
-      }
-    }
-
-    // Modal Details & Edit
-    function openAppModal(id) {
-      selectedAppId = id;
-      const app = applications.find(a => a.id === id);
-      if (!app) return;
-
-      document.getElementById('modalCompany').innerText = app.company;
-      document.getElementById('modalRole').innerText = app.role;
-      document.getElementById('modalPlatformBadge').innerHTML = getPlatformBadge(app.platform);
-      document.getElementById('modalStageSelect').value = app.stage;
-      document.getElementById('modalInterviewDate').value = app.interviewDate || '';
-      document.getElementById('modalContactPerson').value = app.contactPerson || (app.contact ? app.contact.split('(')[0].trim() : '');
-      document.getElementById('modalContactInfo').value = app.contactInfo || '';
-      document.getElementById('modalLocation').value = app.location || '';
-      document.getElementById('modalNotes').value = app.notes || '';
-      document.getElementById('modalMeta').innerText = `Created: ${app.date || 'Active'} • ID: ${app.id}`;
-
-      document.getElementById('appModal').classList.remove('hidden');
-    }
-
-    function closeAppModal() {
-      document.getElementById('appModal').classList.add('hidden');
-      selectedAppId = null;
-    }
-
-    function saveAppModalChanges() {
-      if (!selectedAppId) return;
-      const app = applications.find(a => a.id === selectedAppId);
-      if (!app) return;
-
-      app.stage = document.getElementById('modalStageSelect').value;
-      app.interviewDate = document.getElementById('modalInterviewDate').value;
-      app.contactPerson = document.getElementById('modalContactPerson').value.trim();
-      app.contactInfo = document.getElementById('modalContactInfo').value.trim();
-      if (app.contactPerson) {
-        app.contact = app.contactInfo ? `${app.contactPerson} (${app.contactInfo})` : app.contactPerson;
-      } else {
-        app.contact = "";
-      }
-      app.location = document.getElementById('modalLocation').value.trim() || app.location;
-      app.notes = document.getElementById('modalNotes').value.trim();
-
-      saveData();
-      closeAppModal();
-      render();
-    }
-
-    function deleteCurrentApp() {
-      if (!selectedAppId) return;
-      const app = applications.find(a => a.id === selectedAppId);
-      if (!app) return;
-
-      if (confirm(`Delete application for ${app.company} (${app.role})?`)) {
-        applications = applications.filter(a => a.id !== selectedAppId);
-        saveData();
-        closeAppModal();
-        render();
-      }
-    }
-
-    // Log New Application Modal
-    function openNewAppModal() {
-      document.getElementById('newCompany').value = '';
-      document.getElementById('newRole').value = 'Senior Scrum Master';
-      document.getElementById('newPlatform').value = 'LinkedIn';
-      document.getElementById('newStage').value = 'applied';
-      document.getElementById('newLocation').value = 'Hybrid • Bengaluru';
-      document.getElementById('newNotes').value = '';
-      document.getElementById('newAppModal').classList.remove('hidden');
-    }
-
-    function closeNewAppModal() {
-      document.getElementById('newAppModal').classList.add('hidden');
-    }
-
-    function addNewApplication() {
-      const company = document.getElementById('newCompany').value.trim();
-      const role = document.getElementById('newRole').value.trim();
-      if (!company || !role) {
-        alert("Please enter Company Name and Role Title.");
-        return;
-      }
-
-      const newApp = {
-        id: "app-" + Date.now(),
-        company: company,
-        role: role,
-        platform: document.getElementById('newPlatform').value,
-        stage: document.getElementById('newStage').value,
-        location: document.getElementById('newLocation').value.trim() || "Remote",
-        date: new Date().toISOString().split('T')[0],
-        notes: document.getElementById('newNotes').value.trim(),
-        contact: ""
-      };
-
-      applications.unshift(newApp);
-      saveData();
-      closeNewAppModal();
-      render();
-    }
-
-    // CSV Export & Reset
-    function exportDataCSV() {
-      const headers = ["ID", "Company", "Role", "Platform", "Stage", "Location", "Date", "Contact", "Notes"];
-      const rows = applications.map(a => [
-        `"${a.id}"`,
-        `"${(a.company || '').replace(/"/g, '""')}"`,
-        `"${(a.role || '').replace(/"/g, '""')}"`,
-        `"${(a.platform || '').replace(/"/g, '""')}"`,
-        `"${(a.stage || '').replace(/"/g, '""')}"`,
-        `"${(a.location || '').replace(/"/g, '""')}"`,
-        `"${(a.date || '').replace(/"/g, '""')}"`,
-        `"${(a.contact || '').replace(/"/g, '""')}"`,
-        `"${(a.notes || '').replace(/"/g, '""')}"`
-      ]);
-
-      const csvContent = "data:text/csv;charset=utf-8," + [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
-      const a = document.createElement('a');
-      a.setAttribute("href", encodeURI(csvContent));
-      a.setAttribute("download", `Balaji_ScrumMaster_Pipeline_${new Date().toISOString().split('T')[0]}.csv`);
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-    }
-
-    function resetToDefaults() {
-      if (confirm("Reset CRM to default 55 verified applications? Custom edits will be refreshed.")) {
-        applications = [...defaultApplications];
-        saveData();
-        render();
-      }
-    }
-
-    // Keyboard Shortcuts
-    document.addEventListener('keydown', (e) => {
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-        e.preventDefault();
-        const searchInput = document.getElementById('searchInput');
-        if (searchInput) searchInput.focus();
-      }
-      if (e.key === 'Escape') {
-        closeAppModal();
-        closeNewAppModal();
-      }
     });
 
-    // Master Render Trigger
-    function render() {
-      if (currentView === 'board') {
-        renderBoard();
-      } else {
-        renderTable();
-      }
-      updateKPIs();
+    setupKanbanDragAndDrop();
+  }
+
+  function renderTable() {
+    const tbody = document.getElementById("tableBody");
+    if (!tbody) return;
+    tbody.innerHTML = "";
+
+    const filtered = getFilteredApplications();
+    filtered.forEach(app => {
+      const tr = document.createElement("tr");
+      tr.className = "hover:bg-surface-container-low transition-colors border-b border-surface-variant/40 cursor-pointer";
+      tr.onclick = () => openDetailModal(app.id);
+
+      tr.innerHTML = `
+        <td class="py-3 px-4 font-semibold text-on-surface flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full ${app.stage === "offer" ? "bg-[#234f3a]" : (app.stage === "screening" ? "bg-secondary" : "bg-outline-variant")}"></span>
+          <span>${app.company}</span>
+        </td>
+        <td class="py-3 px-4 text-on-surface font-medium">${app.role}</td>
+        <td class="py-3 px-4 text-on-surface-variant font-mono text-xs">${app.platform}</td>
+        <td class="py-3 px-4 text-on-surface-variant text-xs">${app.location}</td>
+        <td class="py-3 px-4">
+          <span class="px-2 py-0.5 rounded text-xs font-mono font-medium ${app.stage === "offer" ? "bg-secondary-fixed text-on-secondary-fixed" : (app.stage === "screening" ? "bg-secondary text-on-secondary" : "bg-surface-container text-on-surface-variant")}">
+            ${app.stage.toUpperCase()}
+          </span>
+        </td>
+        <td class="py-3 px-4 text-on-surface-variant font-mono text-xs">${app.date}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  // ----------------------------------------------------
+  // 4. Drag & Drop Engine
+  // ----------------------------------------------------
+  let draggedAppId = null;
+
+  function setupKanbanDragAndDrop() {
+    document.querySelectorAll(".kanban-card").forEach(card => {
+      card.addEventListener("dragstart", (e) => {
+        draggedAppId = card.getAttribute("data-card-id");
+        e.dataTransfer.setData("text/plain", draggedAppId);
+        card.classList.add("opacity-50");
+      });
+
+      card.addEventListener("dragend", () => {
+        card.classList.remove("opacity-50");
+      });
+    });
+
+    document.querySelectorAll(".kanban-column").forEach(col => {
+      col.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        col.classList.add("bg-secondary-fixed/20");
+      });
+
+      col.addEventListener("dragleave", () => {
+        col.classList.remove("bg-secondary-fixed/20");
+      });
+
+      col.addEventListener("drop", (e) => {
+        e.preventDefault();
+        col.classList.remove("bg-secondary-fixed/20");
+
+        const appId = e.dataTransfer.getData("text/plain") || draggedAppId;
+        const targetColId = col.getAttribute("data-stage-id");
+
+        let mappedStage = targetColId;
+        if (targetColId === "tech-hm") mappedStage = "technical";
+        else if (targetColId === "leadership") mappedStage = "final";
+
+        const app = applications.find(a => a.id === appId);
+        if (app && app.stage !== mappedStage) {
+          app.stage = mappedStage;
+          saveApplications();
+          renderAll();
+          showToast(`Moved ${app.company} to ${col.getAttribute("data-stage-title") || mappedStage}`);
+        }
+      });
+    });
+  }
+
+  // ----------------------------------------------------
+  // 5. Modals & Details
+  // ----------------------------------------------------
+  function openDetailModal(appId) {
+    const app = applications.find(a => a.id === appId);
+    if (!app) return;
+    selectedAppId = appId;
+
+    document.getElementById("modal-company-name").innerText = app.company;
+    document.getElementById("modal-role-title").innerText = app.role;
+    document.getElementById("modal-meta-location").innerText = app.location;
+    document.getElementById("modal-meta-channel").innerText = app.platform;
+    document.getElementById("modal-poc-name").innerText = app.contact || "Direct Application ATS";
+    document.getElementById("modal-debrief-notes").innerHTML = `<p>${app.notes || "No debrief notes recorded yet."}</p>`;
+
+    const stageSelect = document.getElementById("modal-stage-select");
+    if (stageSelect) {
+      stageSelect.value = (app.stage === "technical" ? "tech-hm" : (app.stage === "final" ? "leadership" : app.stage));
     }
 
-    // Initialize Engine
-    initData();
-    render();
-  </script>
-  <!-- END: Interactive Engine & Seed Dataset -->
+    const modal = document.getElementById("detailModal");
+    if (modal) modal.classList.remove("hidden");
+  }
 
-</body>
-</html>
+  function closeDetailModal() {
+    const modal = document.getElementById("detailModal");
+    if (modal) modal.classList.add("hidden");
+    selectedAppId = null;
+  }
+
+  function advanceStageFromModal() {
+    if (!selectedAppId) return;
+    const app = applications.find(a => a.id === selectedAppId);
+    if (!app) return;
+
+    const select = document.getElementById("modal-stage-select");
+    let targetStage = select.value;
+    if (targetStage === "tech-hm") targetStage = "technical";
+    else if (targetStage === "leadership") targetStage = "final";
+
+    app.stage = targetStage;
+    saveApplications();
+    renderAll();
+    closeDetailModal();
+    showToast(`Updated ${app.company} status to ${targetStage}`);
+  }
+
+  function openLogModal() {
+    const modal = document.getElementById("logModal");
+    if (modal) modal.classList.remove("hidden");
+  }
+
+  function closeLogModal() {
+    const modal = document.getElementById("logModal");
+    if (modal) modal.classList.add("hidden");
+  }
+
+  function handleNewApplication(e) {
+    if (e) e.preventDefault();
+    const company = document.getElementById("newCompany").value.trim();
+    const role = document.getElementById("newRole").value.trim();
+    if (!company || !role) return;
+
+    const newApp = {
+      id: "app-" + Date.now(),
+      company: company,
+      role: role,
+      location: document.getElementById("newLocation").value.trim() || "Remote • Global",
+      platform: document.getElementById("newPlatform").value || "LinkedIn",
+      stage: document.getElementById("newStage").value || "applied",
+      date: new Date().toISOString().split("T")[0],
+      contact: document.getElementById("newContact").value.trim() || "",
+      notes: document.getElementById("newNotes").value.trim() || ""
+    };
+
+    applications.unshift(newApp);
+    saveApplications();
+    renderAll();
+    closeLogModal();
+    showToast(`Logged new application for ${company}`);
+  }
+
+  // ----------------------------------------------------
+  // 6. View Switcher & Export CSV
+  // ----------------------------------------------------
+  window.switchView = function(view) {
+    currentView = view;
+    const kanban = document.getElementById("kanbanViewContainer");
+    const table = document.getElementById("tableViewContainer");
+    const btnBoard = document.getElementById("nav-kanban-btn");
+    const btnTable = document.getElementById("nav-table-btn");
+
+    if (view === "table") {
+      if (kanban) kanban.classList.add("hidden");
+      if (table) table.classList.remove("hidden");
+      if (btnBoard) btnBoard.className = "px-3 py-1.5 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors";
+      if (btnTable) btnTable.className = "px-3 py-1.5 rounded-lg bg-surface text-secondary font-label-md text-label-md font-semibold shadow-xs transition-colors";
+    } else {
+      if (kanban) kanban.classList.remove("hidden");
+      if (table) table.classList.add("hidden");
+      if (btnBoard) btnBoard.className = "px-3 py-1.5 rounded-lg bg-surface text-secondary font-label-md text-label-md font-semibold shadow-xs transition-colors";
+      if (btnTable) btnTable.className = "px-3 py-1.5 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors";
+    }
+  };
+
+  function exportCSV() {
+    const headers = ["ID", "Company", "Role", "Platform", "Stage", "Location", "Date", "Contact", "Notes"];
+    const rows = applications.map(a => [
+      `"${a.id}"`,
+      `"${(a.company || "").replace(/"/g, '""')}"`,
+      `"${(a.role || "").replace(/"/g, '""')}"`,
+      `"${a.platform || ""}"`,
+      `"${a.stage || ""}"`,
+      `"${(a.location || "").replace(/"/g, '""')}"`,
+      `"${a.date || ""}"`,
+      `"${(a.contact || "").replace(/"/g, '""')}"`,
+      `"${(a.notes || "").replace(/"/g, '""')}"`
+    ]);
+    const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map(e => e.join(","))].join("\n");
+    const a = document.createElement("a");
+    a.setAttribute("href", encodeURI(csvContent));
+    a.setAttribute("download", "Balaji_Palani_AppTracker_Pro_58_Roles.csv");
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    showToast("Exported all 58 applications to CSV!");
+  }
+
+  // toastTimeout reused
+  function showToast(msg) {
+    const toast = document.getElementById("kanbanToast");
+    if (!toast) return;
+    toast.innerText = msg;
+    toast.classList.remove("translate-y-20", "opacity-0");
+    toast.classList.add("translate-y-0", "opacity-100");
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+      toast.classList.add("translate-y-20", "opacity-0");
+      toast.classList.remove("translate-y-0", "opacity-100");
+    }, 2800);
+  }
+
+  // ----------------------------------------------------
+  // 7. Filters & Initialization
+  // ----------------------------------------------------
+  document.addEventListener("DOMContentLoaded", () => {
+    loadApplications();
+    renderAll();
+
+    const searchInput = document.getElementById("searchInput");
+    if (searchInput) {
+      searchInput.addEventListener("input", (e) => {
+        currentSearchQuery = e.target.value;
+        renderAll();
+      });
+    }
+
+    window.addEventListener("keydown", (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        if (searchInput) searchInput.focus();
+      }
+      if (e.key === "Escape") {
+        closeDetailModal();
+        closeLogModal();
+      }
+    });
+  });
+
+</script>
+</body></html>
