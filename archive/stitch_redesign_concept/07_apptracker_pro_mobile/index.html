@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#005137", "on-secondary-container": "#00476e", "outline-variant": "#c6c6cd", "on-secondary-fixed-variant": "#004b73", "on-background": "#0b1c30", "tertiary": "#000000", "inverse-on-surface": "#eaf1ff", "secondary": "#006398", "surface-container-high": "#dce9ff", "tertiary-fixed": "#85f8c4", "on-error": "#ffffff", "surface-dim": "#cbdbf5", "on-primary-fixed-variant": "#3f465c", "tertiary-container": "#002114", "secondary-fixed": "#cce5ff", "surface-container": "#e5eeff", "inverse-primary": "#bec6e0", "on-primary-fixed": "#131b2e", "on-secondary": "#ffffff", "primary-fixed-dim": "#bec6e0", "error": "#ba1a1a", "on-surface": "#0b1c30", "error-container": "#ffdad6", "on-tertiary-container": "#069669", "surface-container-lowest": "#ffffff", "primary": "#000000", "inverse-surface": "#213145", "primary-container": "#131b2e", "on-secondary-fixed": "#001d31", "surface": "#f8f9ff", "on-surface-variant": "#45464d", "tertiary-fixed-dim": "#68dba9", "on-primary-container": "#7c839b", "surface-container-low": "#eff4ff", "surface-container-highest": "#d3e4fe", "on-tertiary": "#ffffff", "secondary-container": "#5bb8fe", "on-primary": "#ffffff", "background": "#f8f9ff", "on-error-container": "#93000a", "surface-tint": "#565e74", "secondary-fixed-dim": "#93ccff", "on-tertiary-fixed": "#002114", "surface-bright": "#f8f9ff", "primary-fixed": "#dae2fd", "surface-variant": "#d3e4fe", "outline": "#76777d" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin-desktop": "3.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-md": "1rem", "gutter": "1.5rem", "gutter-desktop": "2rem", "space-lg": "1.5rem", "margin": "1.25rem", "space-sm": "0.5rem", "margin-tablet": "2rem" }, fontFamily: { "display-hero": ["Plus Jakarta Sans"], "label-code": ["JetBrains Mono"], "body-md": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "label-metric": ["JetBrains Mono"], "headline-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "display-hero-mobile": ["Plus Jakarta Sans"], "body-sm": ["Inter"] }, fontSize: { "display-hero": ["56px", { lineHeight: "64px", letterSpacing: "-0.03em", fontWeight: "700" }], "label-code": ["13px", { lineHeight: "18px", letterSpacing: "-0.01em", fontWeight: "500" }], "body-md": ["15px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }], "headline-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" }], "label-metric": ["11px", { lineHeight: "14px", letterSpacing: "0.06em", fontWeight: "600" }], "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }], "headline-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "600" }], "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "400" }], "headline-sm": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }], "display-hero-mobile": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "body-sm": ["13px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }] } } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } body { overscroll-behavior-y: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><a class="flex items-center gap-space-xs text-secondary hover:text-on-secondary-container transition-colors min-h-[44px] pr-space-xs" data-path="career-hub" href="#"><span class="material-symbols-outlined text-lg leading-none">arrow_back</span><span class="font-label-metric text-label-metric uppercase tracking-wider hidden xs:inline">Hub</span></a><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><h1 class="font-headline-sm text-headline-sm text-on-surface truncate leading-none">Board</h1><span class="bg-surface-container-high text-secondary px-space-xs py-0.5 rounded-full font-label-code text-label-metric uppercase">Live AWS</span></div></div></div><div class="flex items-center gap-space-sm shrink-0"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span><span class="font-label-metric text-label-metric text-on-tertiary-container uppercase tracking-wide">0 Days Notice</span></div><div class="relative flex items-center justify-center min-w-[44px] min-h-[44px]"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/ALJJyrDMNT5VI9URhlL52fwFVHsj7w4Irxn6qZUBP9QIKgUrbLvZyoGENNAvPAdWl1wVqzygOciLh3gWozWDpjAFMqeEf0g7znKhn3hmt4cj9f34gqm3N3dL76P8ZTKRrumXupw_BD-Jo90lClSmORY7U2sfM5cMuNqvXYUbQZyCD0t7E9Fosuf3R9L-SW4kTZ2O3hgGyBzZz-EdhguibsMd_vke8rvlUVIRUT80zgytEWldXFeo77simoRd4coi"/><span class="absolute bottom-1.5 right-1.5 w-2.5 h-2.5 bg-on-tertiary-container rounded-full ring-2 ring-surface"></span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full">
+<!-- Executive Profile & Availability Strip -->
+<div class="px-margin pt-space-md pb-space-sm">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-ping"></span>
+<span class="font-label-metric text-label-metric text-on-tertiary-container uppercase tracking-wider font-semibold">Ready for Immediate Onboarding</span>
+</div>
+<span class="bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-full font-label-code text-label-metric">v2.4 Telemetry</span>
+</div>
+<div class="flex items-center gap-space-md">
+<img alt="Balaji Palani" class="w-12 h-12 rounded-full object-cover ring-2 ring-secondary/20 shadow-sm shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrDMNT5VI9URhlL52fwFVHsj7w4Irxn6qZUBP9QIKgUrbLvZyoGENNAvPAdWl1wVqzygOciLh3gWozWDpjAFMqeEf0g7znKhn3hmt4cj9f34gqm3N3dL76P8ZTKRrumXupw_BD-Jo90lClSmORY7U2sfM5cMuNqvXYUbQZyCD0t7E9Fosuf3R9L-SW4kTZ2O3hgGyBzZz-EdhguibsMd_vke8rvlUVIRUT80zgytEWldXFeo77simoRd4coi"/>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Balaji Palani</h2>
+<span class="material-symbols-outlined text-secondary text-base shrink-0" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Sr. Scrum Master &amp; Agile Delivery Lead</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-low px-3 py-2 rounded-lg">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-secondary">bolt</span>
+<span class="font-label-metric text-label-metric uppercase">Notice: 0 Days</span>
+</div>
+<div class="h-3 w-px bg-outline-variant/40"></div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-secondary">cloud_done</span>
+<span class="font-label-metric text-label-metric uppercase">AWS • React • SAFe 6</span>
+</div>
+<div class="h-3 w-px bg-outline-variant/40"></div>
+<span class="font-label-metric text-label-metric text-on-secondary-container font-semibold">APAC / EMEA</span>
+</div>
+</div>
+</div>
+<!-- KPI Snapshot Carousel (Touch Ergonomic) -->
+<div class="px-margin py-space-xs">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-metric text-label-metric text-on-surface-variant uppercase tracking-wider">Executive KPI Snapshot</span>
+<span class="font-label-code text-label-metric text-secondary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs">sync</span> Real-Time
+      </span>
+</div>
+<div class="flex gap-space-sm overflow-x-auto pb-2 scrollbar-none snap-x snap-mandatory -mx-margin px-margin">
+<!-- KPI 1 -->
+<div class="min-w-[130px] flex-1 bg-surface-container-lowest p-3 rounded-xl shadow-sm snap-start shrink-0 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-metric text-label-metric text-on-surface-variant uppercase">Pipeline</span>
+<span class="text-on-tertiary-container bg-surface-container px-1 rounded font-label-code text-[10px]">+12 wk</span>
+</div>
+<div class="my-1.5">
+<div class="font-headline-md text-headline-md text-on-surface leading-none">58</div>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Active Roles</span>
+</div>
+<!-- KPI 2 -->
+<div class="min-w-[130px] flex-1 bg-surface-container-lowest p-3 rounded-xl shadow-sm snap-start shrink-0 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-metric text-label-metric text-on-surface-variant uppercase">Screens</span>
+<span class="material-symbols-outlined text-secondary text-sm">schedule</span>
+</div>
+<div class="my-1.5">
+<div class="font-headline-md text-headline-md text-secondary leading-none">14</div>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant">In Progress</span>
+</div>
+<!-- KPI 3 -->
+<div class="min-w-[130px] flex-1 bg-surface-container-lowest p-3 rounded-xl shadow-sm snap-start shrink-0 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-metric text-label-metric text-on-surface-variant uppercase">Tech / HM</span>
+<span class="material-symbols-outlined text-on-surface text-sm">verified_user</span>
+</div>
+<div class="my-1.5">
+<div class="font-headline-md text-headline-md text-on-surface leading-none">06</div>
+</div>
+<span class="font-body-sm text-[11px] text-on-tertiary-container font-medium">High Conviction</span>
+</div>
+<!-- KPI 4 -->
+<div class="min-w-[130px] flex-1 bg-surface-container-lowest p-3 rounded-xl shadow-sm snap-start shrink-0 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-metric text-label-metric text-on-tertiary-container uppercase font-semibold">Offers</span>
+<span class="material-symbols-outlined text-on-tertiary-container text-sm">handshake</span>
+</div>
+<div class="my-1.5">
+<div class="font-headline-md text-headline-md text-on-tertiary-container leading-none">03</div>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Active Discussion</span>
+</div>
+</div>
+</div>
+<!-- Sourcing Channels Micro-Pills -->
+<div class="px-margin py-space-xs">
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none text-nowrap">
+<span class="font-label-metric text-[10px] text-on-surface-variant uppercase pr-1">Sources:</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-secondary-container font-label-code text-label-metric flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> LinkedIn (32)
+      </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-secondary-container font-label-code text-label-metric flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Hirist (12)
+      </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-code text-label-metric flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Direct Pitch (4)
+      </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-code text-label-metric">
+        Indeed (3)
+      </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-code text-label-metric">
+        Cutshort (1)
+      </span>
+</div>
+</div>
+<!-- Quick Stage Filter Tabs -->
+<div class="sticky top-16 z-30 bg-surface/95 backdrop-blur-md px-margin py-2.5">
+<div class="flex items-center gap-2 overflow-x-auto scrollbar-none pb-0.5" id="stageTabs">
+<button class="stage-pill active px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-metric text-label-metric uppercase transition-all shrink-0 shadow-sm" data-filter="all">
+        All (58)
+      </button>
+<button class="stage-pill px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-metric text-label-metric uppercase transition-all shrink-0" data-filter="offer">
+        Offer / Neg (3)
+      </button>
+<button class="stage-pill px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-metric text-label-metric uppercase transition-all shrink-0" data-filter="tech">
+        Tech / HM (6)
+      </button>
+<button class="stage-pill px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-metric text-label-metric uppercase transition-all shrink-0" data-filter="screening">
+        Screening (14)
+      </button>
+<button class="stage-pill px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-metric text-label-metric uppercase transition-all shrink-0" data-filter="applied">
+        Applied (35)
+      </button>
+</div>
+</div>
+<!-- Active Pipeline Board Section -->
+<div class="px-margin pt-space-xs pb-space-lg flex flex-col gap-space-md" id="cardsList">
+<!-- CARD 1: Barclays (Round 2 Tech / HM) -->
+<div class="pipeline-card bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-space-sm" data-stage="tech">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center font-headline-sm text-secondary font-bold shrink-0">
+            B
+          </div>
+<div class="min-w-0">
+<span class="font-label-metric text-[10px] text-on-surface-variant uppercase tracking-wider block truncate">Barclays Global Service</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Agile Delivery Lead</h3>
+</div>
+</div>
+<span class="bg-surface-container-high text-secondary px-2.5 py-1 rounded-full font-label-code text-[11px] shrink-0 font-medium">
+          Tech / HM
+        </span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 py-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-code text-label-metric flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">domain</span> FinTech / Payments
+        </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-code text-label-metric flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">location_on</span> Hybrid Pune
+        </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-secondary-container font-label-code text-label-metric">
+          Round 2
+        </span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-metric text-label-metric uppercase">Interview Objective</span>
+<span class="font-label-code text-[11px] text-secondary">VP of Eng Panel</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface line-clamp-2">
+          Focus: Impediment triage, velocity recovery telemetry, and cross-squad scaling under SAFe model.
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-secondary">event_upcoming</span>
+<span class="font-label-code text-[11px]">Thursday, 3:30 PM IST</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-metric text-label-metric uppercase hover:bg-surface-container-high transition-colors">
+            Briefing
+          </button>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-metric text-label-metric uppercase flex items-center gap-1 hover:bg-inverse-surface transition-colors">
+<span class="material-symbols-outlined text-xs">call</span> Dial
+          </button>
+</div>
+</div>
+</div>
+<!-- CARD 2: Global Neobank (Offer Stage) -->
+<div class="pipeline-card bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-space-sm" data-stage="offer">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center font-headline-sm text-on-tertiary-container font-bold shrink-0">
+            N
+          </div>
+<div class="min-w-0">
+<span class="font-label-metric text-[10px] text-on-tertiary-container font-semibold uppercase tracking-wider block truncate">Priority Opportunity</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Agile Chapter Lead</h3>
+</div>
+</div>
+<span class="bg-surface-container text-on-tertiary-container px-2.5 py-1 rounded-full font-label-code text-[11px] font-semibold shrink-0 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Offer Stage
+        </span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 py-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-code text-label-metric flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">public</span> Remote (US / Global)
+        </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-secondary-container font-label-code text-label-metric font-semibold">
+          USD $70,000 / yr
+        </span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-tertiary-container font-label-code text-label-metric">
+          0-Day Notice Cleared
+        </span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-metric text-label-metric uppercase">Counter Offer Status</span>
+<span class="font-label-code text-[11px] text-on-tertiary-container font-semibold">Under Review</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+          Offer negotiation active. Final equity structure and remote equipment allowance package discussion.
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-metric text-[11px] text-on-tertiary-container font-medium">Valid until Friday EOD</span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-metric text-label-metric uppercase">
+            Contract PDF
+          </button>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-metric text-label-metric uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">handshake</span> Counter
+          </button>
+</div>
+</div>
+</div>
+<!-- CARD 3: ITC Infotech (Screening) -->
+<div class="pipeline-card bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-space-sm" data-stage="screening">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center font-headline-sm text-on-surface font-bold shrink-0">
+            I
+          </div>
+<div class="min-w-0">
+<span class="font-label-metric text-[10px] text-on-surface-variant uppercase tracking-wider block truncate">ITC Infotech • Direct Pitch</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Senior Scrum Master</h3>
+</div>
+</div>
+<span class="bg-surface-container-low text-on-surface-variant px-2.5 py-1 rounded-full font-label-code text-[11px] shrink-0 font-medium">
+          Screening
+        </span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 py-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-code text-label-metric flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">apartment</span> Hybrid Bengaluru
+        </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-code text-label-metric">
+          Cloud Modernization
+        </span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-metric text-label-metric uppercase">Recruiter Contact</span>
+<span class="font-label-code text-[11px] text-secondary">Kartheek G</span>
+</div>
+<p class="font-label-code text-label-metric text-on-surface truncate">
+          kartheek.g@itcinfotech.com
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-on-secondary-container">alarm</span>
+<span class="font-label-code text-[11px]">Follow-up: Tomorrow 11:30 AM</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-metric text-label-metric uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">mail</span> Mail
+          </button>
+</div>
+</div>
+</div>
+<!-- CARD 4: EPAM Systems (Tech Round) -->
+<div class="pipeline-card bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-space-sm" data-stage="tech">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center font-headline-sm text-secondary font-bold shrink-0">
+            E
+          </div>
+<div class="min-w-0">
+<span class="font-label-metric text-[10px] text-on-surface-variant uppercase tracking-wider block truncate">EPAM Systems</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Lead Scrum Master</h3>
+</div>
+</div>
+<span class="bg-surface-container-high text-secondary px-2.5 py-1 rounded-full font-label-code text-[11px] shrink-0 font-medium">
+          Tech Round
+        </span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 py-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-code text-label-metric">
+          Capital Markets Practice
+        </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-code text-label-metric flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">travel_explore</span> Global Remote
+        </span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg">
+<p class="font-body-sm text-body-sm text-on-surface">
+          Passed initial HR screening. Focus: Large-scale cloud migration delivery metrics, OKRs, and sprint throughput stabilization.
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-metric text-[11px] text-on-surface-variant uppercase">Feedback: Positive (4.8/5)</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-metric text-label-metric uppercase">
+          Prep Deck
+        </button>
+</div>
+</div>
+<!-- CARD 5: Themesoft Inc (Applied / In Review) -->
+<div class="pipeline-card bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-space-sm" data-stage="applied">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center font-headline-sm text-on-surface-variant font-bold shrink-0">
+            T
+          </div>
+<div class="min-w-0">
+<span class="font-label-metric text-[10px] text-on-surface-variant uppercase tracking-wider block truncate">Themesoft Inc.</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Scrum Master</h3>
+</div>
+</div>
+<span class="bg-surface-container-low text-on-surface-variant px-2.5 py-1 rounded-full font-label-code text-[11px] shrink-0">
+          Applied
+        </span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 py-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-code text-label-metric">
+          LinkedIn Easy Apply
+        </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-code text-label-metric">
+          Remote Ontario / Global
+        </span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Application sent with tailored AWS Agile transformation case study. Awaiting profile acknowledgment.
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-code text-[11px] text-on-surface-variant">Applied 2d ago</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-metric text-label-metric uppercase">
+          View Submission
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive Velocity & Speed Telemetry Panel -->
+<div class="px-margin pb-space-lg">
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-metric text-label-metric text-on-surface-variant uppercase">Pipeline Velocity Metrics</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Weekly Conversion Rate</h4>
+</div>
+<span class="font-headline-md text-headline-md text-on-tertiary-container font-bold">78.4%</span>
+</div>
+<!-- Mini Telemetry Sparkline SVG -->
+<div class="w-full h-16 pt-2">
+<svg class="w-full h-full overflow-visible" fill="none" viewbox="0 0 340 60">
+<path d="M 0 50 Q 40 45, 70 30 T 140 25 T 210 38 T 280 12 T 340 5" stroke="#006398" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<path d="M 0 50 Q 40 45, 70 30 T 140 25 T 210 38 T 280 12 T 340 5 L 340 60 L 0 60 Z" fill="url(#sparklineGrad)" opacity="0.12"></path>
+<circle cx="340" cy="5" fill="#006398" r="4"></circle>
+<defs>
+<lineargradient id="sparklineGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#006398"></stop>
+<stop offset="100%" stop-color="#ffffff"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-2 text-center">
+<div class="bg-surface-container-low p-2 rounded-lg">
+<span class="font-label-metric text-[10px] text-on-surface-variant uppercase block">Avg Turnaround</span>
+<span class="font-label-code text-label-code text-on-surface font-semibold">2.4 Days</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg">
+<span class="font-label-metric text-[10px] text-on-surface-variant uppercase block">Screen to HM</span>
+<span class="font-label-code text-label-code text-on-tertiary-container font-semibold">42.8%</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg">
+<span class="font-label-metric text-[10px] text-on-surface-variant uppercase block">Offer Yield</span>
+<span class="font-label-code text-label-code text-secondary font-semibold">50.0%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Floating Action Bar -->
+<div class="fixed bottom-20 left-0 right-0 px-margin flex items-center justify-between gap-3 pointer-events-none z-40 max-w-lg mx-auto">
+<button class="pointer-events-auto bg-surface-container-lowest text-on-surface px-4 py-2.5 rounded-full shadow-lg flex items-center gap-2 hover:bg-surface-container transition-all active:scale-95" id="exportCsvBtn">
+<span class="material-symbols-outlined text-secondary text-sm">download</span>
+<span class="font-label-metric text-label-metric uppercase tracking-wider font-semibold">Export CSV</span>
+</button>
+<button class="pointer-events-auto bg-primary text-on-primary px-5 py-2.5 rounded-full shadow-lg flex items-center gap-2 hover:bg-inverse-surface transition-all active:scale-95" id="addAppBtn">
+<span class="material-symbols-outlined text-base">add</span>
+<span class="font-label-metric text-label-metric uppercase tracking-wider font-semibold">Log Pipeline Role</span>
+</button>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 bg-surface-container-lowest text-on-surface px-4 py-2 rounded-full shadow-lg font-label-code text-label-metric flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-300 z-50" id="toastNotification">
+<span class="material-symbols-outlined text-on-tertiary-container text-sm">check_circle</span>
+<span id="toastMsg">Exporting CRM state...</span>
+</div>
+</div>
+<script>
+  // Dynamic Pipeline Stage Filtering
+  const stagePills = document.querySelectorAll('.stage-pill');
+  const cards = document.querySelectorAll('.pipeline-card');
+  const toast = document.getElementById('toastNotification');
+  const toastMsg = document.getElementById('toastMsg');
+
+  function showToast(message) {
+    if (!toast) return;
+    toastMsg.textContent = message;
+    toast.classList.remove('opacity-0', '-translate-y-2');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    setTimeout(() => {
+      toast.classList.add('opacity-0', '-translate-y-2');
+      toast.classList.remove('opacity-100', 'translate-y-0');
+    }, 2200);
+  }
+
+  stagePills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      stagePills.forEach(p => {
+        p.classList.remove('bg-primary', 'text-on-primary');
+        p.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+      });
+      pill.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+      pill.classList.add('bg-primary', 'text-on-primary');
+
+      const filter = pill.getAttribute('data-filter');
+      cards.forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-stage') === filter) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Export CSV Action
+  document.getElementById('exportCsvBtn')?.addEventListener('click', () => {
+    showToast('Exported: balaji-palani-crm-pipeline.csv');
+  });
+
+  // Log Application Action
+  document.getElementById('addAppBtn')?.addEventListener('click', () => {
+    showToast('Quick-add form opened for Balaji Palani');
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-semibold relative after:content-[''] after:absolute after:bottom-1 after:w-1 after:h-1 after:bg-primary after:rounded-full"><div class="flex items-center justify-around h-16 px-space-sm max-w-lg mx-auto"><a aria-current="page" class="flex flex-col items-center justify-center flex-1 h-full min-h-[44px] transition-colors text-primary font-semibold relative after:content-[''] after:absolute after:bottom-1 after:w-1 after:h-1 after:bg-primary after:rounded-full" data-path="board" href="#"><span class="material-symbols-outlined text-[22px]">view_kanban</span><span class="font-label-metric text-label-metric uppercase tracking-wider mt-0.5">Board</span></a><a class="flex flex-col items-center justify-center flex-1 h-full min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="metrics" href="#"><span class="material-symbols-outlined text-[22px]">monitoring</span><span class="font-label-metric text-label-metric uppercase tracking-wider mt-0.5">Metrics</span></a><a class="flex flex-col items-center justify-center flex-1 h-full min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="quick-add" href="#"><div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.12)] -translate-y-1"><span class="material-symbols-outlined text-xl">add_notes</span></div><span class="font-label-metric text-label-metric uppercase tracking-wider mt-0.5">Sticky</span></a><a class="flex flex-col items-center justify-center flex-1 h-full min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="summary" href="#"><span class="material-symbols-outlined text-[22px]">ios_share</span><span class="font-label-metric text-label-metric uppercase tracking-wider mt-0.5">Export</span></a></div></nav></body></html>
