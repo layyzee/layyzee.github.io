@@ -187,6 +187,11 @@ input[type=range].sprint-slider::-webkit-slider-thumb:active {
 // ==========================================
 let currentDesignMode = localStorage.getItem('agile_design_mode') || 'impeccable';
 
+function toggleDesignMode() {
+  const nextMode = currentDesignMode === 'impeccable' ? 'amicro' : 'impeccable';
+  setDesignMode(nextMode);
+}
+
 function setDesignMode(mode, showNotification = true) {
   currentDesignMode = mode;
   localStorage.setItem('agile_design_mode', mode);
@@ -194,17 +199,27 @@ function setDesignMode(mode, showNotification = true) {
   const body = document.body;
   const btnImpeccable = document.getElementById('btn-mode-impeccable');
   const btnAmicro = document.getElementById('btn-mode-amicro');
+  const quickIcon = document.getElementById('quick-toggle-icon');
+  const quickLabel = document.getElementById('quick-toggle-label');
+  const quickBtn = document.getElementById('btn-mode-quick-toggle');
+  const drawerImp = document.getElementById('drawer-btn-impeccable');
+  const drawerAmi = document.getElementById('drawer-btn-amicro');
 
   if (mode === 'amicro') {
     body.classList.remove('mode-impeccable');
     body.classList.add('mode-amicro');
 
     if (btnAmicro) {
-      btnAmicro.className = 'switcher-btn-active px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium';
+      btnAmicro.className = 'switcher-btn-active px-2 py-1 rounded-md transition-all flex items-center gap-1 font-medium';
     }
     if (btnImpeccable) {
-      btnImpeccable.className = 'text-ink-muted hover:text-ink px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium';
+      btnImpeccable.className = 'text-ink-muted hover:text-ink px-2 py-1 rounded-md transition-all flex items-center gap-1 font-medium';
     }
+    if (quickIcon) quickIcon.textContent = 'auto_awesome';
+    if (quickLabel) quickLabel.textContent = 'Motion';
+    if (quickBtn) quickBtn.className = 'xl:hidden h-8 px-2 sm:px-2.5 rounded-md bg-[#244B39] text-white border border-[#244B39] shadow-xs flex items-center gap-1 font-mono text-xs transition-colors shrink-0';
+    if (drawerAmi) drawerAmi.className = 'py-2 px-2.5 rounded-lg bg-[#244B39] text-white font-bold flex items-center justify-center gap-1.5 transition-all shadow-xs';
+    if (drawerImp) drawerImp.className = 'py-2 px-2.5 rounded-lg bg-canvas-warm border border-sand-border text-ink-muted flex items-center justify-center gap-1.5 transition-all';
 
     initAmicroListeners();
   } else {
@@ -212,11 +227,16 @@ function setDesignMode(mode, showNotification = true) {
     body.classList.add('mode-impeccable');
 
     if (btnImpeccable) {
-      btnImpeccable.className = 'switcher-btn-active px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium';
+      btnImpeccable.className = 'switcher-btn-active px-2 py-1 rounded-md transition-all flex items-center gap-1 font-medium';
     }
     if (btnAmicro) {
-      btnAmicro.className = 'text-ink-muted hover:text-ink px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium';
+      btnAmicro.className = 'text-ink-muted hover:text-ink px-2 py-1 rounded-md transition-all flex items-center gap-1 font-medium';
     }
+    if (quickIcon) quickIcon.textContent = 'menu_book';
+    if (quickLabel) quickLabel.textContent = 'Calm';
+    if (quickBtn) quickBtn.className = 'xl:hidden h-8 px-2 sm:px-2.5 rounded-md bg-canvas-warm hover:bg-sand-border/40 text-ink border border-sand-border shadow-xs flex items-center gap-1 font-mono text-xs transition-colors shrink-0';
+    if (drawerImp) drawerImp.className = 'py-2 px-2.5 rounded-lg bg-[#244B39] text-white font-bold flex items-center justify-center gap-1.5 transition-all shadow-xs';
+    if (drawerAmi) drawerAmi.className = 'py-2 px-2.5 rounded-lg bg-canvas-warm border border-sand-border text-ink-muted flex items-center justify-center gap-1.5 transition-all';
 
     resetAmicroTransforms();
   }
@@ -358,6 +378,7 @@ tailwind.config = {
 <!-- Header: Editorial Publication Ribbon -->
 <header class="fixed top-0 left-0 right-0 z-50 bg-canvas/92 backdrop-blur-md border-b border-sand-border/80 transition-all duration-300">
   <div class="h-16 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
+    <!-- Left: Brand Avatar & Name -->
     <a href="#overview" class="flex items-center gap-2 sm:gap-3 shrink-0 group">
       <div class="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border border-sand-border shadow-xs shrink-0 ring-1 ring-sand-border/60">
         <img src="assets/img/my-pic.jpg" alt="Balaji Palani" class="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-300">
@@ -374,54 +395,62 @@ tailwind.config = {
             <span class="sm:hidden">0 Days</span>
           </span>
         </div>
-        <span class="text-[10px] sm:text-[11px] font-mono text-ink-muted leading-tight truncate max-w-[140px] sm:max-w-none">Agile Delivery Architect · Ex-AWS</span>
+        <span class="text-[10px] sm:text-[11px] font-mono text-ink-muted leading-tight truncate max-w-[130px] sm:max-w-none">Agile Delivery Architect · Ex-AWS</span>
       </div>
     </a>
 
-    <nav class="hidden lg:flex items-center gap-1 text-[13px] font-medium text-ink-muted">
-      <a href="#overview" class="px-3 py-1.5 rounded-md hover:text-ink hover:bg-canvas-warm transition-colors">Overview</a>
-      <a href="#saas-stack" class="px-3 py-1.5 rounded-md hover:text-ink hover:bg-canvas-warm transition-colors">6 Engines</a>
-      <a href="#sprint-engine" class="px-3 py-1.5 rounded-md text-ink bg-canvas-warm font-semibold border border-sand-border/80 shadow-xs">Cadence</a>
-      <a href="#roi-calculator" class="px-3 py-1.5 rounded-md hover:text-ink hover:bg-canvas-warm transition-colors">ROI Impact</a>
-      <a href="#case-studies" class="px-3 py-1.5 rounded-md hover:text-ink hover:bg-canvas-warm transition-colors">Case Studies</a>
-      <a href="#credentials" class="px-3 py-1.5 rounded-md hover:text-ink hover:bg-canvas-warm transition-colors">Credentials</a>
+    <!-- Center: Navigation (visible only on wide screens 1280px+ so it never crowds 13" laptops/tablets) -->
+    <nav class="hidden xl:flex items-center gap-0.5 2xl:gap-1 text-[13px] font-medium text-ink-muted">
+      <a href="#overview" class="px-2.5 py-1.5 rounded-md hover:text-ink hover:bg-canvas-warm transition-colors">Overview</a>
+      <a href="#saas-stack" class="px-2.5 py-1.5 rounded-md hover:text-ink hover:bg-canvas-warm transition-colors">6 Engines</a>
+      <a href="#sprint-engine" class="px-2.5 py-1.5 rounded-md text-ink bg-canvas-warm font-semibold border border-sand-border/80 shadow-xs">Cadence</a>
+      <a href="#roi-calculator" class="px-2.5 py-1.5 rounded-md hover:text-ink hover:bg-canvas-warm transition-colors">ROI Impact</a>
+      <a href="#case-studies" class="px-2.5 py-1.5 rounded-md hover:text-ink hover:bg-canvas-warm transition-colors">Case Studies</a>
+      <a href="#credentials" class="px-2.5 py-1.5 rounded-md hover:text-ink hover:bg-canvas-warm transition-colors">Credentials</a>
     </nav>
 
-    
-    <!-- Header Design System Switcher -->
-    <div class="flex items-center gap-1 p-0.5 sm:p-1 rounded-lg bg-canvas-warm border border-sand-border shadow-xs text-xs font-mono shrink-0">
-      <button id="btn-mode-impeccable" onclick="setDesignMode('impeccable')" class="switcher-btn-active px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium" title="Impeccable Style: Calm Editorial, Quiet Typography & Restraint">
-        <span class="material-symbols-outlined text-[15px]">menu_book</span>
-        <span class="text-[11px] font-medium hidden sm:inline">Impeccable</span>
-        <span class="text-[9px] text-white/80 hidden md:inline">Calm</span>
-        <span class="text-[11px] sm:hidden font-medium">Calm</span>
-      </button>
-      <button id="btn-mode-amicro" onclick="setDesignMode('amicro')" class="text-ink-muted hover:text-ink px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium" title="Amicro Style: Micro-Interactions, Spotlights, 3D Tilt & Tactile Springs">
-        <span class="material-symbols-outlined text-[15px]">auto_awesome</span>
-        <span class="text-[11px] font-medium hidden sm:inline">Amicro</span>
-        <span class="text-[9px] opacity-75 hidden md:inline">Motion</span>
-        <span class="text-[11px] sm:hidden font-medium">Motion</span>
-      </button>
-      <button onclick="openDesignCompareModal()" class="px-1.5 sm:px-2 py-1 rounded-md text-ink-muted hover:text-[#244B39] hover:bg-card transition-all flex items-center gap-1 font-medium border border-transparent hover:border-sand-border" title="Compare Impeccable vs Amicro Philosophies">
-        <span class="material-symbols-outlined text-[15px]">compare_arrows</span>
-        <span class="text-[11px] hidden xl:inline">Compare</span>
-      </button>
-    </div>
+    <!-- Right: Unified Actions Group (Pinned to right, shrink-0, zero clipping on any screen) -->
+    <div class="flex items-center gap-1 sm:gap-2 shrink-0">
+      
+      <!-- Desktop Design System Switcher (Visible on xl+ 1280px+) -->
+      <div class="hidden xl:flex items-center p-0.5 rounded-lg bg-canvas-warm border border-sand-border shadow-xs text-xs font-mono">
+        <button id="btn-mode-impeccable" onclick="setDesignMode('impeccable')" class="switcher-btn-active px-2 py-1 rounded-md transition-all flex items-center gap-1 font-medium" title="Impeccable Style: Calm Editorial">
+          <span class="material-symbols-outlined text-[14px]">menu_book</span>
+          <span class="text-[11px]">Calm</span>
+        </button>
+        <button id="btn-mode-amicro" onclick="setDesignMode('amicro')" class="text-ink-muted hover:text-ink px-2 py-1 rounded-md transition-all flex items-center gap-1 font-medium" title="Amicro Style: Micro-Interactions">
+          <span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+          <span class="text-[11px]">Motion</span>
+        </button>
+        <button onclick="openDesignCompareModal()" class="px-1.5 py-1 rounded-md text-ink-muted hover:text-[#244B39] transition-all flex items-center" title="Compare Design Philosophies">
+          <span class="material-symbols-outlined text-[14px]">compare_arrows</span>
+        </button>
+      </div>
 
+      <!-- Quick Toggle Button for Laptops, Tablets & Mobile (< xl) -->
+      <button id="btn-mode-quick-toggle" onclick="toggleDesignMode()" class="xl:hidden h-8 px-2 sm:px-2.5 rounded-md bg-canvas-warm hover:bg-sand-border/40 text-ink border border-sand-border shadow-xs flex items-center gap-1 font-mono text-xs transition-colors shrink-0" title="Toggle Design Style (Calm vs Motion)">
+        <span id="quick-toggle-icon" class="material-symbols-outlined text-[15px] text-[#244B39]">menu_book</span>
+        <span id="quick-toggle-label" class="text-[10px] font-semibold hidden sm:inline">Calm</span>
+      </button>
 
-    <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
-      <a href="./docs/resume/Balaji_Palani_Senior_Scrum_Master.pdf" download="Balaji_Palani_Senior_Scrum_Master.pdf" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-mono font-medium bg-card border border-sand-border text-ink hover:border-[#244B39] hover:text-[#244B39] transition-all shadow-xs">
-        <span class="material-symbols-outlined text-[15px] text-[#244B39]">description</span>
-        <span>1-Page Summary</span>
+      <!-- 1-Page Summary PDF (hidden on mobile, visible on sm+) -->
+      <a href="./docs/resume/Balaji_Palani_Senior_Scrum_Master.pdf" download="Balaji_Palani_Senior_Scrum_Master.pdf" class="hidden md:inline-flex items-center gap-1.5 h-8 px-2.5 rounded-md text-xs font-mono font-medium bg-card border border-sand-border text-ink hover:border-[#244B39] hover:text-[#244B39] transition-all shadow-xs shrink-0">
+        <span class="material-symbols-outlined text-[14px] text-[#244B39]">description</span>
+        <span>Summary</span>
       </a>
-      <a href="#contact" class="h-8 sm:h-9 px-2.5 sm:px-4 rounded-md bg-[#244B39] hover:bg-[#1B382B] text-canvas font-mono text-xs font-medium flex items-center gap-1.5 shadow-xs transition-colors">
-        <span class="material-symbols-outlined text-[14px] sm:text-[15px]">arrow_outward</span>
-        <span class="hidden sm:inline">Hire / Connect</span>
+
+      <!-- Hire / Connect Button -->
+      <a href="#contact" class="h-8 px-2.5 sm:px-3 rounded-md bg-[#244B39] hover:bg-[#1B382B] text-canvas font-mono text-xs font-medium flex items-center gap-1 shadow-xs transition-colors shrink-0">
+        <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+        <span class="hidden sm:inline">Hire</span>
         <span class="sm:hidden">Hire</span>
       </a>
-      <button onclick="toggleMobileDrawer()" class="lg:hidden p-1.5 sm:p-2 rounded-md hover:bg-canvas-warm text-ink-muted hover:text-ink transition-colors border border-sand-border/60 flex items-center justify-center" aria-label="Toggle Navigation">
-        <span class="material-symbols-outlined text-[20px] sm:text-[22px]">menu</span>
+
+      <!-- Mobile / Tablet Hamburger Menu Button (visible on screens < xl) -->
+      <button onclick="toggleMobileDrawer()" class="xl:hidden h-8 w-8 rounded-md hover:bg-canvas-warm text-ink-muted hover:text-ink transition-colors border border-sand-border/60 flex items-center justify-center shrink-0" aria-label="Toggle Navigation">
+        <span class="material-symbols-outlined text-[18px]">menu</span>
       </button>
+
     </div>
   </div>
 </header>
@@ -2118,6 +2147,28 @@ document.addEventListener("click", (e) => {
         <span class="material-symbols-outlined text-[20px]">close</span>
       </button>
     </div>
+    <!-- Mobile Drawer Design Philosophy Card -->
+    <div class="p-3 rounded-xl bg-card border border-sand-border flex flex-col gap-2 shadow-xs">
+      <div class="flex items-center justify-between">
+        <span class="text-[10px] font-mono text-ink-muted uppercase tracking-wider font-semibold">Design Philosophy</span>
+        <span class="text-[10px] font-mono text-[#244B39] font-medium">Live Switcher</span>
+      </div>
+      <div class="grid grid-cols-2 gap-1.5 font-mono text-xs">
+        <button id="drawer-btn-impeccable" onclick="setDesignMode('impeccable')" class="py-2 px-2.5 rounded-lg border border-sand-border flex items-center justify-center gap-1.5 transition-all text-ink">
+          <span class="material-symbols-outlined text-[15px]">menu_book</span>
+          <span>Calm</span>
+        </button>
+        <button id="drawer-btn-amicro" onclick="setDesignMode('amicro')" class="py-2 px-2.5 rounded-lg border border-sand-border flex items-center justify-center gap-1.5 transition-all text-ink">
+          <span class="material-symbols-outlined text-[15px]">auto_awesome</span>
+          <span>Motion</span>
+        </button>
+      </div>
+      <button onclick="openDesignCompareModal(); closeMobileDrawer();" class="text-[11px] font-mono text-[#244B39] hover:underline flex items-center justify-center gap-1 pt-1 border-t border-sand-border/50">
+        <span class="material-symbols-outlined text-[13px]">compare_arrows</span>
+        <span>Compare Impeccable vs Amicro ↗</span>
+      </button>
+    </div>
+
     <nav class="flex flex-col gap-1.5 font-mono text-xs">
       <a href="#overview" onclick="closeMobileDrawer()" class="px-3 py-2 rounded-md hover:bg-canvas-warm text-ink font-medium">Overview</a>
       <a href="#saas-stack" onclick="closeMobileDrawer()" class="px-3 py-2 rounded-md hover:bg-canvas-warm text-ink font-medium">6 SaaS Engines</a>
