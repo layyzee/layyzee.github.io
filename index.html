@@ -57,9 +57,273 @@ input[type=range].sprint-slider::-webkit-slider-thumb:active {
   transform: translateY(0) scale(1);
   pointer-events: auto;
 }
+
+/* ========================================================
+   DESIGN SYSTEM ENGINE: IMPECCABLE vs. AMICRO
+   ======================================================== */
+
+.interactive-card {
+  position: relative;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* --- 1. IMPECCABLE MODE (Calm Editorial / Distilled Silence) --- */
+.mode-impeccable .interactive-card:hover {
+  border-color: #244B39;
+  background-color: #FFFFFF;
+}
+.mode-impeccable .amicro-tilt {
+  transform: none !important;
+  box-shadow: 0 1px 2px rgba(31, 36, 45, 0.05) !important;
+}
+.mode-impeccable .amicro-spotlight::before {
+  display: none !important;
+}
+.mode-impeccable .amicro-border-beam::after {
+  display: none !important;
+}
+
+/* --- 2. AMICRO MODE (Tactile Micro-Interactions) --- */
+.mode-amicro {
+  --amicro-spring: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mode-amicro .amicro-spotlight {
+  position: relative;
+  overflow: hidden;
+}
+.mode-amicro .amicro-spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(350px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(36, 75, 57, 0.09), transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 2;
+}
+.mode-amicro .amicro-spotlight:hover::before {
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .mode-amicro .amicro-tilt {
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: transform 0.16s ease-out, box-shadow 0.22s ease;
+  }
+  .mode-amicro .amicro-tilt:hover {
+    box-shadow: 0 16px 36px -12px rgba(31, 36, 45, 0.1), 0 4px 14px -4px rgba(36, 75, 57, 0.08);
+  }
+}
+
+.mode-amicro .amicro-magnetic {
+  will-change: transform;
+  transition: transform 0.18s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.amicro-ripple-host {
+  position: relative;
+  overflow: hidden;
+}
+.amicro-ripple-wave {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  transform: scale(0);
+  animation: amicroRipplePort 0.55s ease-out forwards;
+  pointer-events: none;
+  z-index: 5;
+}
+@keyframes amicroRipplePort {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.mode-amicro button:active,
+.mode-amicro .interactive-card:active {
+  transform: scale(0.985);
+}
+
+.mode-amicro .amicro-border-beam {
+  position: relative;
+}
+.mode-amicro .amicro-border-beam::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(90deg, transparent 0%, #244B39 35%, #C26447 65%, transparent 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: amicroBeamSpinPort 4.5s linear infinite;
+  pointer-events: none;
+  z-index: 3;
+}
+@keyframes amicroBeamSpinPort {
+  0% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(45deg); }
+  100% { filter: hue-rotate(0deg); }
+}
+
+.switcher-btn-active {
+  background-color: #244B39 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 1px 3px rgba(36, 75, 57, 0.3) !important;
+}
+
 </style>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script>
+
+// ==========================================
+// DESIGN SYSTEM ENGINE (IMPECCABLE vs. AMICRO)
+// ==========================================
+let currentDesignMode = localStorage.getItem('agile_design_mode') || 'impeccable';
+
+function setDesignMode(mode, showNotification = true) {
+  currentDesignMode = mode;
+  localStorage.setItem('agile_design_mode', mode);
+
+  const body = document.body;
+  const btnImpeccable = document.getElementById('btn-mode-impeccable');
+  const btnAmicro = document.getElementById('btn-mode-amicro');
+
+  if (mode === 'amicro') {
+    body.classList.remove('mode-impeccable');
+    body.classList.add('mode-amicro');
+
+    if (btnAmicro) {
+      btnAmicro.className = 'switcher-btn-active px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium';
+    }
+    if (btnImpeccable) {
+      btnImpeccable.className = 'text-ink-muted hover:text-ink px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium';
+    }
+
+    initAmicroListeners();
+  } else {
+    body.classList.remove('mode-amicro');
+    body.classList.add('mode-impeccable');
+
+    if (btnImpeccable) {
+      btnImpeccable.className = 'switcher-btn-active px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium';
+    }
+    if (btnAmicro) {
+      btnAmicro.className = 'text-ink-muted hover:text-ink px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium';
+    }
+
+    resetAmicroTransforms();
+  }
+}
+
+function openDesignCompareModal() {
+  const modal = document.getElementById('design-compare-modal');
+  if (modal) modal.classList.remove('hidden');
+}
+
+function closeDesignCompareModal() {
+  const modal = document.getElementById('design-compare-modal');
+  if (modal) modal.classList.add('hidden');
+}
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeDesignCompareModal();
+  }
+});
+
+let amicroInitialized = false;
+function initAmicroListeners() {
+  if (amicroInitialized) return;
+  amicroInitialized = true;
+
+  const isTouch = window.matchMedia('(pointer: coarse)').matches;
+
+  document.addEventListener('mousemove', (e) => {
+    if (currentDesignMode !== 'amicro' || isTouch) return;
+
+    const spotlights = document.querySelectorAll('.mode-amicro .amicro-spotlight');
+    spotlights.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (
+        e.clientX >= rect.left - 50 &&
+        e.clientX <= rect.right + 50 &&
+        e.clientY >= rect.top - 50 &&
+        e.clientY <= rect.bottom + 50
+      ) {
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        el.style.setProperty('--mouse-x', `${x}px`);
+        el.style.setProperty('--mouse-y', `${y}px`);
+      }
+    });
+
+    const tilts = document.querySelectorAll('.mode-amicro .amicro-tilt');
+    tilts.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if (
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom
+      ) {
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -5;
+        const rotateY = ((x - centerX) / centerX) * 5;
+        card.style.transform = `perspective(900px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.015, 1.015, 1.015)`;
+      } else if (card.style.transform && card.style.transform !== 'none') {
+        card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      }
+    });
+  });
+
+  document.querySelectorAll('.amicro-tilt').forEach(card => {
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (currentDesignMode !== 'amicro') return;
+    const host = e.target.closest('.amicro-ripple-host');
+    if (!host) return;
+
+    const rect = host.getBoundingClientRect();
+    const ripple = document.createElement('span');
+    const size = Math.max(rect.width, rect.height) * 1.5;
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
+
+    ripple.className = 'amicro-ripple-wave';
+    ripple.style.width = `${size}px`;
+    ripple.style.height = `${size}px`;
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+
+    host.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
+  });
+}
+
+function resetAmicroTransforms() {
+  document.querySelectorAll('.amicro-tilt').forEach(card => {
+    card.style.transform = 'none';
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  setDesignMode(currentDesignMode, false);
+});
+
 tailwind.config = {
   theme: {
     extend: {
@@ -122,6 +386,28 @@ tailwind.config = {
       <a href="#case-studies" class="px-3 py-1.5 rounded-md hover:text-ink hover:bg-canvas-warm transition-colors">Case Studies</a>
       <a href="#credentials" class="px-3 py-1.5 rounded-md hover:text-ink hover:bg-canvas-warm transition-colors">Credentials</a>
     </nav>
+
+    
+    <!-- Header Design System Switcher -->
+    <div class="flex items-center gap-1 p-0.5 sm:p-1 rounded-lg bg-canvas-warm border border-sand-border shadow-xs text-xs font-mono shrink-0">
+      <button id="btn-mode-impeccable" onclick="setDesignMode('impeccable')" class="switcher-btn-active px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium" title="Impeccable Style: Calm Editorial, Quiet Typography & Restraint">
+        <span class="material-symbols-outlined text-[15px]">menu_book</span>
+        <span class="text-[11px] font-medium hidden sm:inline">Impeccable</span>
+        <span class="text-[9px] text-white/80 hidden md:inline">Calm</span>
+        <span class="text-[11px] sm:hidden font-medium">Calm</span>
+      </button>
+      <button id="btn-mode-amicro" onclick="setDesignMode('amicro')" class="text-ink-muted hover:text-ink px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium" title="Amicro Style: Micro-Interactions, Spotlights, 3D Tilt & Tactile Springs">
+        <span class="material-symbols-outlined text-[15px]">auto_awesome</span>
+        <span class="text-[11px] font-medium hidden sm:inline">Amicro</span>
+        <span class="text-[9px] opacity-75 hidden md:inline">Motion</span>
+        <span class="text-[11px] sm:hidden font-medium">Motion</span>
+      </button>
+      <button onclick="openDesignCompareModal()" class="px-1.5 sm:px-2 py-1 rounded-md text-ink-muted hover:text-[#244B39] hover:bg-card transition-all flex items-center gap-1 font-medium border border-transparent hover:border-sand-border" title="Compare Impeccable vs Amicro Philosophies">
+        <span class="material-symbols-outlined text-[15px]">compare_arrows</span>
+        <span class="text-[11px] hidden xl:inline">Compare</span>
+      </button>
+    </div>
+
 
     <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
       <a href="./docs/resume/Balaji_Palani_Senior_Scrum_Master.pdf" download="Balaji_Palani_Senior_Scrum_Master.pdf" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-mono font-medium bg-card border border-sand-border text-ink hover:border-[#244B39] hover:text-[#244B39] transition-all shadow-xs">
@@ -205,7 +491,7 @@ tailwind.config = {
 
       <!-- Bento Cards: Warm Porcelain Surface -->
       <div class="lg:col-span-5 grid grid-cols-2 gap-3.5 relative">
-        <div id="hero-velocity-card" class="tooltip-trigger relative p-4 rounded-lg bg-card border border-sand-border shadow-xs flex flex-col justify-between cursor-pointer group hover:border-[#244B39] transition-all" onclick="toggleVelocityTooltip(event, this)">
+        <div id="hero-velocity-card" class="tooltip-trigger relative p-4 rounded-lg bg-card border border-sand-border shadow-xs flex flex-col justify-between cursor-pointer group hover:border-[#244B39] transition-all interactive-card amicro-spotlight amicro-tilt" onclick="toggleVelocityTooltip(event, this)">
           <div class="flex items-center justify-between">
             <span class="font-mono text-[11px] uppercase tracking-wider text-ink-muted font-semibold">Sustained Velocity</span>
             <span class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-sage-light text-[10px] font-mono font-semibold text-[#244B39] border border-sage/20 group-hover:bg-[#244B39] group-hover:text-white transition-colors">
@@ -325,19 +611,19 @@ tailwind.config = {
           </div>
         </div>
 
-        <div class="p-4 rounded-lg bg-card border border-sand-border shadow-xs flex flex-col justify-between">
+        <div class="p-4 rounded-lg bg-card border border-sand-border shadow-xs flex flex-col justify-between interactive-card amicro-spotlight amicro-tilt">
           <span class="font-mono text-[11px] uppercase tracking-wider text-ink-muted font-semibold">Blocker SLA</span>
           <div class="font-serif text-3xl font-medium text-ink my-2">&lt; 24h</div>
           <span class="text-xs text-ink-muted">Zero critical cross-team stalls</span>
         </div>
 
-        <div class="p-4 rounded-lg bg-card border border-sand-border shadow-xs flex flex-col justify-between">
+        <div class="p-4 rounded-lg bg-card border border-sand-border shadow-xs flex flex-col justify-between interactive-card amicro-spotlight amicro-tilt">
           <span class="font-mono text-[11px] uppercase tracking-wider text-ink-muted font-semibold">Predictability</span>
           <div class="font-serif text-3xl font-medium text-ink my-2">98.4%</div>
           <span class="text-xs text-ink-muted">Commitment vs completed ratio</span>
         </div>
 
-        <div class="p-4 rounded-lg bg-card border border-sand-border shadow-xs flex flex-col justify-between">
+        <div class="p-4 rounded-lg bg-card border border-sand-border shadow-xs flex flex-col justify-between interactive-card amicro-spotlight amicro-tilt">
           <span class="font-mono text-[11px] uppercase tracking-wider text-ink-muted font-semibold">Spillover Metric</span>
           <div class="font-serif text-3xl font-medium text-sage my-2">0</div>
           <span class="text-xs text-ink-muted">Stories spilled past review</span>
@@ -1971,5 +2257,147 @@ document.addEventListener("click", (e) => {
     </div>
   </div>
 </div>
+
+
+  <!-- ==========================================
+       DESIGN PHILOSOPHY COMPARISON MODAL
+       ========================================== -->
+  <div id="design-compare-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-card border border-sand-border rounded-2xl max-w-4xl w-full p-5 sm:p-8 shadow-2xl relative my-auto max-h-[90vh] overflow-y-auto">
+      
+      <div class="flex items-start justify-between gap-4 pb-4 border-b border-sand-border">
+        <div>
+          <div class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold uppercase text-[#244B39] tracking-wider mb-1">
+            <span class="material-symbols-outlined text-[16px]">compare</span>
+            Design Philosophy Benchmark
+          </div>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-ink">Impeccable vs. Amicro in Practice</h2>
+          <p class="text-xs sm:text-sm text-ink-muted mt-1">
+            Comparing Paul Bakaus’s <strong>Calm Editorial</strong> architecture against Syed Subhan’s <strong>Tactile Micro-Interactions</strong> on Balaji's Master Portfolio.
+          </p>
+        </div>
+        <button onclick="closeDesignCompareModal()" class="p-1.5 rounded-lg text-ink-muted hover:text-ink hover:bg-canvas-warm border border-sand-border/60 transition-colors">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-6">
+        
+        <div class="rounded-xl border-2 border-sand-border p-5 bg-canvas flex flex-col justify-between relative">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md bg-card border border-sand-border text-xs font-mono font-bold text-ink flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[15px] text-[#244B39]">menu_book</span>
+                Impeccable Style
+              </span>
+              <span class="text-[10px] font-mono text-ink-muted uppercase tracking-wider">Paul Bakaus (Calm)</span>
+            </div>
+            
+            <h3 class="font-serif text-lg font-bold text-ink">The Dignity of Stillness</h3>
+            <p class="text-xs text-ink-muted leading-relaxed mt-1">
+              Zero decorative motion. High signal-to-noise ratio. Newsreader serif headlines, precise 1px hairline rules, and generous white space inspired by classic British & Swiss editorial broadsheets.
+            </p>
+
+            <div class="mt-4 p-4 rounded-lg bg-card border border-sand-border">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-mono text-[#244B39] font-semibold">Sustained Delivery Velocity</span>
+                <span class="text-[10px] font-mono text-ink-muted">Static Metric</span>
+              </div>
+              <div class="font-serif text-2xl font-bold text-ink">+20% Story Points</div>
+              <p class="text-[11px] font-mono text-ink-muted mt-1">Zero jitter • Instant comprehension • Print-grade typography</p>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-sand-border flex items-center justify-between">
+            <span class="text-xs font-mono text-ink-muted">Active everywhere</span>
+            <button onclick="setDesignMode('impeccable'); closeDesignCompareModal();" class="px-3 py-1.5 rounded-md bg-card hover:bg-canvas-warm border border-sand-border text-xs font-mono font-semibold text-ink transition-colors">
+              Activate Calm
+            </button>
+          </div>
+        </div>
+
+        <div class="rounded-xl border-2 border-[#244B39]/60 p-5 bg-card flex flex-col justify-between relative shadow-md interactive-card amicro-spotlight amicro-tilt amicro-border-beam">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md bg-[#244B39] text-white text-xs font-mono font-bold flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[15px]">auto_awesome</span>
+                Amicro Style
+              </span>
+              <span class="text-[10px] font-mono text-[#244B39] uppercase tracking-wider font-semibold">Syed Subhan (Motion)</span>
+            </div>
+            
+            <h3 class="font-serif text-lg font-bold text-ink">Sensory Tactile Feedback</h3>
+            <p class="text-xs text-ink-muted leading-relaxed mt-1">
+              Delightful micro-animations that cure robotic UI. Soft cursor radial spotlights, 3D perspective tilt on hover, magnetic buttons, and liquid wave ripples on click.
+            </p>
+
+            <div class="mt-4 p-4 rounded-lg bg-canvas-warm border border-[#244B39]/30 relative overflow-hidden interactive-card amicro-spotlight amicro-tilt">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-mono text-[#244B39] font-bold">Sustained Delivery Velocity</span>
+                <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#244B39]/10 text-[#244B39] font-bold animate-pulse">Live Tilt</span>
+              </div>
+              <div class="font-serif text-2xl font-bold text-[#244B39]">+20% Story Points</div>
+              <p class="text-[11px] font-mono text-[#244B39] font-medium mt-1">Hover with mouse to see cursor spotlight & 3D tilt</p>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-sand-border flex items-center justify-between">
+            <span class="text-xs font-mono text-[#244B39] font-semibold">Tactile Delight</span>
+            <button onclick="setDesignMode('amicro'); closeDesignCompareModal();" class="px-3.5 py-1.5 rounded-md bg-[#244B39] hover:bg-[#1B382B] text-xs font-mono font-bold text-white transition-colors shadow-xs amicro-magnetic amicro-ripple-host">
+              Activate Amicro
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="border border-sand-border rounded-xl overflow-hidden mb-5">
+        <div class="bg-canvas-warm px-4 py-2.5 border-b border-sand-border text-xs font-mono font-bold text-ink uppercase tracking-wider">
+          Architecture & Trade-off Matrix
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs font-mono text-left">
+            <thead class="bg-card text-ink-muted border-b border-sand-border">
+              <tr>
+                <th class="py-2.5 px-4">Evaluation Dimension</th>
+                <th class="py-2.5 px-4 text-[#244B39] font-bold">Impeccable (Calm Editorial)</th>
+                <th class="py-2.5 px-4 text-clay font-bold">Amicro (Micro-Interactions)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-sand-border/60">
+              <tr class="hover:bg-canvas-warm/50">
+                <td class="py-2.5 px-4 font-bold text-ink">Core Goal</td>
+                <td class="py-2.5 px-4 font-sans text-ink-muted">Executive clarity, tranquil reading, zero distraction</td>
+                <td class="py-2.5 px-4 font-sans text-ink-muted">Modern product delight, tactile engagement, playful feedback</td>
+              </tr>
+              <tr class="hover:bg-canvas-warm/50">
+                <td class="py-2.5 px-4 font-bold text-ink">Motion Budget</td>
+                <td class="py-2.5 px-4 font-sans text-ink-muted">0ms (100% still, instant state transitions)</td>
+                <td class="py-2.5 px-4 font-sans text-ink-muted">150ms - 400ms spring physics & continuous mouse tracking</td>
+              </tr>
+              <tr class="hover:bg-canvas-warm/50">
+                <td class="py-2.5 px-4 font-bold text-ink">Mobile Behavior</td>
+                <td class="py-2.5 px-4 font-sans text-ink-muted">High contrast, clean typography, fast native scrolling</td>
+                <td class="py-2.5 px-4 font-sans text-ink-muted">Touch ripples, tap haptic squash, scroll-triggered count-ups</td>
+              </tr>
+              <tr class="hover:bg-canvas-warm/50">
+                <td class="py-2.5 px-4 font-bold text-ink">Ideal For</td>
+                <td class="py-2.5 px-4 font-sans text-ink-muted">Executive Cockpits, Playbooks, Portfolio Hubs, Board briefs</td>
+                <td class="py-2.5 px-4 font-sans text-ink-muted">SaaS Dashboards, AI Product Landing Pages, Interactive Tools</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-sand-border text-xs font-mono text-ink-muted">
+        <div>💡 You can switch modes anytime using the header toggle.</div>
+        <button onclick="closeDesignCompareModal()" class="px-4 py-2 bg-canvas-warm hover:bg-sand-border/40 border border-sand-border rounded-lg text-ink font-medium transition-colors">
+          Dismiss & Explore
+        </button>
+      </div>
+
+    </div>
+  </div>
 
 </body></html>
