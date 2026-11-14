@@ -968,27 +968,29 @@ tailwind.config = {
           </div>
         </div>
 
-        <!-- 3: SprintPoker -->
-        <div class="saas-card cursor-pointer p-5 rounded-lg bg-card border border-sand-border hover:border-terracotta shadow-xs flex flex-col justify-between transition-all group" data-category="estimation" onclick="openSaaSModal('sprintpoker')">
+        <!-- 3: SpecForge AI -->
+        <div class="saas-card cursor-pointer p-5 rounded-lg bg-card border border-sand-border hover:border-terracotta shadow-xs flex flex-col justify-between transition-all group" data-category="genai" onclick="openSaaSModal('specforge')">
           <div class="flex flex-col gap-3">
             <div class="flex items-center justify-between">
-              <span class="px-2 py-0.5 rounded-full bg-canvas-warm border border-sand-border font-mono text-[10px] text-ink-muted uppercase">Estimation Engine</span>
-              <span class="font-mono text-[11px] text-ink-muted">4 Decks</span>
+              <span class="px-2 py-0.5 rounded-full bg-canvas-warm border border-sand-border font-mono text-[10px] text-ink-muted uppercase">Enterprise AI &amp; BDD</span>
+              <span class="font-mono text-[11px] text-forest font-semibold">React 19 • TS</span>
             </div>
-            <div class="h-12 bg-canvas-warm/70 rounded border border-sand-border-subtle p-1.5 flex items-center justify-center gap-2 select-none">
-              <div class="w-6 h-9 rounded bg-card border border-sand-border shadow-xs flex items-center justify-center font-mono text-[10px] text-ink font-semibold">3</div>
-              <div class="w-6 h-9 rounded bg-terracotta text-canvas shadow-xs flex items-center justify-center font-mono text-[10px] font-semibold">5</div>
-              <div class="w-6 h-9 rounded bg-card border border-sand-border shadow-xs flex items-center justify-center font-mono text-[10px] text-ink font-semibold">8</div>
+            <div class="h-12 bg-canvas-warm/70 rounded border border-sand-border-subtle p-2 flex items-center justify-between select-none">
+              <div class="flex items-center gap-1.5 font-mono text-[10px] text-ink">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>INVEST 94/100</span>
+              </div>
+              <div class="px-1.5 py-0.5 rounded bg-forest/10 text-forest font-mono text-[9px] font-semibold">Gherkin BDD</div>
             </div>
             <div>
-              <h3 class="font-serif text-lg font-medium text-ink group-hover:text-terracotta transition-colors">SprintPoker Precision Planning</h3>
+              <h3 class="font-serif text-lg font-medium text-ink group-hover:text-terracotta transition-colors">SpecForge AI Requirement Diagnostic Studio</h3>
               <p class="text-xs text-ink-muted leading-relaxed mt-1">
-                Multi-deck Fibonacci planning poker with team consensus analysis, Jira RFC 4180 export pipeline, and Web Audio synthesizer chimes.
+                Dismantles sprint spillover by catching requirement blind spots before engineers write code. Evaluates INVEST compliance, scans negative edge cases, and synthesizes BDD Gherkin test suites.
               </p>
             </div>
           </div>
           <div class="pt-4 mt-3 flex items-center justify-between border-t border-sand-border text-xs">
-            <span class="flex items-center gap-1.5 font-mono text-sage font-medium text-[11px]"><span class="w-1.5 h-1.5 rounded-full bg-sage"></span> Active</span>
+            <span class="flex items-center gap-1.5 font-mono text-sage font-medium text-[11px]"><span class="w-1.5 h-1.5 rounded-full bg-sage"></span> Production Ready</span>
             <span class="font-mono text-ink-muted group-hover:text-terracotta flex items-center gap-1 transition-colors">Inspect System →</span>
           </div>
         </div>
@@ -1864,6 +1866,19 @@ const saasAppsDatabase = {
       { label: "Agile Pre-sets", desc: "12 Miro-equivalent enterprise templates" }
     ],
     launchUrl: "https://layyzee.github.io/scrum-master-career-portal/retro.html",
+    sourceUrl: "https://github.com/layyzee"
+  },
+  'specforge': {
+    title: "SpecForge AI Requirement Diagnostic Studio",
+    category: "Enterprise AI & BDD",
+    archBadge: "React 19 / TypeScript / BDD Synthesizer",
+    innovation: "Engineered to dismantle the #1 cause of sprint spillover: ambiguous, defect-ridden requirements. Built with modern React 19, TypeScript, and Tailwind, it executes real-time multi-axis INVEST compliance audits, detects missing negative error states, and synthesizes copy-ready BDD Gherkin test suites with 1-click Jira Cloud export.",
+    tags: ["React 19", "TypeScript", "INVEST Audit", "BDD Gherkin", "Jira RFC 4180"],
+    metrics: [
+      { label: "Spillover Defense", desc: "Catches 5 vulnerability classes before dev coding" },
+      { label: "Test Automation", desc: "Given-When-Then Gherkin scenarios with 1-click export" }
+    ],
+    launchUrl: "https://layyzee.github.io/scrum-master-career-portal/specforge/",
     sourceUrl: "https://github.com/layyzee"
   },
   'sprintpoker': {
