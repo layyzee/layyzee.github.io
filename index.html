@@ -995,27 +995,29 @@ tailwind.config = {
           </div>
         </div>
 
-        <!-- 4: PI Planner -->
-        <div class="saas-card cursor-pointer p-5 rounded-lg bg-card border border-sand-border hover:border-terracotta shadow-xs flex flex-col justify-between transition-all group" data-category="enterprise" onclick="openSaaSModal('pi-planner')">
+        <!-- 4: AppTracker Pro CRM -->
+        <div class="saas-card cursor-pointer p-5 rounded-lg bg-card border border-sand-border hover:border-terracotta shadow-xs flex flex-col justify-between transition-all group" data-category="enterprise" onclick="openSaaSModal('apptracker')">
           <div class="flex flex-col gap-3">
             <div class="flex items-center justify-between">
-              <span class="px-2 py-0.5 rounded-full bg-canvas-warm border border-sand-border font-mono text-[10px] text-ink-muted uppercase">Enterprise Scaled Agile</span>
-              <span class="font-mono text-[11px] text-ink-muted">SAFe® 6.0</span>
+              <span class="px-2 py-0.5 rounded-full bg-canvas-warm border border-sand-border font-mono text-[10px] text-ink-muted uppercase">Enterprise Recruitment CRM</span>
+              <span class="font-mono text-[11px] text-forest font-semibold">React 19 • TS</span>
             </div>
-            <div class="h-12 bg-canvas-warm/70 rounded border border-sand-border-subtle p-2 flex items-center justify-between select-none">
-              <div class="px-1.5 py-0.5 rounded bg-card border border-sand-border font-mono text-[9px] text-ink">Squad A</div>
-              <span class="text-terracotta font-mono text-[10px]">⟶ Bézier ⟶</span>
-              <div class="px-1.5 py-0.5 rounded bg-sage-light text-sage font-mono text-[9px] font-semibold">Squad B</div>
+            <div class="h-12 bg-canvas-warm/70 rounded border border-sand-border-subtle p-2 flex items-center justify-between select-none font-mono text-[10px]">
+              <div class="flex items-center gap-1.5 text-ink">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>77 Verified Roles</span>
+              </div>
+              <div class="px-1.5 py-0.5 rounded bg-forest/10 text-forest font-semibold">⌘K • Drag &amp; Drop</div>
             </div>
             <div>
-              <h3 class="font-serif text-lg font-medium text-ink group-hover:text-terracotta transition-colors">PI Planner SAFe® 6.0 Program Board</h3>
+              <h3 class="font-serif text-lg font-medium text-ink group-hover:text-terracotta transition-colors">AppTracker Pro Enterprise Pipeline CRM</h3>
               <p class="text-xs text-ink-muted leading-relaxed mt-1">
-                Multi-squad program board featuring real-time curved Bézier dependency tracking, 4-column ROAM matrix, and Fist-of-Five confidence polling.
+                Full-featured recruiting pipeline suite managing 77 verified roles with 6-stage drag-and-drop Kanban, live conversion telemetry, privacy lock for screen-sharing, and ⌘K Spotlight.
               </p>
             </div>
           </div>
           <div class="pt-4 mt-3 flex items-center justify-between border-t border-sand-border text-xs">
-            <span class="flex items-center gap-1.5 font-mono text-sage font-medium text-[11px]"><span class="w-1.5 h-1.5 rounded-full bg-sage"></span> Multi-Squad</span>
+            <span class="flex items-center gap-1.5 font-mono text-sage font-medium text-[11px]"><span class="w-1.5 h-1.5 rounded-full bg-sage"></span> Production Suite</span>
             <span class="font-mono text-ink-muted group-hover:text-terracotta flex items-center gap-1 transition-colors">Inspect System →</span>
           </div>
         </div>
@@ -1893,6 +1895,19 @@ const saasAppsDatabase = {
     ],
     launchUrl: "https://layyzee.github.io/scrum-master-career-portal/poker.html",
     sourceUrl: "https://github.com/layyzee"
+  },
+  'apptracker': {
+    title: "AppTracker Pro Enterprise Pipeline CRM",
+    category: "Enterprise Recruitment CRM",
+    archBadge: "React 19 / TypeScript / Vite / Tailwind",
+    innovation: "Replaces fragmented spreadsheets with a high-fidelity recruitment CRM. Features 6-stage drag-and-drop Kanban with celebratory confetti, ⌘K command palette spotlight, Privacy Shield toggle (masking company names & salaries when screen-sharing with recruiters), and real-time conversion telemetry across 77 verified opportunities.",
+    tags: ["React 19", "TypeScript", "Tailwind CSS", "Kanban Drag & Drop", "Privacy Shield", "⌘K Spotlight"],
+    metrics: [
+      { label: "Pipeline Scale", desc: "77 Real-world verified enterprise applications" },
+      { label: "Privacy Protection", desc: "1-Click Client Privacy Shield for live recruiter screen-shares" }
+    ],
+    launchUrl: "https://layyzee.github.io/scrum-master-career-portal/tracker-pro/",
+    sourceUrl: "https://github.com/layyzee/scrum-master-career-portal"
   },
   'pi-planner': {
     title: "PI Planner SAFe® 6.0 Program Board",
